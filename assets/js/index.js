@@ -1,0 +1,2114 @@
+function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+  const bubble = document.querySelector('.whatsapp-chat-bubble');
+
+  function toggleBubble(show) {
+    if (show) {
+      bubble.style.display = 'inline-block';
+    } else {
+      bubble.style.display = 'none';
+    }
+  }
+
+  // Initial: Show, then hide after 7 seconds
+  setTimeout(() => toggleBubble(false), 7000);
+
+  // Loop: Show every 22 seconds, hide after 7 seconds
+  setInterval(() => {
+    toggleBubble(true);
+    setTimeout(() => toggleBubble(false), 7000);
+  }, 22000);
+
+
+
+
+
+
+const toursData = {
+  "safari-blue": {
+    overview: `
+      <h2>Overview</h2>
+      <p>Let us take you on our Safari Blue Tour—a signature Zanzibar experience that combines turquoise waters, stunning marine life, and breathtaking islands.</p>
+      <p>Whether you’re a family, a couple, or just someone who loves adventure, this tour is the perfect way to explore the best of Zanzibar’s southern coastline.</p>
+      <h3>What to Expect</h3>
+      <h4>Sail Like a Local</h4>
+      <p>Hop aboard a traditional Swahili dhow—a beautifully crafted wooden boat. Our crew will make sure you’re comfortable and safe as you sail across the sparkling blue waters. Feel the sun on your skin and the sea breeze in your hair—it’s magical!</p>
+
+      <h4>Snorkeling at Stunning Reefs</h4>
+      <p>Dive into Zanzibar’s vibrant coral reefs! Don’t worry if you’re new to snorkeling—we’ll provide all the gear and guide you to the best spots. You’ll see colorful fish, fascinating coral formations, and maybe even starfish.</p>
+
+      <h4>A Stop at Kwale Island</h4>
+      <p>After a morning of adventure, we’ll take you to Kwale Island, where a delicious seafood feast will be waiting. Think freshly grilled lobster, calamari, fish, and tropical fruits. Prefer vegetarian? No problem—just let us know.</p>
+
+      <h4>Relax on a Secluded Sandbank</h4>
+      <p>Imagine walking along powder-soft sand surrounded by crystal-clear water. This is your time to swim, snorkel, or just kick back and relax.</p>
+
+      <h4>Spot Playful Dolphins</h4>
+      <p>Keep an eye out for dolphins! They love to swim alongside the dhow, and watching them leap and play is an experience you won’t forget.</p>
+
+      <h4>Explore a Peaceful Mangrove Lagoon</h4>
+      <p>End your day with a calming visit to a mangrove lagoon. It’s a quiet, beautiful spot filled with fascinating wildlife and serene vibes.</p>
+
+      <h4>Seafood Feast You’ll Love</h4>
+      <p>We take lunch seriously! Enjoy the freshest seafood, grilled to perfection, along with tropical fruits and traditional dishes. If you have special dietary needs, just let us know in advance—we’ve got you covered.</p>
+
+      <h4>Booking and Transportation</h4>
+      <p>We make it super simple to book your Safari Blue adventure. You can reserve online, through WhatsApp, or just give us a call. We also offer flexible payment options, including credit cards, bank transfers, and cash.</p>
+      <p>To make things even easier, we provide comfortable transport to and from your hotel, so you don’t have to worry about a thing.</p>
+
+    `,
+    itinerary: `
+      <h2>Safari Blue Tour Itinerary</h2>
+      <p>Here’s what your day could look like, but don’t worry—we’re super flexible and can adjust the timing to fit your schedule.</p>
+
+      <h3>Your Day at a Glance</h3>
+
+      <h4>Morning Pick-Up</h4>
+      <p>We’ll come to your hotel to pick you up—just tell us what time works best for you! Once you’re ready, we’ll head to the beautiful village of Fumba, where your adventure begins.</p>
+
+      <h4>Set Sail on a Traditional Dhow</h4>
+      <p>At Fumba, you’ll hop aboard a traditional wooden dhow, and we’ll set sail into Zanzibar’s sparkling turquoise waters. Feel the ocean breeze as we cruise toward your first stop.</p>
+
+      <h4>Relax at a Sandbank Paradise</h4>
+      <p>Our first destination is a stunning sandbank—a perfect little slice of paradise. You can snorkel, swim, or just lounge around in the sun. We’ll provide all the snorkeling gear, and if you’re not experienced, don’t worry—our team will guide you.</p>
+
+      <h4>Snorkeling at Coral Reefs</h4>
+      <p>Next up, we’ll take you to one of Zanzibar’s most vibrant coral reefs. Dive into the clear waters and explore an underwater world filled with colorful fish and marine life. Want more time here? Just let us know!</p>
+
+      <h4>Seafood Feast on Kwale Island</h4>
+      <p>By now, you’ve probably worked up an appetite! We’ll head to Kwale Island, where a delicious Swahili-style seafood buffet will be waiting. Freshly grilled fish, lobster, calamari, and tropical fruits await you. Vegetarian? No problem—just let us know.</p>
+
+      <h4>Explore the Mangrove Lagoon</h4>
+      <p>After lunch, we’ll take you on a calm little journey through the mangrove lagoon. It’s peaceful, serene, and full of wildlife.</p>
+
+      <h4>Relaxation and Optional Activities</h4>
+      <p>Once we’re back on the beach, you can swim, climb the nearby ancient baobab tree, or just relax.</p>
+
+      <h4>Drop-Off at Your Hotel</h4>
+      <p>We’ll take you back to your hotel when the tour ends. We’re flexible, so let us know the timing that works best for you.</p>
+
+      <h4>Why You’ll Love This Tour</h4>
+      <p>It’s a mix of adventure, relaxation, and amazing Zanzibar vibes! We’re all about making sure you have the day you want—tell us what you’d like more or less of.</p>
+
+    `,
+    price: `
+      <h2>Price</h2>
+      <p><strong>$50 per person</strong> (includes transport, lunch, and snorkeling gear)</p>
+
+    `,
+    includes: `
+      <h2>Includes</h2>
+      <ul>
+        <li>Transport to/from hotel</li>
+        <li>Seafood lunch</li>
+        <li>Snorkeling gear</li>
+        <li>Drinks & fruits</li>
+        <li>Guide services</li>
+      </ul>
+
+    `,
+    gallery: [
+      "./assets/images/20240119_125319.jpg",
+      "./assets/images/20240119_125307.jpg",
+      "./assets/images/tours/Safari-Blue-Adventure-08 (2).jpg"
+    ]
+    ,
+    faq: `
+      <h2>FAQ</h2>
+      <p><strong>Q:</strong> Is snorkeling equipment provided?<br><strong>A:</strong> Yes, everything is included.</p>
+      <p><strong>Q:</strong> Can vegetarians be accommodated?<br><strong>A:</strong> Absolutely, just let us know in advance.</p>
+      <p><strong>Q:</strong> How do I book?<br><strong>A:</strong> You can book online, via WhatsApp, or by phone.</p>
+
+      
+    `
+  }
+};
+
+
+toursData["sunset-dhow-cruise"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Are you ready for an unforgettable experience that perfectly captures the magic of Zanzibar?</p>
+    <p>Let me tell you about our Sunset Dhow Cruise – it’s not just a tour; it’s a moment you’ll treasure forever.</p>
+    <p>The golden sun slowly dipping into the horizon, the sky painted in shades of fiery orange, pink, and deep purple.</p>
+    <p>The warm ocean breeze brushing against your skin, the gentle sway of a traditional dhow boat gliding over the calm waters of the Indian Ocean.</p>
+    <p>Whether you’re a romantic couple, a solo traveler seeking tranquility, or a group of friends wanting to celebrate life, this cruise is made for you!</p>
+    <h3>What to Expect</h3>
+    <ul>
+      <li><strong>Golden Hour Views:</strong> Witness the sun casting its final glow over the historical skyline of Stone Town.</li>
+      <li><strong>Sail on a Traditional Dhow:</strong> Authentic, elegant, and smooth sailing on a handcrafted wooden boat.</li>
+      <li><strong>Drinks & Music:</strong> Refreshing beverages with soothing Taarab music or the ocean’s natural rhythm.</li>
+      <li><strong>Magical Ambiance:</strong> Dip your toes in the water, take stunning photos, or simply relax.</li>
+    </ul>
+    <h3>Booking & Transport</h3>
+    <p>Book online, via WhatsApp, or by phone. Flexible payments (credit cards, bank transfer, cash) and hotel transfers included.</p>
+  `,
+  itinerary: `
+    <h2>Sunset Dhow Cruise Itinerary</h2>
+    <p>Get ready for a magical evening on the waters of Stone Town.</p>
+    <h4>Starting Point:</h4>
+    <p>Stone Town Beach | <strong>Start Time:</strong> 4:30 pm | <strong>Duration:</strong> ~3 hours</p>
+    <ol>
+      <li><strong>Hotel Pickup:</strong> Air-conditioned transfer from your hotel.</li>
+      <li><strong>Boarding:</strong> Warm welcome aboard a traditional wooden dhow.</li>
+      <li><strong>Sunset Sailing:</strong> Glide over calm waters with drinks, snacks, and music.</li>
+      <li><strong>Golden Hour:</strong> Capture breathtaking views of the sunset.</li>
+      <li><strong>Return to Shore:</strong> Enjoy the peaceful night sea atmosphere.</li>
+      <li><strong>Hotel Drop-Off:</strong> Safe transfer back to your hotel.</li>
+    </ol>
+  `,
+  price: `
+    <h2>Price</h2>
+    <p><strong>$40 per person</strong> (includes drinks, snacks, and hotel transfers)</p>
+  `,
+  includes: `
+    <h2>Includes</h2>
+    <ul>
+      <li>Hotel pickup & drop-off</li>
+      <li>Traditional dhow cruise</li>
+      <li>Snacks & drinks</li>
+      <li>Music & entertainment</li>
+      <li>Friendly crew & guide</li>
+    </ul>
+  `,
+  gallery: [
+    "./assets/images/tours/Sunset-Dhow-Cruise-01.jpg",
+    "./assets/images/tours/Sunset-Dhow-Cruise-02.jpg",
+    "./assets/images/tours/Sunset-Dhow-Cruise-03.jpg",
+    "./assets/images/tours/Sunset-Dhow-Cruise-04.jpg"
+  ],
+  faq: `
+    <h2>FAQ</h2>
+    <p><strong>Q:</strong> Is transport included?<br><strong>A:</strong> Yes, roundtrip hotel transfers are included.</p>
+    <p><strong>Q:</strong> Are drinks provided?<br><strong>A:</strong> Yes, we offer soft drinks, local beer, wine, and water.</p>
+    <p><strong>Q:</strong> Can children join?<br><strong>A:</strong> Yes, it’s a family-friendly tour.</p>
+  `
+};
+
+
+
+toursData["swimming-with-dolphins-in-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Swimming with Dolphins in Zanzibar offers an unforgettable experience in the crystal-clear waters of the Indian Ocean.</p>
+    <p>The two main spots for dolphin tours are Mnemba Atoll and Kizimkazi.</p>
+    <p>At Blue Green Zanzibar Tours, we prefer dolphin experiences around Mnemba Atoll, and trust us—it’s the best spot for this magical encounter!</p>
+
+    <h3>Why Mnemba Over Kizimkazi?</h3>
+    <ul>
+      <li><strong>More Ethical & Less Crowded:</strong> Unlike Kizimkazi, where multiple boats often chase the dolphins, Mnemba offers a more relaxed, ethical, and less intrusive experience. The dolphins here are more comfortable, making for a better and more natural swim.</li>
+      <li><strong>Clearer, Calmer Waters:</strong> Mnemba is known for its turquoise, glass-like waters, offering better visibility when swimming or snorkeling. You won’t just see dolphins—you’ll see them in their full, breathtaking beauty.</li>
+    </ul>
+
+    <h3>More Than Just Dolphins</h3>
+    <p>After your dolphin encounter, you’ll explore Mnemba’s world-famous coral reefs, home to tropical fish, sea turtles, and stunning marine life. It’s a two-in-one adventure!</p>
+
+    <h3>Less Travel, More Fun</h3>
+    <p>Mnemba is closer to most hotels in the north (Nungwi, Kendwa, Matemwe), meaning less time on the road and more time in the water!</p>
+
+    <p><em>Prefer Kizimkazi? Contact us!</em></p>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Dolphin Tour with Blue Green Zanzibar Tours is super easy! You can reserve online, via WhatsApp, or call us. We offer flexible payments and provide hotel pickup and drop-off for a smooth, stress-free experience.</p>
+    <p>Just relax and get ready for an unforgettable adventure swimming with dolphins.</p>
+  `,
+
+  itinerary: `
+    <h2>Trip Itinerary</h2>
+    <p><strong>Tour Duration:</strong> Half-Day (Approximately 3-4 Hours)</p>
+    <p><strong>Best Time:</strong> Early Morning (06:00 AM – 10:00 AM)</p>
+    <p><strong>Location:</strong> Mnemba Atoll, Zanzibar</p>
+
+    <h3>Hotel Pick-up</h3>
+    <ul>
+      <li>Your driver will pick you up from your hotel.</li>
+      <li>Transfer to Matemwe, the departure point for Mnemba Atoll.</li>
+    </ul>
+
+    <h3>Boat Departure to Mnemba Atoll</h3>
+    <ul>
+      <li>Meet your boat captain and guide.</li>
+      <li>Briefing on safety, snorkeling techniques, and responsible dolphin encounters.</li>
+      <li>Life jackets and snorkeling gear provided.</li>
+    </ul>
+
+    <h3>Dolphin Spotting & Swimming</h3>
+    <ul>
+      <li>Sail to the dolphin hotspot near Mnemba Atoll.</li>
+      <li>Observe wild bottlenose and spinner dolphins in their natural habitat.</li>
+      <li>Swim alongside them while respecting their space.</li>
+    </ul>
+
+    <h3>Snorkeling at Mnemba Coral Reef</h3>
+    <ul>
+      <li>Discover vibrant marine life and coral formations.</li>
+      <li>Relax in the crystal-clear waters.</li>
+    </ul>
+
+    <h3>Refreshments & Relaxation</h3>
+    <ul>
+      <li>Enjoy fresh tropical fruits and water on the boat.</li>
+      <li>Relax or swim around the atoll.</li>
+    </ul>
+
+    <h3>Return & Drop-off</h3>
+    <ul>
+      <li>Boat ride back to Matemwe.</li>
+      <li>Hotel drop-off, concluding the tour.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Price</h2>
+    <p><strong>$40 per person</strong> (includes transport, snorkeling gear, and refreshments)</p>
+  `,
+
+  includes: `
+    <h2>Includes</h2>
+    <ul>
+      <li>Hotel pickup & drop-off</li>
+      <li>Snorkeling gear</li>
+      <li>Life jackets</li>
+      <li>Fresh tropical fruits & water</li>
+      <li>Guide services</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar_M4kn3.jpeg"
+  ],
+
+  faq: `
+    <h2>FAQ</h2>
+    <p><strong>Q:</strong> Do I need to be a good swimmer?<br><strong>A:</strong> Not necessarily—life jackets are provided.</p>
+    <p><strong>Q:</strong> Is it guaranteed to see dolphins?<br><strong>A:</strong> We can’t guarantee, but sightings are very common at Mnemba.</p>
+    <p><strong>Q:</strong> Can children join this tour?<br><strong>A:</strong> Yes, but parental supervision is required.</p>
+  `
+};
+  
+
+
+
+toursData["jozani-forest-cave-swimming-tour-combination"] = {
+  overview: `
+    <h2>Jozani Forest & Cave Swimming Tour Combination</h2>
+    <p>The perfect combination of thrill and relaxation, giving you a chance to explore Zanzibar’s only national park before diving into a secret underground cave pool!</p>
+    <h3>Stop 1: Jozani Forest – Meet Zanzibar’s Famous Red Colobus Monkeys!</h3>
+    <ul>
+      <li>Home to rare Red Colobus Monkeys found only in Zanzibar.</li>
+      <li>Walk through lush tropical forest with diverse wildlife.</li>
+      <li>Explore mystical mangrove boardwalks.</li>
+      <li>Discover traditional medicinal plants and unique flora.</li>
+    </ul>
+    <h3>Stop 2: Cave Swimming – Dive into a Hidden Gem</h3>
+    <ul>
+      <li>Swim in a natural underground cave with crystal-clear water.</li>
+      <li>Cool off after the forest tour in refreshing freshwater pools.</li>
+      <li>Learn about the cave’s history and cultural significance.</li>
+    </ul>
+    <h3>Why You’ll Love This Tour</h3>
+    <ul>
+      <li>Perfect mix of adventure & relaxation.</li>
+      <li>Great for families, couples, and solo travelers.</li>
+      <li>Amazing photo opportunities.</li>
+      <li>Knowledgeable local guides.</li>
+    </ul>
+  `,
+  price: `
+    <h2>Price</h2>
+    <p>Contact us for the latest rates — we offer competitive pricing for individuals and groups.</p>
+    <p>Includes transport, park entry fees, guide services, and cave swimming access.</p>
+  `,
+  includes: `
+    <h2>Includes</h2>
+    <ul>
+      <li>Hotel pickup & drop-off</li>
+      <li>Experienced local guide</li>
+      <li>Jozani Forest park fees</li>
+      <li>Cave swimming entry</li>
+      <li>Freshwater swimming</li>
+    </ul>
+  `,
+  gallery: [
+    "./assets/images/tours/Jozani-Forest-Tour-01-1 (1).jpg",
+    "./assets/images/tours/jozani-monkeys.jpg",
+    "./assets/images/tours/jozani-mangrove.jpg",
+    "./assets/images/tours/cave-swimming.jpg"
+  ],
+  faq: `
+    <h2>FAQ</h2>
+    <p><strong>Q: Is the cave swimming safe?</strong><br>Yes, the water is calm and clear. Life jackets are available if needed.</p>
+    <p><strong>Q: Can children join?</strong><br>Yes, but parental supervision is required.</p>
+    <p><strong>Q: What should I bring?</strong><br>Swimwear, towel, sunscreen, and comfortable walking shoes.</p>
+  `
+};
+
+
+toursData["stone-town-prison-island-nakupenda-sandbank-tour-combination"] = {
+  overview: `
+    <h2>Stone Town, Prison Island & Nakupenda Sandbank Tour Combination</h2>
+    <p>If you’re looking for a day packed with history, wildlife, and breathtaking tropical beauty, our Stone Town, Prison Island & Nakupenda Sandbank Tour is the perfect choice!</p>
+    <p>This three-in-one adventure takes you from Zanzibar’s historic streets to giant tortoises on Prison Island and finally to the dreamy white sands of Nakupenda Sandbank—all in one unforgettable day!</p>
+
+    <h3>Stop 1: Stone Town – Walk Through Zanzibar’s Rich History</h3>
+    <ul>
+      <li>Explore the Old Slave Market & Anglican Cathedral.</li>
+      <li>Visit the House of Wonders & Sultan’s Palace.</li>
+      <li>Wander through Darajani Market.</li>
+      <li>See Zanzibar’s iconic carved doors & architecture.</li>
+      <li>Pass by Freddie Mercury’s House.</li>
+    </ul>
+
+    <h3>Stop 2: Prison Island – Meet the Giant Tortoises!</h3>
+    <ul>
+      <li>Feed and interact with Aldabra Giant Tortoises.</li>
+      <li>Learn about the island’s quarantine and conservation history.</li>
+      <li>Relax on the island beach with turquoise views.</li>
+      <li>Snorkel around vibrant coral reefs.</li>
+    </ul>
+
+    <h3>Stop 3: Nakupenda Sandbank – A Dreamy Escape!</h3>
+    <ul>
+      <li>Swim in warm, shallow waters.</li>
+      <li>Snorkel and explore marine life.</li>
+      <li>Enjoy a fresh seafood lunch on the sandbank.</li>
+      <li>Sunbathe on pristine white sand.</li>
+    </ul>
+
+    <p><em>Bonus:</em> Nakupenda means “I love you” in Swahili—fall in love with Zanzibar!</p>
+  `,
+  price: `
+    <h2>Price</h2>
+    <p>Please contact us for the latest pricing. Rates include guided tours, entry fees, lunch, and all activities.</p>
+  `,
+  includes: `
+    <h2>Includes</h2>
+    <ul>
+      <li>Hotel pickup & drop-off</li>
+      <li>Professional guide</li>
+      <li>Entry fees to Stone Town sites & Prison Island</li>
+      <li>Snorkeling gear</li>
+      <li>Seafood lunch at Nakupenda</li>
+    </ul>
+  `,
+  gallery: [
+    "./assets/images/tours/Stone-Town-Walking-Tour-02-768x512.jpg",
+    "./assets/images/tours/stone-town-doors.jpg",
+    "./assets/images/tours/prison-island-tortoises.jpg",
+    "./assets/images/tours/nakupenda-sandbank.jpg"
+  ],
+  faq: `
+    <h2>FAQ</h2>
+    <p><strong>Q: Can children join this tour?</strong><br>Yes, the tour is family-friendly and suitable for all ages.</p>
+    <p><strong>Q: What should I bring?</strong><br>Comfortable shoes, swimwear, sunscreen, hat, and a camera.</p>
+    <p><strong>Q: Is lunch included?</strong><br>Yes, a fresh seafood lunch is included at Nakupenda Sandbank.</p>
+  `
+};
+
+
+toursData["spice-farm-jozani-forest-paje-beach-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Looking for a tour that combines Zanzibar’s exotic spices, incredible wildlife, and stunning beaches?</p>
+    <p>Our Spice Farm, Jozani Forest & Paje Beach Tour is the ultimate mix of adventure and relaxation!</p>
+    <p>Immerse yourself in the rich aromas of Zanzibar’s famous spices, walk among the rare Red Colobus Monkeys in Jozani Forest, and end your day on the white sandy shores of Paje Beach, one of the most beautiful beaches on the island.</p>
+
+    <h3>Stop 1: Spice Farm – Smell, Taste & Experience Zanzibar’s Spice Heritage</h3>
+    <ul>
+      <li>See, touch, and taste fresh spices like cloves, vanilla, cinnamon, nutmeg, and cardamom.</li>
+      <li>Learn about traditional spice farming and how these flavors have shaped Zanzibar’s culture.</li>
+      <li>Watch a coconut tree climber in action and sip fresh coconut water straight from the source.</li>
+      <li>Smell the rich aroma of exotic herbs and fruits growing all around you.</li>
+      <li><em>Bonus:</em> Take home organic, locally grown spices as the perfect souvenir!</li>
+    </ul>
+
+    <h3>Stop 2: Jozani Forest – Walk Among the Red Colobus Monkeys</h3>
+    <ul>
+      <li>Spot the friendly monkeys swinging from the trees—don’t be surprised if they come close for a better look!</li>
+      <li>Walk through the beautiful mahogany and eucalyptus trees, soaking in the fresh air.</li>
+      <li>Discover the magical mangrove boardwalk, where you’ll see crabs, fish, and unique swamp vegetation.</li>
+      <li>Learn about conservation efforts to protect Zanzibar’s rare wildlife and fragile ecosystem.</li>
+      <li><em>Fun Fact:</em> The Red Colobus Monkeys are completely fearless of humans, making them super easy to photograph up close!</li>
+    </ul>
+
+    <h3>Stop 3: Paje Beach – The Ultimate Tropical Escape</h3>
+    <ul>
+      <li>Relax on soft white sand while enjoying the warm Indian Ocean breeze.</li>
+      <li>Swim in crystal-clear turquoise waters—perfect for cooling off after your tour.</li>
+      <li>Try out some beachside restaurants and cafés, serving fresh seafood, tropical juices, and refreshing cocktails.</li>
+      <li>Watch kite surfers in action—Paje is one of the top kitesurfing destinations in the world!</li>
+      <li><em>Insider Tip:</em> If you’re feeling adventurous, you can try kitesurfing, paddleboarding, or even a sunset beach walk!</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Spice Farm, Jozani Forest & Paje Beach Tour is quick and hassle-free! Simply fill out our booking form or reach out via call or WhatsApp for instant assistance.</p>
+    <p>We offer multiple payment options to suit your convenience, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it easy to secure your spot.</p>
+    <p>For a stress-free experience, we provide comfortable transportation directly from your accommodation, ensuring a smooth and seamless journey from start to finish.</p>
+  `,
+  itinerary: null,  // No itinerary content provided; set to null to avoid 'undefined'
+  price: null,      // You can fill this if needed, or keep null
+  includes: null,   // You can fill this if needed, or keep null
+  gallery: [
+    "./assets/images/tours/Jozani-Forest-Tour-08-1-768x512.jpg",
+    "./assets/images/tours/spice-farm.jpg",
+    "./assets/images/tours/paje-beach.jpg"
+  ],
+  faq: null         // You can add FAQs here or keep null
+};
+
+
+
+toursData["zanzibar-spice-farm-tour"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Ready for an adventure that will tickle your senses and deepen your love for nature?</p>
+    <p>Zanzibar Spice Farm Tour is an absolute must when you’re on the island.</p>
+    <p>Picture this:</p>
+    <p>You’re walking through lush green plantations, where the air is alive with the scent of exotic spices like cinnamon, vanilla, and cloves—spices that have shaped Zanzibar’s history and made it famous around the world.</p>
+    <p>Our friendly and knowledgeable guides will take you behind the scenes of this magical world, showing you how these spices grow, are harvested, and turned into the flavors you enjoy.</p>
+    <p>And here’s the fun part—you’ll get to touch, smell, and even taste these spices straight from the source. It’s a full sensory experience!</p>
+    <p>We also include a fruit tasting session, where you’ll try tropical delights like jackfruit, starfruit, and Zanzibari bananas.</p>
+    <p>Trust us, they taste different when eaten right where they’re grown.</p>
+    <p>But it’s not just about the spices!</p>
+    <p>You’ll also get a glimpse into the local culture, meet the farmers who dedicate their lives to this craft, and even learn about the traditional uses of spices in Swahili cooking and medicine.</p>
+    <p>Plus, there’s always a chance for a little fun with coconut climbing demonstrations—get your cameras ready for that!</p>
+    <p>This tour is perfect for food lovers, culture enthusiasts, or anyone looking to do something uniquely Zanzibari.</p>
+    <p>So, come along and let us take you on this sensory adventure—you’ll never look at spices the same way again!</p>
+    <h3>Booking and Transportation</h3>
+    <p>Booking your Zanzibar Spice Farm Tour with Blue Green Zanzibar Tours is as easy as pie!</p>
+    <p>You can reserve your spot online using our simple booking form, reach out to us via WhatsApp, or give us a quick call—we’re always here to make the process smooth and stress-free.</p>
+    <p>We also offer flexible payment options to fit your preferences, whether you’d like to pay by credit card, bank transfer, or good old-fashioned cash.</p>
+    <p>And don’t worry about getting there—we’ve got your transportation covered!</p>
+    <p>Relax with our comfortable pick-up and drop-off service from your hotel, so you can fully immerse yourself in the sights, scents, and tastes of Zanzibar’s spice farms without a single worry.</p>
+    <p>Let us handle the logistics while you focus on enjoying this unforgettable experience!</p>
+  `,
+
+  itinerary: `
+    <h2>Spice Farm Tour Itinerary</h2>
+    <p><strong>Duration:</strong> Approximately 3-4 hours</p>
+    <p><strong>Start Time:</strong> Flexible, based on your preference</p>
+    <ul>
+      <li><strong>Pick-up from Your Hotel:</strong> We’ll pick you up from your hotel in a comfortable, air-conditioned vehicle. Sit back, relax, and enjoy the scenic drive through Zanzibar’s picturesque countryside.</li>
+      <li><strong>Arrival at the Spice Farm:</strong> Welcome to one of Zanzibar’s lush spice plantations! Our friendly guide will greet you and give a quick introduction to the tour.</li>
+      <li><strong>Spice Walk & Exploration:</strong> Stroll through the farm as your guide unveils the secrets of Zanzibar’s most famous spices—cinnamon, cloves, vanilla, nutmeg, and more! Learn how these spices are grown, harvested, and used in daily life. Touch, smell, and taste fresh spices directly from the plants.</li>
+      <li><strong>Spice Shopping (Optional):</strong> Browse and buy fresh spices, handmade soaps, and other unique products to take a piece of Zanzibar home with you.</li>
+      <li><strong>Optional Lunch:</strong> Enjoy an authentic Zanzibari lunch (optional, add-on), infused with the spices you just explored, served in a serene setting on the farm.</li>
+      <li><strong>Return to Your Hotel:</strong> We’ll drop you off at your hotel, leaving you with unforgettable memories and maybe a bag of fresh spices to treasure.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $25</li>
+      <li><strong>2 Persons:</strong> $20 per person</li>
+      <li><strong>3-6 Persons:</strong> $17 per person</li>
+      <li><strong>7-14 Persons:</strong> $15 per person</li>
+      <li><strong>15-28 Persons:</strong> $10 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included in the listed prices, as they depend on the distance from your hotel. Please get in touch with us, and we’ll provide a tailored quote that includes transfer costs based on your hotel’s location.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>Soft Drinks</li>
+      <li>Tropical fruits</li>
+      <li>All government fees</li>
+      <li>Traditional spiced meal (for extra cost)</li>
+      <li>Transfer from and return to your hotel available for extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Spice-Tour-07.jpg",
+    "./assets/images/tours/Spice-Tour-06.jpg",
+    "./assets/images/tours/Spice-Tour-05.jpg",
+    "./assets/images/tours/Spice-Tour-03.jpg",
+    "./assets/images/tours/Spice-Tour-08.jpg",
+    "./assets/images/tours/Spice-Tour-01.jpg",
+    "./assets/images/tours/Spice-Tour-02.jpg",
+    "./assets/images/tours/Spice-Tour-04.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Spice Farm Tour</h2>
+    <p><strong>Is this tour suitable for children?</strong><br>Yes, the tour is family-friendly and suitable for children of all ages.</p>
+    <p><strong>Can I combine this tour with other activities?</strong><br>Yes, you can combine this tour with other tours or activities. Please contact us for details.</p>
+    <p><strong>Do I need to book in advance?</strong><br>It is recommended to book in advance to secure your preferred date and time.</p>
+    <p><strong>What language is the tour conducted in?</strong><br>The tour is conducted in English by knowledgeable local guides.</p>
+    <p><strong>Can I buy spices during the tour?</strong><br>Yes, there are opportunities to purchase fresh spices and handmade products at the farm.</p>
+  `
+};
+
+
+
+
+toursData["jozan-forest-tour-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>If you’re visiting Zanzibar and looking for something that combines nature, adventure, and a little bit of wonder, let us take you on an unforgettable journey to Jozani Forest!</p>
+    <p>This is the place to experience the wild, natural beauty of Zanzibar.</p>
+    <p>As the island’s only national park, it’s home to the famous and endangered Red Colobus Monkeys—trust me, seeing these little guys up close is a treat! They’re not shy, so you’ll have plenty of time to snap some great photos while they swing through the treetops or curiously watch you back.</p>
+    <p>But the monkeys are just the start! Jozani Forest is also a vibrant ecosystem filled with towering mahogany trees, exotic birds, butterflies, and even medicinal plants that locals have been using for centuries.</p>
+    <p>Our guides are experts—not only will they walk you through the lush forest trails, but they’ll also share cool stories about the plants, wildlife, and the cultural significance of the area.</p>
+    <p>Oh, and here’s something you’ll love: Jozani isn’t just about the forest. We’ll also take you to explore the mangrove boardwalk—a peaceful, almost magical place where the tides meet the forest. The mangroves are critical for Zanzibar’s ecosystem, and walking through them feels like stepping into another world.</p>
+    <p>This tour is perfect for nature lovers, families, couples—basically, anyone looking to connect with the heart of Zanzibar.</p>
+    <h3>Booking and Transportation</h3>
+    <p>We make it super easy to book your Jozani Forest adventure with Blue Green Zanzibar Tours! You can reserve your spot online (booking form), through WhatsApp, or simply give us a call.</p>
+    <p>We also offer flexible payment options to suit your needs—credit cards, bank transfers, or good old cash are all welcome.</p>
+    <p>And to make your experience completely stress-free, we’ll provide comfortable transportation to and from your hotel. Relax, we’ve got everything covered so you can focus on enjoying the magic of Jozani Forest!</p>
+  `,
+
+  itinerary: `
+    <h2>Jozan Forest Tour Itinerary</h2>
+    <p><strong>Duration:</strong> Approx. 3-4 hours.</p>
+    <p><strong>Morning or Afternoon Departure:</strong> We offer flexible departure times—choose between a morning or afternoon tour to suit your schedule.</p>
+    <ul>
+      <li><strong>Hotel Pickup:</strong> Our friendly driver will pick you up from your hotel in a comfortable, air-conditioned vehicle. Sit back, relax, and enjoy the scenic drive to Jozani Forest.</li>
+      <li><strong>Arrival at Jozani Forest:</strong> Upon arrival, meet your professional guide who will give you a quick introduction to the forest and what to expect during the tour.</li>
+      <li><strong>Guided Nature Walk:</strong>
+        <ul>
+          <li><strong>Red Colobus Monkey Encounter:</strong> Explore the heart of the forest and meet the famous Zanzibar Red Colobus Monkeys! Watch these playful, endangered creatures in their natural habitat as your guide shares fascinating facts about their behavior and conservation efforts.</li>
+          <li><strong>Forest Trail Exploration:</strong> Walk through lush trails lined with towering mahogany and tropical plants. Discover unique trees, medicinal plants, and spot colorful birds and butterflies along the way.</li>
+        </ul>
+      </li>
+      <li><strong>Mangrove Boardwalk:</strong> Head to the peaceful mangrove forest, where you’ll stroll along a wooden boardwalk surrounded by tidal mangroves. Learn about this important ecosystem and how it supports Zanzibar’s coastal environment.</li>
+      <li><strong>Leisure Time and Photos:</strong> Take some time to soak in the serenity of Jozani Forest, snap some photos, and enjoy the tranquil atmosphere.</li>
+      <li><strong>Return Journey:</strong> After the tour, we’ll take you back to your hotel, ensuring a safe and comfortable ride.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $50</li>
+      <li><strong>2 Persons:</strong> $40 per person</li>
+      <li><strong>3-6 Persons:</strong> $35 per person</li>
+      <li><strong>7-14 Persons:</strong> $30 per person</li>
+      <li><strong>15-28 Persons:</strong> $25 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included in the listed prices, as they depend on the distance from your hotel. Please get in touch with us, and we’ll provide a tailored quote that includes transfer costs based on your hotel’s location.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>Soft Drinks</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available only for extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Jozani-Forest-Tour-07.jpg",
+    "./assets/images/tours/Jozani Forest (1).jpg",
+    "./assets/images/tours/jozani-1.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-05.jpg",
+    "./assets/images/tours/Cave swimming Maalum cave (8).jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-02.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-06.jpg",
+    "./assets/images/tours/Jozani Forest (2).jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-08.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-09.jpg",
+    "./assets/images/tours/Jozani Forest (3).jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-01.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Jozan Forest Tour</h2>
+    <p><strong>Can children join the tour?</strong><br>Absolutely! The tour is family-friendly and perfect for kids who love nature and wildlife.</p>
+    <p><strong>Do I need a guide?</strong><br>Yes, the tour is guided by knowledgeable professionals to enhance your experience.</p>
+    <p><strong>Do I need to book in advance?</strong><br>It is recommended to book in advance to secure your preferred date and time.</p>
+    <p>If you have additional questions, feel free to contact us directly. We’re here to help make this tour an unforgettable experience!</p>
+  `
+};
+
+
+toursData["nakupenda-sandbank-tour-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>If you’re looking for a breathtaking escape, our Nakupenda Sandbank Tour is an absolute must.</p>
+    <p>Imagine a pristine white sandbank rising from the turquoise waters, surrounded by nothing but the endless ocean. That’s Nakupenda—which literally means “I love you” in Swahili, and trust us, you’ll fall in love with this paradise too!</p>
+    <p>This tour is all about relaxation, adventure, and pure tropical bliss. You’ll bask in the sun, swim in crystal-clear waters, and snorkel among vibrant marine life.</p>
+    <p>And to top it all off, we’ll treat you to a fresh seafood feast right on the sandbank, with the sound of gentle waves as your background music.</p>
+    <p>Whether you’re a couple looking for a romantic getaway, a solo traveler seeking tranquility, or a group of friends ready for an unforgettable experience, Nakupenda Sandbank is a place you won’t forget.</p>
+    <h3>Booking and Transportation options</h3>
+    <p>Booking your Nakupenda Sandbank Tour with Blue Green Zanzibar Tours is as easy as a sea breeze! Reserve your spot online using our simple booking form, send us a quick WhatsApp message, or give us a call—we’re always here to make the process smooth and hassle-free.</p>
+    <p>We also offer flexible payment options to suit your needs, whether you prefer credit card, bank transfer, or cash.</p>
+    <p>And don’t worry about transportation—we’ve got it covered! Enjoy a comfortable pick-up and drop-off service from your hotel, so you can fully relax and soak in the beauty of Zanzibar’s most stunning sandbank.</p>
+    <p>Let us handle the details while you focus on making unforgettable memories in paradise!</p>
+  `,
+
+  itinerary: `
+    <h2>Nakupenda Sandbank Trip Itinerary</h2>
+    <p><strong>Duration:</strong> Half-day or full-day options available</p>
+    <p><strong>Morning Departure</strong></p>
+    <ul>
+      <li>Your adventure begins as we pick you up from your hotel (if needed) and take you to the shore in Stone Town.</li>
+      <li>Here, you’ll meet our friendly crew and board a traditional dhow boat.</li>
+      <li><strong>Arrival at Nakupenda Sandbank:</strong> Step onto the soft white sand, surrounded by breathtaking blue waters. Swim, sunbathe, or simply relax and take in the stunning views.</li>
+      <li>Dive into the clear waters and swim among colorful fish, sea stars, and other marine life.</li>
+      <li><strong>Lunch:</strong> Enjoy a delicious seafood feast right on the sandbank — freshly grilled lobster, prawns, calamari, fish, Swahili-style rice, tropical fruits, and refreshing drinks. Vegetarian options include grilled vegetables, spiced potatoes, lentil curry, and fresh salads.</li>
+      <li><strong>Free Time to Explore & Relax:</strong> Swim, take photos, or simply soak in the beauty of this hidden gem.</li>
+      <li><strong>Departure to Stone Town:</strong> As the tide rises, board the boat and return to Stone Town.</li>
+      <li><strong>Drop-off at Your Hotel:</strong> We’ll safely take you back, ending a perfect day in paradise!</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $100</li>
+      <li><strong>2 Persons:</strong> $70 per person</li>
+      <li><strong>3-6 Persons:</strong> $60 per person</li>
+      <li><strong>7-14 Persons:</strong> $55 per person</li>
+      <li><strong>15-28 Persons:</strong> $45 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included as they depend on the distance from your hotel. Please contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Private Boat</li>
+      <li>Swimming Equipment</li>
+      <li>Lunch (Seafood BBQ, Chicken, or Vegetarian options)</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available for extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/nakupenda sandbank 6.jpg",
+    "./assets/images/tours/Nakupenda-Sandbank-Picnic-09.jpg",
+    "./assets/images/tours/Nakupenda-Sandbank-Picnic-01.jpg",
+    "./assets/images/tours/nakupenda sandbank 4.jpg",
+    "./assets/images/tours/nakupenda.jpg",
+    "./assets/images/tours/Nakupenda-Sandbank-Picnic.jpg",
+    "./assets/images/tours/nakupenda-sandbank-2.jpg",
+    "./assets/images/tours/nakupenda sandbank 3.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Nakupenda Sandbank Tour</h2>
+    <p><strong>Do I need to know how to swim to join this tour?</strong><br>Not necessarily! You can still enjoy the sandbank, boat ride, and beach lunch even if you don’t swim. Life jackets are available for those who want to experience the water safely.</p>
+    <p><strong>Is this tour suitable for families with children?</strong><br>Yes, families are welcome and the tour is family-friendly.</p>
+    <p><strong>Do I need to book in advance?</strong><br>Booking ahead is recommended to secure your preferred date.</p>
+    <p>If you have additional questions, feel free to contact us directly. We’re here to help make this tour an unforgettable experience!</p>
+  `
+};
+
+
+toursData["prison-island-tour-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>The Prison Island Tour in Zanzibar is a popular half-day trip to Changuu Island, about 5.6 km from Stone Town (a short 30-minute boat ride).</p>
+    <p>But don’t let the name scare you—this place is nothing like a gloomy prison! Instead, it’s an island paradise packed with history, turquoise waters, and some of the coolest giant tortoises you’ll ever meet.</p>
+    <h3>What to expect</h3>
+    <ul>
+      <li><strong>Scenic Boat Ride:</strong> Cruise across the stunning Indian Ocean with endless blue views.</li>
+      <li><strong>Meet the Giant Tortoises:</strong> Aldabra tortoises over 100 years old; feed, photograph, and learn their stories.</li>
+      <li><strong>Explore the Old Prison Ruins:</strong> Originally built to house rebellious slaves but never used as a prison; later a quarantine station.</li>
+      <li><strong>Beach Time:</strong> Swim in crystal-clear waters or relax on white sandy beaches.</li>
+    </ul>
+    <h3>Booking and Transportation for Your Prison Island Tour</h3>
+    <p>Booking your Prison Island Tour with Blue Green Zanzibar Tours is super easy! Reserve online, via WhatsApp, or call. We offer flexible payment options including credit cards, bank transfers, and cash.</p>
+    <p>To make your experience smoother, we provide comfortable transport to and from your hotel—just sit back, relax, and enjoy your island adventure!</p>
+  `,
+
+  itinerary: `
+    <h2>Prison Island Tour Itinerary</h2>
+    <p><strong>Duration:</strong> 3–4 Hours</p>
+    <p><strong>Departure Point:</strong> Stone Town</p>
+    <ul>
+      <li>Pick-Up & Transfer to the Dock: Pickup from your hotel (if requested), transfer to Stone Town dock.</li>
+      <li>Boat Ride to Prison Island (~30 minutes): Enjoy stunning views of Zanzibar’s coastline.</li>
+      <li>Explore Prison Island:
+        <ul>
+          <li>Giant Tortoises Sanctuary: Meet, feed, and photograph these gentle giants.</li>
+          <li>Prison Ruins: Learn about the island’s history and former quarantine use.</li>
+          <li>Scenic Beach: Relax and take photos.</li>
+        </ul>
+      </li>
+      <li>Beach Time (Optional): Swim or relax on soft white sand.</li>
+      <li>Return Boat Ride to Stone Town.</li>
+      <li>Hotel Drop-Off: Return transfer to your hotel or central location.</li>
+    </ul>
+    <p>You’ll return with a heart full of memories and a camera full of stunning photos!</p>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $55</li>
+      <li><strong>2-5 Persons:</strong> $50 per person</li>
+      <li><strong>6-10 Persons:</strong> $45 per person</li>
+      <li><strong>11-27 Persons:</strong> $40 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and vary by hotel distance. Contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Boat ride</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/prison island.jpg",
+    "./assets/images/tours/Prison-Island-Tour.jpg",
+    "./assets/images/tours/Prison-Island-Tour-01.jpg",
+    "./assets/images/tours/Prison-Island-Tour-08.jpg",
+    "./assets/images/tours/Prison-Island-Tour-07.jpg",
+    "./assets/images/tours/Prison-Island-Tour-06.jpg",
+    "./assets/images/tours/Prison-Island-Tour-09.jpg",
+    "./assets/images/tours/Prison-Island-Tour-02.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Prison Island Tour</h2>
+    <p><strong>Why is it called Prison Island?</strong><br>The island was originally intended to house prisoners but was later used as a quarantine station for yellow fever patients. Despite its name, no prisoners were ever kept there.</p>
+    <p><strong>Is the tour suitable for kids?</strong><br>Yes, the tour is family-friendly and suitable for children.</p>
+    <p>If you have more questions, feel free to reach out. We’re here to make this tour everything you’ve dreamed of and more!</p>
+  `
+};
+
+toursData["village-tour-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>A Village Tour in Zanzibar offers an authentic glimpse into local island life, taking you beyond the beaches to experience the rich culture and traditions of Zanzibar communities.</p>
+    <p>We take you deep into a traditional Zanzibar village, where life moves at a peaceful, natural rhythm. No touristy gimmicks—just real people, real culture, and real moments.</p>
+    <p>You’ll meet locals, see how they live, and even get hands-on with daily activities.</p>
+    <h3>What You’ll Do:</h3>
+    <ul>
+      <li>Walk through the village, feeling the warm welcome as you explore narrow paths lined with mud houses, coconut trees, and smiling faces.</li>
+      <li>Visit a local home to learn how traditional Swahili homes are built, decorated, and maintained.</li>
+      <li>Experience daily life by watching or trying coconut husking, weaving, or grinding spices the old-fashioned way.</li>
+      <li>Learn about traditional cooking by visiting a local kitchen and smelling rich Zanzibar cuisine aromas.</li>
+      <li>Interact with villagers, including elders and kids, feeling the genuine island hospitality.</li>
+      <li>Explore local crafts such as basket weaving, pottery, and handmade mats—perfect souvenirs!</li>
+    </ul>
+    <h3>Booking and Transportation</h3>
+    <p>Booking your Village Tour with Blue Green Zanzibar Tours is easy! Reserve online, via WhatsApp, or by phone.</p>
+    <p>Flexible payment options: credit cards, bank transfers, or cash.</p>
+    <p>Comfortable transportation to/from your hotel is provided so you can relax and enjoy the experience.</p>
+  `,
+
+  itinerary: `
+    <h2>Village Tour in Zanzibar – Itinerary</h2>
+    <ul>
+      <li><strong>Pickup from Your Hotel:</strong> Flexible timing (morning or afternoon). Enjoy a scenic drive through the island.</li>
+      <li><strong>Arrival & Warm Welcome:</strong> Meet village elders and locals, learn about the village's culture and history.</li>
+      <li><strong>Village Walking Tour:</strong> Explore pathways, traditional Swahili homes built with natural materials.</li>
+      <li><strong>Traditional Skills & Activities:</strong> Watch/participate in coconut husking, weaving, pottery making, and spice grinding.</li>
+      <li><strong>Cooking & Tasting:</strong> See traditional dishes being prepared and enjoy tasting fresh seasonal fruits and local treats.</li>
+      <li><strong>Cultural Interaction & Storytelling:</strong> Chat with elders and enjoy traditional songs or drumming performances (if available).</li>
+      <li><strong>Local Crafts & Souvenirs:</strong> Browse and support local artisans by purchasing handmade crafts.</li>
+      <li><strong>Return Journey:</strong> Head back to your hotel with wonderful memories of your immersive village experience.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $55 per person</li>
+      <li><strong>3-6 Persons:</strong> $45 per person</li>
+      <li><strong>7-14 Persons:</strong> $40 per person</li>
+      <li><strong>15-28 Persons:</strong> $35 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs depend on your hotel’s location and are not included in the listed prices. Contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>All activities fees</li>
+      <li>Bottle of water</li>
+      <li>All government fees</li>
+      <li>Traditional food available at extra cost</li>
+      <li>Transfer to/from hotel available for extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-04.jpg",
+    "./assets/images/tours/culture-tour-3.jpg",
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-07.jpg",
+    "./assets/images/tours/culture-tour-2.jpg",
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-02.jpg",
+    "./assets/images/tours/culture-tour.jpg",
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-03.jpg",
+    "./assets/images/tours/culture-tour-4.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Village Tour</h2>
+    <p><strong>How long does the village tour last?</strong><br>Half-day: Approx. 4–5 hours; Full-day: Around 6–7 hours (includes traditional lunch).</p>
+    <p><strong>Is this tour suitable for families with kids?</strong><br>Yes, it is family-friendly and suitable for children.</p>
+    <p>If you have additional questions, feel free to contact us directly. We’re here to make this tour unforgettable!</p>
+  `
+};
+
+
+toursData["mnemba-atoll-snorkeling-trip-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Discover the breathtaking underwater world with our Mnemba Atoll Snorkeling Trip.</p>
+    <p>This excursion offers the chance to explore crystal-clear waters, vibrant coral reefs, and abundant marine life.</p>
+    <p>Whether you’re a pro or a first-time snorkeler, this trip is for everyone who loves the sea!</p>
+    <h3>Tour Highlights</h3>
+    <ul>
+      <li>Boat Ride to Mnemba Atoll: Depart from Matemwe or Nungwi and cruise across turquoise waters.</li>
+      <li>Snorkeling Experience: Swim among colorful coral reefs, tropical fish, sea turtles, and other marine species.</li>
+      <li>Dolphin Spotting (Seasonal): Encounter playful dolphins near the atoll.</li>
+      <li>Relax on a Sandbank: Sunbathe and enjoy ocean views on a nearby sandbank (tide-dependent).</li>
+      <li>Fresh Fruits & Refreshments: Enjoy tropical fruits and light snacks onboard.</li>
+    </ul>
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Mnemba Atoll Snorkeling Trip with Blue Green Zanzibar Tours is easy! Reserve online, via WhatsApp, or call us.</p>
+    <p>Flexible payment options including credit cards, bank transfers, and cash.</p>
+    <p>We provide comfortable hotel pickup and drop-off to ensure a stress-free experience.</p>
+  `,
+
+  itinerary: `
+    <h2>Mnemba Snorkeling Trip Itinerary</h2>
+    <ul>
+      <li><strong>Hotel Pickup:</strong> Pickup from your hotel in a comfortable, air-conditioned vehicle and scenic drive to Matemwe.</li>
+      <li><strong>Boat Ride to Mnemba Atoll:</strong> Board a traditional dhow or speedboat; enjoy turquoise waters and possible dolphin sightings.</li>
+      <li><strong>Snorkeling at Mnemba Atoll:</strong> Explore vibrant coral reefs with colorful fish, sea turtles, and guided underwater sights.</li>
+      <li><strong>Tropical Refreshments:</strong> Relax onboard with fresh tropical fruits and cold drinks while enjoying ocean views.</li>
+      <li><strong>Return Boat Ride & Hotel Drop-Off:</strong> Smooth ride back to Matemwe Beach and transfer to your hotel with wonderful memories.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $90</li>
+      <li><strong>2 Persons:</strong> $70 per person</li>
+      <li><strong>3-6 Persons:</strong> $60 per person</li>
+      <li><strong>7-14 Persons:</strong> $45 per person</li>
+      <li><strong>15-28 Persons:</strong> $27 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Note:</em> Transportation costs depend on your hotel’s location and are not included. Contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Boat</li>
+      <li>Snorkeling gear</li>
+      <li>Life Jackets</li>
+      <li>Soft Drinks & Tropical Fruits</li>
+      <li>All government fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/mnemba-snorkelling.jpg",
+    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-05.jpg",
+    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-07.jpg",
+    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-02.jpg",
+    "./assets/images/tours/Mnemba-Tours-7.jpg",
+    "./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar.jpg",
+    "./assets/images/tours/Mnemba-Tours-13.jpg",
+    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-04.jpg",
+    "./assets/images/tours/Mnemba-Tours-10.jpg",
+    "./assets/images/tours/Mnemba-Tours-2.jpg",
+    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-01.jpg",
+    "./assets/images/tours/mnemba-snorkeling.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Mnemba Snorkeling Trip</h2>
+    <p><strong>Do I need to be an experienced swimmer?</strong><br>No! The waters are shallow and calm, perfect for beginners. Our guides provide safety briefings and assistance.</p>
+    <p><strong>What marine life can I see while snorkeling?</strong><br>Colorful tropical fish, sea turtles, and vibrant coral reefs.</p>
+    <p><strong>How long does the snorkeling trip last?</strong><br>The trip typically lasts several hours including transport, snorkeling, and refreshments.</p>
+    <p>If you have more questions, feel free to contact us. We’re here to make your trip unforgettable!</p>
+  `
+};
+
+
+toursData["cave-swimming-in-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Zanzibar is home to stunning natural swimming caves, perfect for a refreshing dip.</p>
+    <p>The most popular spots include Kuza Cave in Jambiani, known for its crystal-clear turquoise waters and cultural significance; Swahili Cave in Jambiani, a hidden underground pool with cool, mineral-rich water; and Maalum Cave in Paje, a breathtaking natural pool with an open-top design that allows sunlight to create mesmerizing reflections.</p>
+    <p>These caves offer a unique swimming experience, blending adventure, nature, and relaxation.</p>
+    <h3>Kuza Cave – The Hidden Oasis</h3>
+    <p>Located in the lush forest, this ancient limestone cave features shimmering turquoise water believed by locals to hold spiritual energy. It’s perfect for a refreshing dip and memorable photos.</p>
+    <h3>Swahili Cave – A Secret Gem</h3>
+    <p>A natural underground pool surrounded by stunning rock formations, offering cool, mineral-rich waters and a peaceful retreat off the beaten path.</p>
+    <h3>Maalum Cave – The Ultimate Natural Pool</h3>
+    <p>Maalum Cave feels like nature’s own luxury pool with crystal-clear water and an open-top design that lets sunlight create magical reflections. It includes a lounge area for relaxing after your swim.</p>
+    <p><strong>Our preference:</strong> We highly recommend Maalum Cave for its perfect mix of adventure and relaxation.</p>
+    <h3>Booking and Transportation</h3>
+    <p>Booking is quick and simple through our online form, phone, or WhatsApp. Payment options include credit cards (Visa, MasterCard, Amex), bank transfers, and cash.</p>
+    <p>Comfortable transport from your accommodation is provided, so you can relax and enjoy the trip.</p>
+  `,
+
+  itinerary: `
+    <h2>Cave Swimming Tour – Itinerary</h2>
+    <ul>
+      <li><strong>Pickup:</strong> Flexible timing pickup from your hotel or villa in an air-conditioned vehicle.</li>
+      <li><strong>Drive to Maalum Cave:</strong> Enjoy a scenic 30-45 minute drive through Zanzibar’s landscape to Paje.</li>
+      <li><strong>Arrival & Introduction:</strong> Briefing on cave history, natural features, and swimming tips.</li>
+      <li><strong>Swimming Experience:</strong> 1.5–2 hours swimming in crystal-clear mineral-rich waters, soaking sunlight reflections.</li>
+      <li><strong>Relax & Refresh:</strong> Lounge area with drinks to unwind after swimming.</li>
+      <li><strong>Free Time:</strong> Capture photos and explore the area.</li>
+      <li><strong>Return:</strong> Drive back to your accommodation with unforgettable memories.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $35 per person</li>
+      <li><strong>3-5 Persons:</strong> $30 per person</li>
+      <li><strong>6-10 Persons:</strong> $25 per person</li>
+      <li><strong>10+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Note:</em> Transportation costs vary by hotel distance and are not included. Contact us for a customized transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance Fees</li>
+      <li>All Government Fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Cave-swimming-Maalum-Cave.jpg",
+    "./assets/images/tours/Cave-swimming-Maalum-Cave-10.jpg",
+    "./assets/images/tours/Cave-Swimming-Salaam-Cave.jpg",
+    "./assets/images/tours/Cave-Swimming-Maalum-cave-5.jpg",
+    "./assets/images/tours/Cave-swimming-Maalum-cave-9.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About Cave Swimming</h2>
+    <p><strong>What are the best caves for swimming in Zanzibar?</strong><br>
+    Maalum Cave (Paje), Kuza Cave (Jambiani), and Swahili Cave (Jambiani) are the top spots. We especially recommend Maalum Cave for its clear waters and relaxing lounge.</p>
+    <p><strong>Can I visit multiple caves in one day?</strong><br>
+    Yes, it may be possible depending on your schedule. Contact us for tailored arrangements.</p>
+    <p><strong>Is cave swimming suitable for children?</strong><br>
+    Yes, but please contact us for guidance on safety and age restrictions.</p>
+    <p>If you have more questions, don’t hesitate to contact us! We want to make your cave swimming experience unforgettable.</p>
+  `
+};
+
+
+toursData["swimming-with-turtles-in-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Swimming with turtles in Zanzibar is an unforgettable experience, offering a chance to get up close with these gentle creatures in crystal-clear waters.</p>
+    <p>The best spot for this activity is Baraka Natural Aquarium in Nungwi, where rescued sea turtles thrive in a natural lagoon.</p>
+    <p>You can swim, feed, and learn about turtle conservation efforts while enjoying the stunning coastal scenery.</p>
+    <p>Suitable for all ages, this eco-friendly adventure provides a unique way to connect with marine life while supporting local conservation projects.</p>
+    <h3>Why You’ll Love It</h3>
+    <ul>
+      <li>Get Up Close with Turtles – No cages, no stress—just you and these incredible marine animals in their natural environment.</li>
+      <li>Learn & Connect – Our guides will tell you all about the turtles, their rescue stories, and the conservation efforts to protect them.</li>
+    </ul>
+    <h3>Booking and Transportation</h3>
+    <p>Booking your swimming with turtles adventure with us is quick and easy! Reserve through our booking form, call, or WhatsApp.</p>
+    <p>We offer flexible payment options including credit cards (Visa, MasterCard, American Express), bank transfers, and cash for hassle-free booking.</p>
+    <p>Comfortable transportation from your accommodation is provided, so just sit back, relax, and get ready for an unforgettable encounter.</p>
+  `,
+
+  itinerary: `
+    <h2>Swimming with Turtles Tour Itinerary</h2>
+    <p><strong>Location:</strong> Baraka Natural Aquarium, Nungwi</p>
+    <p><strong>Duration:</strong> 3–4 hours (including travel time)</p>
+    <ul>
+      <li><strong>Pick-Up & Transfer (Flexible Timing):</strong> Friendly driver picks you up from your accommodation and drives along scenic coastal roads to Nungwi.</li>
+      <li><strong>Arrival at Baraka Natural Aquarium:</strong> Warm welcome and briefing by expert guides about turtles and conservation efforts.</li>
+      <li><strong>Swimming & Feeding Session:</strong> Swim alongside gentle sea turtles in the natural lagoon and feed them by hand.</li>
+      <li><strong>Free Time and Relaxation:</strong> Enjoy the surrounding area and nearby beaches.</li>
+      <li><strong>Return Transfer:</strong> Relax as we drop you off at your accommodation, filled with amazing memories.</li>
+    </ul>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $35</li>
+      <li><strong>6-10 Persons:</strong> $30 per person</li>
+      <li><strong>11-25 Persons:</strong> $25 per person</li>
+      <li><strong>25+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Note:</em> Transportation costs depend on your hotel’s location and are not included. Contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/swim-with-turtles-5.jpg",
+    "./assets/images/tours/swim-with-turtles-6.jpg",
+    "./assets/images/tours/swim-with-turtles-7.jpg",
+    "./assets/images/tours/swim-with-turtles-8.jpg",
+    "./assets/images/tours/swim-with-turtles.jpg",
+    "./assets/images/tours/swim-with-turtles-3.jpg",
+    "./assets/images/tours/swim-with-turtles-4.jpg",
+    "./assets/images/tours/swim-with-turtles-9.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About Swimming with Sea Turtles</h2>
+    <p><strong>Can anyone swim with the turtles?</strong><br>Yes! Suitable for all ages and swimming levels. Non-swimmers can still wade in shallow areas and interact with turtles.</p>
+    <p><strong>Is the tour ethical and eco-friendly?</strong><br>Absolutely. This tour supports local conservation efforts and prioritizes the wellbeing of turtles.</p>
+    <p>If you have more questions, don’t hesitate to reach out to us. We’re here to make your swim with sea turtles experience unforgettable!</p>
+  `
+};
+
+toursData["horse-riding-in-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Horse Riding Tour in Zanzibar offers a unique way to explore the island’s stunning landscapes, from pristine white-sand beaches to lush tropical trails.</p>
+    <p>Suitable for all experience levels, this tour includes guided rides on well-trained horses, with options for sunrise, sunset, or daytime excursions.</p>
+    <p>You can enjoy a peaceful walk, a gentle trot, or an exhilarating gallop along the shoreline, creating unforgettable memories.</p>
+    <p>Safety gear is provided, and expert guides ensure a safe and enjoyable experience.</p>
+    <p>Perfect for solo travelers, couples, and families, this tour is a must-do adventure in Zanzibar.</p>
+    <h3>Why Will You Love This Tour?</h3>
+    <ul>
+      <li><strong>Ride on the Beach:</strong> Feel the thrill of riding along the shoreline as the waves gently kiss the sand. Whether beginner or experienced, it’s pure magic!</li>
+      <li><strong>Sunset Rides:</strong> Opt for a breathtaking sunset ride and witness the sky painted with stunning colors.</li>
+      <li><strong>Scenic Jungle Trails:</strong> Explore Zanzibar’s lush greenery, passing through coconut groves and spice-scented paths.</li>
+      <li><strong>Perfect for Everyone:</strong> No prior experience needed! Friendly, well-trained horses and expert guides ensure a safe, unforgettable ride.</li>
+    </ul>
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Horse Riding Tour in Zanzibar is quick and hassle-free! Fill out our booking form or contact us via call or WhatsApp for instant assistance.</p>
+    <p>Flexible payment options include credit cards (Visa, MasterCard, American Express), bank transfers, and cash payments.</p>
+    <p>Comfortable transportation is provided directly from your accommodation for a stress-free journey.</p>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <p>The actual cost of our Horse Riding Tour in Zanzibar varies based on availability and ride duration.</p>
+    <p>For the latest pricing and details, please reach out to us directly. Our team is happy to assist you and tailor your horseback riding experience.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Riding Gear</li>
+      <li>Bottle of Water</li>
+      <li>All fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/horse-riding-9-768x536.jpg",
+    "./assets/images/tours/horse-riding.jpg",
+    "./assets/images/tours/horse-riding-6.jpg",
+    "./assets/images/tours/horse-riding-8.jpg",
+    "./assets/images/tours/horse-riding-5.jpg",
+    "./assets/images/tours/horse-riding-4.jpg",
+    "./assets/images/tours/horse-riding-3.jpg",
+    "./assets/images/tours/horse-riding-10.jpg",
+    "./assets/images/tours/horse-riding-2.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About Horse Riding in Zanzibar</h2>
+    <p><strong>Do I need prior horse riding experience?</strong><br>No experience is necessary! Our professional guides provide instructions and match you with a suitable horse based on your skill level.</p>
+    <p><strong>How long does the tour last?</strong><br>The duration depends on the package you choose. Please contact us for details.</p>
+    <p>If you have more questions, don’t hesitate to reach out. We’re here to make sure your horse riding experience is everything you’ve dreamed of and more.</p>
+  `
+};
+
+
+
+toursData["quad-biking-in-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Experience the thrill of a quad biking tour in Zanzibar, exploring off-the-beaten-path trails through lush villages, scenic plantations, and breathtaking coastal routes.</p>
+    <p>This guided adventure lets you discover authentic local culture while riding powerful, easy-to-handle quad bikes.</p>
+    <p>Popular routes include areas near Kiwengwa and Nungwi, offering a mix of dirt roads, forest trails, and traditional Swahili villages.</p>
+    <h3>Why You’ll Love This Tour</h3>
+    <ul>
+      <li>Ride through Zanzibar’s best-kept secret landscapes</li>
+      <li>Meet friendly locals and experience authentic village life</li>
+      <li>Snap amazing photos in stunning natural spots</li>
+      <li>Beginner-friendly – no prior riding experience needed!</li>
+    </ul>
+    <h3>Booking and Transportation</h3>
+    <p>Booking your Quad Biking Tour in Zanzibar is quick and stress-free! Reserve online or contact us via call or WhatsApp for instant assistance.</p>
+    <p>Multiple payment options: credit cards (Visa, MasterCard, American Express), bank transfers, and cash payments.</p>
+    <p>Comfortable transportation directly from your hotel or accommodation is provided for a smooth experience.</p>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <p><strong>Duration:</strong> 3 hours</p>
+    <p><strong>Price:</strong> $110 per person</p>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel’s location. Contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Guide</li>
+      <li>High-quality, well-maintained quad bike with fuel</li>
+      <li>Safety Gear</li>
+      <li>Bottle of Water</li>
+      <li>All government fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/quad-biking-10-768x512.jpg",
+    "./assets/images/tours/quad-biking-9.jpg",
+    "./assets/images/tours/quad-biking-6.jpg",
+    "./assets/images/tours/quad-biking-8.jpg",
+    "./assets/images/tours/quad-biking-7.jpg",
+    "./assets/images/tours/quad-biking-5.jpg",
+    "./assets/images/tours/quad-biking-3.jpg",
+    "./assets/images/tours/quad-biking-2.jpg",
+    "./assets/images/tours/quad-biking-4.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About the Quad Biking Tour</h2>
+    <p><strong>Can two people share one quad bike?</strong><br>Yes! We have double-seat quad bikes, perfect for couples or friends who want to ride together.</p>
+    <p><strong>What will I see on the tour?</strong><br>You’ll explore villages, plantations, coastal routes, and scenic landscapes.</p>
+    <p><strong>Do I need to book in advance?</strong><br>Booking ahead is recommended to secure your preferred date and time.</p>
+    <p>If you have additional questions, feel free to contact us directly. We’re here to help make this tour unforgettable!</p>
+  `
+};
+
+
+toursData["kite-surfing-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Experience the thrill of kite surfing in Zanzibar, one of the world’s top destinations for this exhilarating watersport!</p>
+    <p>Whether you’re a beginner looking to learn or an experienced rider seeking the perfect wind conditions, our kite surfing tour is designed for all skill levels.</p>
+    <h3>Tour Highlights</h3>
+    <ul>
+      <li><strong>World-Class Kite Spots:</strong> Kite in the stunning waters of Paje, Jambiani, and Matemwe with steady winds and breathtaking beaches.</li>
+      <li><strong>Ideal Wind Conditions:</strong> Side-onshore winds from December to March (Kaskazi) and June to September (Kusi) ensure perfect riding conditions.</li>
+      <li><strong>Expert Coaching for All Levels:</strong> Experienced instructors guide beginners and advanced riders alike.</li>
+      <li><strong>Top-Quality Equipment Rental:</strong> Latest kites, boards, harnesses, and safety gear provided.</li>
+      <li><strong>Downwind Kite Safari:</strong> Enjoy an exhilarating downwind ride along Zanzibar’s coastline.</li>
+      <li><strong>Flat Water & Small Waves:</strong> Perfect conditions for learning and freestyle practice.</li>
+      <li><strong>Warm Tropical Waters:</strong> No wetsuits needed; enjoy crystal-clear, waist-deep water.</li>
+    </ul>
+    <h3>Booking & Transportation Options</h3>
+    <p>Reserve your kite surfing adventure easily through our booking form, call, or WhatsApp.</p>
+    <p>Multiple payment options available: credit cards (Visa, MasterCard, American Express), bank transfers, and cash.</p>
+    <p>Comfortable transport from your accommodation to the kite spots is arranged for a smooth experience.</p>
+  `,
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Hour:</strong> $80</li>
+      <li><strong>Half Day:</strong> $130</li>
+      <li><strong>Full Day:</strong> $170</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel’s location. Contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Guided Sessions</li>
+      <li>All Equipment</li>
+      <li>Lunch (for full day package)</li>
+      <li>All government fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  gallery: [
+    "./assets/images/tours/kite-surfing-4.webp",
+    "./assets/images/tours/kite-surfing.jpg",
+    "./assets/images/tours/kite-surfing-9.jpg",
+    "./assets/images/tours/kite-surfing-8.jpg",
+    "./assets/images/tours/kite-surfing-6.jpg",
+    "./assets/images/tours/kite-surfing-3.jpg",
+    "./assets/images/tours/kite-surfing-4.jpg",
+    "./assets/images/tours/kite-surfing-5.jpg",
+    "./assets/images/tours/kite-surfing-7.jpg"
+  ],
+
+  faq: `
+    <h2>FAQs About Kite Surfing in Zanzibar</h2>
+    <p><strong>What is the best time to kitesurf in Zanzibar?</strong><br>
+    The prime kite surfing seasons are mid-June to mid-October and December to mid-March, with steady trade winds (Kusi and Kaskazi) providing ideal conditions.</p>
+    <p><strong>Which are the best kite surfing spots in Zanzibar?</strong><br>
+    Popular spots include Paje, Jambiani, and Matemwe, known for their perfect wind and water conditions.</p>
+    <p>If you have more questions, don’t hesitate to reach out to us! We’re here to make sure your Kite Surfing experience is everything you’ve dreamed of and more.</p>
+  `
+};
+
+
+toursData["scuba-diving-in-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>We take you on an unforgettable scuba diving Zanzibar adventure.</p>
+    <p>If you’re dreaming of crystal-clear waters, vibrant coral reefs, and swimming alongside sea turtles, dolphins, and colorful fish, you’re in the right place!</p>
+    <h3>Why Dive with Us?</h3>
+    <p>We know Zanzibar like the back of our fins! With experienced dive masters, top-notch gear, and carefully selected dive sites, we make sure you experience the absolute best of Zanzibar’s underwater world.</p>
+    <p>Whether you’re a first-time diver or a seasoned pro, we tailor each trip to your skill level and comfort.</p>
+    <h3>Tour Highlights</h3>
+    <ul>
+      <li><strong>Crystal-Clear Waters & Vibrant Coral Reefs:</strong> Dive into the warm, turquoise waters of the Indian Ocean, home to some of the most stunning coral formations.</li>
+      <li><strong>Swim with Marine Life:</strong> Encounter sea turtles, dolphins, reef sharks, moray eels, and an explosion of tropical fish.</li>
+    </ul>
+    <h3>Booking & Transportation</h3>
+    <p>Booking your scuba diving Zanzibar adventure with Blue Green Zanzibar Tours is easy. Reserve online, via WhatsApp, or call us—we’re happy to help!</p>
+    <p>Flexible payment options: credit cards, bank transfers, or cash.</p>
+    <p>We provide comfortable transportation to and from your hotel for a stress-free experience. Just relax and get ready to dive into Zanzibar’s breathtaking underwater world—we’ve got everything covered!</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/scuba-diving-768x512.jpg",
+    "./assets/images/tours/scuba-diving-2.jpg",
+    "./assets/images/tours/scuba-diving-5.jpg",
+    "./assets/images/tours/Scuba,Diver,Photographer,Swimming,With,The,Sea,Turtle.,Blue,Sea,.jpg",
+    "./assets/images/tours/scuba-diving-3.jpg",
+    "./assets/images/tours/scuba-diving-9.jpg",
+    "./assets/images/tours/scuba-diving-10.jpg",
+    "./assets/images/tours/scuba-diving-4.jpg",
+    "./assets/images/tours/scuba-diving-9.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>Single Dive:</strong> $110</li>
+      <li><strong>Double Dive with certificate:</strong> $145</li>
+      <li><strong>Double Dive without certificate:</strong> $175</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel’s location. Please contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional dive instructor</li>
+      <li>All diving equipment</li>
+      <li>Boat</li>
+      <li>All government fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  faq: `
+    <h2>FAQs About Scuba Diving in Zanzibar</h2>
+    <p><strong>Do I need prior diving experience?</strong><br>
+    Not at all! If you’ve never dived before, you can try our Discover Scuba Diving experience, where an instructor guides you step by step. Certified divers can choose dives suited to their skill level.</p>
+    <p><strong>What are the best dive sites in Zanzibar?</strong><br>
+    (Details available upon request.)</p>
+    <p><strong>How deep are the dives?</strong><br>
+    (Details available upon request.)</p>
+    <p>If you have additional questions, feel free to contact us directly. We’re here to make this tour an unforgettable experience!</p>
+  `
+};
+
+
+
+toursData["game-fishing-zanzibar"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Game fishing in Zanzibar offers an exciting experience for anglers looking to catch big fish in the deep waters of the Indian Ocean.</p>
+    <p>The archipelago is known for its rich marine biodiversity, warm waters, and abundance of pelagic fish species, making it a top destination for sport fishing enthusiasts.</p>
+    <h3>Why Fish with Us?</h3>
+    <p>We’re not just about fishing—we’re about the thrill, the chase, and the ultimate experience!</p>
+    <p>Whether you’re a seasoned angler or a total beginner, our expert crew and top-notch equipment will set you up for success.</p>
+    <p>The waters around Zanzibar are teeming with big game fish like marlin, sailfish, tuna, dorado, wahoo, and kingfish, and we know exactly where to find them.</p>
+    <h3>What to Expect on Your Trip</h3>
+    <ul>
+      <li><strong>A Fully Equipped Fishing Boat:</strong> Latest gear, GPS, and fish-finding technology ready for action.</li>
+      <li><strong>Professional Crew:</strong> Experienced skippers and deckhands guiding you every step.</li>
+      <li><strong>Top Fishing Grounds:</strong> Best deep-sea hotspots for the big catches.</li>
+      <li><strong>All-Inclusive Experience:</strong> Bait, tackle, refreshments, and local secrets to help you land the catch of a lifetime.</li>
+      <li><strong>Half-Day & Full-Day Charters:</strong> Choose a half-day trip for some serious fishing or a full-day charter for the full offshore adventure.</li>
+    </ul>
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Game Fishing adventure with Blue Green Zanzibar Tours is quick and hassle-free!</p>
+    <p>Reserve online, via WhatsApp, or call us anytime.</p>
+    <p>Flexible payment options: credit cards, bank transfers, and cash.</p>
+    <p>Enjoy comfortable hotel pick-up and drop-off so you can focus on the excitement while we handle the logistics.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/game-fishing-3-768x576.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>Half Day:</strong> $350</li>
+      <li><strong>Full Day:</strong> $800</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and vary based on your hotel’s location. Contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional fishing crew</li>
+      <li>All fishing equipment</li>
+      <li>Boat</li>
+      <li>Lunch (for full day game)</li>
+      <li>All government fees</li>
+      <li>Transfer to/from hotel available at extra cost</li>
+    </ul>
+  `,
+
+  faq: `
+    <h2>FAQs About the Game Fishing Zanzibar Tour</h2>
+    <p><strong>What types of fish can I catch in Zanzibar?</strong><br>
+    Zanzibar’s waters are home to marlin (blue, black, and striped), sailfish, yellowfin tuna, dorado (mahi-mahi), wahoo, kingfish, giant trevally, and barracuda. Depending on the season, you’ll have a good chance of landing a trophy catch!</p>
+    <p><strong>Do I need previous fishing experience?</strong><br>
+    No prior experience is necessary. Our crew will assist you throughout the trip.</p>
+    <p><strong>Can I keep the fish I catch?</strong><br>
+    Policies depend on the species and local regulations. Please ask your guide for details.</p>
+    <p><strong>How many people can join a fishing trip?</strong><br>
+    Our boats accommodate various group sizes—contact us for specific details.</p>
+    <p>If you have more questions, feel free to contact us directly. We’re here to make your Deep Sea Game Fishing Tour unforgettable!</p>
+  `
+};
+
+
+toursData["spice-farm-stone-town-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Spice Farm & Stone Town Tour Combination is the perfect way to experience the island’s rich history, culture, and flavors—all in one unforgettable adventure!</p>
+
+    <h3>First Stop: The Spice Farm – A Sensory Journey!</h3>
+    <p>Zanzibar isn’t called the “Spice Island” for nothing!</p>
+    <p>Step into a world of vibrant aromas and discover how cloves, vanilla, cinnamon, and other exotic spices grow.</p>
+    <p>You’ll touch, smell, and even taste fresh spices straight from the source.</p>
+    <p>Watch local farmers climb trees like acrobats to harvest fruits and spices—it’s a show on its own!</p>
+    <p>Plus, get a chance to try fresh tropical fruits and learn about their amazing health benefits.</p>
+
+    <h3>Next Up: Stone Town – A Walk Through History!</h3>
+    <p>After soaking in the spice experience, we head to Stone Town, a UNESCO World Heritage Site packed with history and culture.</p>
+    <p>Stroll through the maze-like alleys, marvel at the stunning carved wooden doors, and uncover stories of sultans, traders, and explorers who shaped this island.</p>
+    <p>We’ll visit iconic spots like:</p>
+    <ul>
+      <li>The Old Slave Market – A powerful reminder of Zanzibar’s past.</li>
+      <li>Freddy Mercury’s House – Birthplace of the legendary Queen singer!</li>
+      <li>The House of Wonders & Sultan’s Palace Museum – A glimpse into Zanzibar’s royal history.</li>
+      <li>Darajani Market – The perfect spot to see daily local life and maybe grab a souvenir or two!</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Spice Farm & Stone Town Tour Combination is quick and hassle-free!</p>
+    <p>Simply use our booking form or reach out via call or WhatsApp for instant assistance.</p>
+    <p>We offer multiple payment options including credit cards (Visa, MasterCard, American Express), bank transfers, and cash.</p>
+    <p>For your convenience, comfortable transportation is provided directly from your accommodation, ensuring a smooth and stress-free experience.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Stone-Town-Walking-Tour-07.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-04.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-08.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-06.jpg",
+    "./assets/images/tours/Spice-Tour-05.jpg",
+    "./assets/images/tours/Spice-Tour-03.jpg",
+    "./assets/images/tours/Spice-Tour-08.jpg",
+    "./assets/images/tours/Spice-Tour-07.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $55</li>
+      <li><strong>2 Persons:</strong> $45 per person</li>
+      <li><strong>3-6 Persons:</strong> $40 per person</li>
+      <li><strong>7-14 Persons:</strong> $35 per person</li>
+      <li><strong>15-28 Persons:</strong> $25 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included in the listed prices as they depend on your hotel location. Please contact us for a tailored transfer quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel is available at extra cost</li>
+    </ul>
+  `
+};
+
+toursData["stone-town-prison-island-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Stone Town & Prison Island Tour is the perfect combo to explore the island’s fascinating history, vibrant culture, and stunning coastal scenery—all in one incredible day!</p>
+
+    <h3>Stone Town: A Walk Through Time</h3>
+    <p>We’ll start in the heart of Stone Town, a UNESCO World Heritage Site packed with history, culture, and incredible architecture.</p>
+    <p>As we stroll through the narrow, winding streets, you’ll feel the mix of Arab, Persian, Indian, and European influences that make this place so unique.</p>
+    <p>We’ll visit must-see spots like:</p>
+    <ul>
+      <li>The House of Wonders (once the grandest building in East Africa!)</li>
+      <li>The Old Fort, a piece of Omani defense history</li>
+      <li>The haunting yet powerful Slave Market & Memorial</li>
+      <li>The Sultan’s Palace Museum, full of royal secrets</li>
+      <li>The famous Zanzibar Doors—each one tells a story!</li>
+    </ul>
+    <p>And of course, we’ll have time to soak up the lively market scenes, sip on fresh coconut water, and maybe even shop for some unique souvenirs!</p>
+
+    <h3>Prison Island: Nature & History Collide</h3>
+    <p>After Stone Town, we’ll hop on a traditional dhow boat and cruise to Prison Island, just a 20-minute ride away.</p>
+    <p>Don’t worry—no one’s been imprisoned here for ages! Instead, you’ll get to:</p>
+    <ul>
+      <li>Meet the giant Aldabra tortoises—some are over 100 years old!</li>
+      <li>Learn about the island’s eerie past as a quarantine station</li>
+      <li>Relax on the white sandy beach and take in the stunning views</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Stone Town & Prison Island Tour Combination is quick and hassle-free!</p>
+    <p>Simply fill out our booking form or contact us via call or WhatsApp for instant assistance.</p>
+    <p>We offer multiple payment options to suit your preference, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash.</p>
+    <p>To make your experience even smoother, we provide comfortable transportation directly from your accommodation, ensuring a stress-free and seamless adventure from start to finish.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Stone-Town-Walking-Tour-07.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-04.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-08.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-06.jpg",
+    "./assets/images/tours/prison-island.jpg",
+    "./assets/images/tours/Prison-Island-Tour-01.jpg",
+    "./assets/images/tours/Prison-Island-Tour-06.jpg",
+    "./assets/images/tours/Prison-Island-Tour-09.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1 Person:</strong> $90</li>
+      <li><strong>2 Persons:</strong> $75 per person</li>
+      <li><strong>3-6 Persons:</strong> $70 per person</li>
+      <li><strong>7-14 Persons:</strong> $55 per person</li>
+      <li><strong>15-28 Persons:</strong> $45 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Boat</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+
+toursData["spice-farm-jozani-forest-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Spice Farm & Jozani Forest Tour is a perfect combination of nature, culture, and history—giving you the best of what this island has to offer.</p>
+
+    <h3>Stop 1: Spice Farm – The Scent of Zanzibar</h3>
+    <p>Did you know Zanzibar is called the “Spice Island”?</p>
+    <p>On this tour, we’ll take you to a local spice farm where you’ll see, touch, and smell fresh spices like cinnamon, vanilla, cloves, and nutmeg—straight from the source!</p>
+    <p>Our friendly guides will show you how these spices grow and how they’re used in Zanzibari cuisine, medicine, and even beauty products.</p>
+    <p>Fun part? You’ll get to taste tropical fruits, drink fresh coconut water, and even get a natural perfume made from the flowers on the farm!</p>
+
+    <h3>Stop 2: Jozani Forest – Home of the Rare Red Colobus Monkeys</h3>
+    <p>After exploring the spice farm, we head to Jozani Forest, Zanzibar’s only national park and home to the endangered Red Colobus Monkeys—found nowhere else in the world!</p>
+    <p>These playful little guys love to jump from tree to tree, and don’t worry, they’re super friendly and used to visitors.</p>
+    <p>But Jozani isn’t just about the monkeys. You’ll also explore the mystical mangrove forest, a unique ecosystem that protects Zanzibar’s coastline.</p>
+    <p>Walking along the wooden boardwalk, you’ll see crabs, birds, and even glimpse some shy bush babies if you’re lucky!</p>
+
+    <h3>Why You’ll Love This Tour:</h3>
+    <ul>
+      <li>Two amazing experiences in one day – Perfect for nature and culture lovers!</li>
+      <li>Expert local guides – Fun, knowledgeable, and ready to answer all your questions.</li>
+      <li>Great for all ages – Whether you’re solo, a couple, or a family, this tour is a must-do.</li>
+      <li>Perfect photo spots – Capture the beauty of Zanzibar’s lush forests and colorful spice farms.</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking this tour is simple and hassle-free!</p>
+    <p>Just fill out our easy booking form or contact us via call or WhatsApp for instant assistance.</p>
+    <p>We accept multiple payment options, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it convenient for you to secure your spot.</p>
+    <p>To make your experience smooth and stress-free, we provide comfortable transportation directly from your accommodation—whether you’re staying in Stone Town, Nungwi, Kendwa, Paje, or beyond. Sit back, relax, and let us take care of the rest!</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Spice-Tour-05.jpg",
+    "./assets/images/tours/Spice-Tour-03.jpg",
+    "./assets/images/tours/Spice-Tour-08.jpg",
+    "./assets/images/tours/Spice-Tour-07.jpg",
+    "./assets/images/tours/jozani-1.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-07.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-09.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-02.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $50 per person</li>
+      <li><strong>3-6 Persons:</strong> $40 per person</li>
+      <li><strong>7-14 Persons:</strong> $35 per person</li>
+      <li><strong>15-28 Persons:</strong> $25 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+toursData["village-tour-stone-town-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>If you’re looking for a tour that takes you deep into Zanzibar’s rich history and vibrant local culture, our Village & Stone Town Tour is the perfect choice!</p>
+    <p>This unique experience gives you a chance to step into the daily lives of the island’s people, then explore the heart of Zanzibar’s historical capital—all in one unforgettable day.</p>
+
+    <h3>Stop 1: Village Tour – Experience the Real Zanzibar</h3>
+    <ul>
+      <li>Meet the Locals – Friendly villagers will welcome you and share their daily routines.</li>
+      <li>Traditional Handicrafts – Watch how locals weave baskets, carve wood, and create pottery.</li>
+      <li>Visit a Local Market – If it’s market day, you’ll see how fresh produce and goods are traded.</li>
+      <li>Swahili Cooking Experience – Learn how locals prepare delicious meals using fresh ingredients and spices.</li>
+      <li>Cultural Activities – Join in on traditional drumming, dancing, or even a quick Swahili lesson!</li>
+    </ul>
+
+    <h3>Stop 2: Stone Town – Walk Through History</h3>
+    <ul>
+      <li>House of Wonders & Sultan’s Palace – Explore Zanzibar’s royal history.</li>
+      <li>Old Slave Market – Visit one of the most important sites in Africa’s history.</li>
+      <li>Forodhani Gardens – See where locals gather for the famous evening food market.</li>
+      <li>Darajani Market – Experience the lively spice, fish, and produce market.</li>
+      <li>Freddie Mercury’s House – Visit the birthplace of the legendary Queen singer!</li>
+      <li>Historic Doors & Architecture – Snap photos of the beautifully carved wooden doors, a signature of Swahili culture.</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Reserving your Village & Stone Town Tour is simple and stress-free!</p>
+    <p>Just complete our easy booking form or contact us via call or WhatsApp for quick assistance.</p>
+    <p>We offer a variety of secure payment options, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, ensuring a smooth booking process.</p>
+    <p>To make your experience as convenient as possible, we provide comfortable transportation straight from your accommodation. Sit back, relax, and let us take care of everything!</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-03.jpg",
+    "./assets/images/tours/nungwi-cultural-village-tour-from-nungwi-or-kendwa.5f56281db2b03-full.jpg",
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-02.jpg",
+    "./assets/images/tours/Nungwi-Cultural-Village-Tour-08.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-08.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-07.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-06.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-01.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $95 per person</li>
+      <li><strong>3-6 Persons:</strong> $85 per person</li>
+      <li><strong>7-14 Persons:</strong> $75 per person</li>
+      <li><strong>15-28 Persons:</strong> $65 per person</li>
+      <li><strong>28+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+
+toursData["spice-farm-prison-island-stone-town-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Spice Farm, Prison Island & Stone Town Tour gives you the perfect mix of culture, nature, and adventure.</p>
+    <p>Walk through aromatic spice farms, meet giant tortoises on Prison Island, and explore the winding alleys of historic Stone Town.</p>
+    <p>This is Zanzibar at its best!</p>
+
+    <h3>Stop 1: Spice Farm – Discover Zanzibar’s Fragrant Treasures</h3>
+    <ul>
+      <li>Smell, taste, and touch spices like cloves, vanilla, cinnamon, cardamom, and nutmeg.</li>
+      <li>See exotic tropical fruits like jackfruit, starfruit, and passion fruit growing fresh on the trees.</li>
+      <li>Learn about traditional spice farming and how Zanzibar became a global spice hub.</li>
+      <li>Watch an exciting coconut-climbing show and sip on fresh coconut water!</li>
+      <li>Bonus: You can even buy fresh organic spices straight from the farm to take a piece of Zanzibar home with you!</li>
+    </ul>
+
+    <h3>Stop 2: Prison Island – Meet the Legendary Giant Tortoises!</h3>
+    <ul>
+      <li>Get up close and feed these gentle creatures—they love attention!</li>
+      <li>Learn about the island’s past as a former prison and quarantine station.</li>
+      <li>Explore the island’s beautiful beaches and enjoy the stunning turquoise waters.</li>
+      <li>Fun Fact: The oldest tortoise on the island is said to be over 150 years old!</li>
+    </ul>
+
+    <h3>Stop 3: Stone Town – Walk Through Zanzibar’s Living History</h3>
+    <ul>
+      <li>Explore historic landmarks, including the Old Slave Market & Anglican Cathedral.</li>
+      <li>Visit the House of Wonders & Sultan’s Palace, symbols of Zanzibar’s royal past.</li>
+      <li>Wander through Darajani Market, a lively place filled with spices, seafood, and souvenirs.</li>
+      <li>See the famous Zanzibar doors, known for their intricate carvings and unique designs.</li>
+      <li>Stop by Freddie Mercury’s House, the birthplace of the legendary Queen singer.</li>
+      <li>Insider Tip: Don’t forget to grab a refreshing sugarcane juice or taste some local street food while exploring Stone Town!</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Spice Farm, Prison Island & Stone Town Tour is quick and easy!</p>
+    <p>Simply fill out our booking form or contact us via call or WhatsApp for instant assistance.</p>
+    <p>We offer multiple payment options, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it simple and secure to confirm your spot.</p>
+    <p>For your convenience, we provide comfortable transportation directly from your accommodation, ensuring a seamless and stress-free experience from start to finish.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Stone-Town-Walking-Tour-07.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-04.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-08.jpg",
+    "./assets/images/tours/Stone-Town-Walking-Tour-06.jpg",
+    "./assets/images/tours/prison-island.jpg",
+    "./assets/images/tours/Prison-Island-Tour-01.jpg",
+    "./assets/images/tours/Prison-Island-Tour-06.jpg",
+    "./assets/images/tours/Prison-Island-Tour-09.jpg",
+    "./assets/images/tours/Spice-Tour-05.jpg",
+    "./assets/images/tours/Spice-Tour-08.jpg",
+    "./assets/images/tours/Spice-Tour-02.jpg",
+    "./assets/images/tours/Spice-Tour-07.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $90 per person</li>
+      <li><strong>3-6 Persons:</strong> $70 per person</li>
+      <li><strong>7-14 Persons:</strong> $60 per person</li>
+      <li><strong>15-25 Persons:</strong> $50 per person</li>
+      <li><strong>25+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Boat</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+toursData["spice-farm-jozani-forest-rock-restaurant-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Looking for the ultimate mix of nature, culture, and cuisine?</p>
+    <p>Our Spice Farm, Jozani Forest & The Rock Restaurant Tour is a must-do experience in Zanzibar!</p>
+    <p>Walk through fragrant spice farms, encounter the rare Red Colobus Monkeys in the heart of Jozani Forest, and wrap up your day with an unforgettable dining experience at The Rock Restaurant—one of the world’s most iconic restaurants, perched right in the Indian Ocean.</p>
+
+    <h3>Stop 1: Spice Farm – Step Into Zanzibar’s Aromatic World</h3>
+    <ul>
+      <li>Smell, taste, and touch exotic spices like cloves, vanilla, cinnamon, nutmeg, and cardamom.</li>
+      <li>See tropical fruits growing in their natural habitat—mangoes, passion fruit, and jackfruit!</li>
+      <li>Watch an expert coconut tree climber in action and sip on fresh coconut water.</li>
+      <li>Learn about the medicinal and culinary uses of Zanzibar’s famous spices.</li>
+      <li>Bonus: You can buy freshly harvested spices and organic products directly from the farm as a perfect souvenir!</li>
+    </ul>
+
+    <h3>Stop 2: Jozani Forest – Meet Zanzibar’s Unique Wildlife</h3>
+    <ul>
+      <li>Walk through towering trees and lush greenery, immersing yourself in Zanzibar’s last remaining indigenous forest.</li>
+      <li>Spot the friendly Red Colobus Monkeys, known for their playful nature and striking red fur.</li>
+      <li>Discover the mystical mangrove boardwalk, where you’ll see crabs, fish, and unique swamp vegetation.</li>
+      <li>Learn about the conservation efforts to protect Zanzibar’s wildlife and fragile ecosystems.</li>
+      <li>Fun Fact: The Red Colobus Monkeys are completely fearless of humans, making it easy to observe and photograph them up close!</li>
+    </ul>
+
+    <h3>Stop 3: The Rock Restaurant – Dine in One of the Most Unique Restaurants in the World!</h3>
+    <ul>
+      <li>Enjoy a meal with panoramic views of the endless blue waters of the Indian Ocean.</li>
+      <li>Savor fresh seafood and Swahili-inspired dishes, all made with local ingredients.</li>
+      <li>Take stunning photos from the beach or arrive by boat when the tide is high!</li>
+      <li>Unwind with a drink in one of the most Instagrammable locations in Zanzibar!</li>
+      <li>Insider Tip: Since The Rock is a popular spot, early reservations are highly recommended to secure a table with the best views!</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Spice Farm, Jozani Forest & The Rock Restaurant Tour is quick and hassle-free!</p>
+    <p>Simply complete our booking form or reach out via call or WhatsApp for instant assistance.</p>
+    <p>We offer secure and flexible payment options, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it easy to confirm your reservation.</p>
+    <p>To ensure a smooth and stress-free experience, we provide comfortable transportation directly from your accommodation, so you can relax and enjoy every moment of your adventure.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/Spice-Tour-07.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-01.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-07.jpg",
+    "./assets/images/tours/Jozani-Forest-Tour-09.jpg",
+    "./assets/images/tours/Dining-at-The-Rock-Zanzibar-01.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <p>Please contact us for current pricing and group rates.</p>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+toursData["mnemba-island-swimming-with-turtles-nungwi-kendwa-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>Imagine a day filled with crystal-clear waters, incredible marine life, and breathtaking beaches—that’s exactly what our Mnemba Island, Swimming with Turtles & Nungwi/Kendwa Beach Tour offers!</p>
+    <p>Whether you’re an ocean lover, an adventure seeker, or just looking for the perfect tropical escape, this tour is a must-do in Zanzibar.</p>
+
+    <h3>Stop 1: Mnemba Island – Snorkel in a Marine Paradise</h3>
+    <ul>
+      <li>Mnemba Atoll is home to Zanzibar’s most stunning underwater world, with vibrant coral reefs and an abundance of marine life.</li>
+      <li>Snorkel in the clear turquoise waters, surrounded by colorful fish, sea turtles, and even dolphins if you’re lucky!</li>
+      <li>Explore the coral reefs and discover a breathtaking variety of marine species.</li>
+      <li>Relax on the boat with stunning views of Mnemba Island, a private paradise off Zanzibar’s coast.</li>
+      <li>Fun Fact: Mnemba Atoll is one of the top snorkeling and diving spots in East Africa!</li>
+    </ul>
+
+    <h3>Stop 2: Swim with Turtles – A Magical Wildlife Encounter</h3>
+    <ul>
+      <li>Visit the Nungwi Natural Aquarium, a sanctuary that rescues and rehabilitates sea turtles.</li>
+      <li>Swim alongside these gentle creatures in their natural habitat!</li>
+      <li>Learn about turtle conservation efforts and how these beautiful animals are protected.</li>
+      <li>Experience an unforgettable up-close encounter as you feed and swim with the turtles.</li>
+      <li>Insider Tip: The turtles are completely free to swim back into the ocean, making this an eco-friendly and ethical way to interact with them!</li>
+    </ul>
+
+    <h3>Stop 3: Nungwi or Kendwa Beach – Relax in Paradise</h3>
+    <ul>
+      <li>Unwind on the beach with a refreshing coconut or cocktail in hand.</li>
+      <li>Swim in the calm, warm waters—no seaweed, just perfect beach vibes!</li>
+      <li>Enjoy beachside restaurants and bars, offering delicious seafood and tropical drinks.</li>
+      <li>Catch the magical sunset, as Nungwi and Kendwa have some of the best sunset views on the island.</li>
+      <li>Why Kendwa & Nungwi? Unlike other beaches in Zanzibar, these spots don’t have extreme low tides, so you can swim all day long!</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Mnemba Island, Swimming with Turtles & Nungwi/Kendwa Beach Tour is quick and hassle-free!</p>
+    <p>Simply fill out our booking form or contact us via call or WhatsApp for instant assistance.</p>
+    <p>We offer multiple secure payment options, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it easy to confirm your spot.</p>
+    <p>For your convenience, we provide comfortable transportation directly from your accommodation, ensuring a smooth and stress-free experience from start to finish.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/nungwi-bwach-3.jpg",
+    "./assets/images/tours/nungwi-beach-4.jpg",
+    "./assets/images/tours/Zanzibar-Nungwi-beach.jpg",
+    "./assets/images/tours/kendwa.jpg",
+    "./assets/images/tours/swim-with-turtles-9.jpg",
+    "./assets/images/tours/swim-with-turtles-6.jpg",
+    "./assets/images/tours/swim-with-turtles-7.jpg",
+    "./assets/images/tours/swim-with-turtles-3.jpg",
+    "./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar_M4kn3.jpg",
+    "./assets/images/tours/mnemba-snorkelling.jpg",
+    "./assets/images/tours/mnemba-snorkeling.jpg",
+    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-05.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $125 per person</li>
+      <li><strong>3-6 Persons:</strong> $90 per person</li>
+      <li><strong>7-14 Persons:</strong> $80 per person</li>
+      <li><strong>15-25 Persons:</strong> $60 per person</li>
+      <li><strong>25+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Boat</li>
+      <li>Entrance fees</li>
+      <li>Swimming Equipment</li>
+      <li>Tropical Fruits</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+
+
+toursData["horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination"] = {
+  overview: `
+    <h2>Overview</h2>
+    <p>If you’re looking for an unforgettable mix of adventure, nature, and relaxation, this is the perfect tour for you!</p>
+    <p>Imagine galloping along the beach on horseback, swimming with majestic sea turtles, and ending your day on one of Zanzibar’s most stunning beaches—all in one amazing experience!</p>
+    <p>This Horse Riding, Swimming with Turtles & Nungwi/Kendwa Beach Tour is a dream come true for animal lovers, beach enthusiasts, and adventure seekers alike.</p>
+
+    <h3>Stop 1: Horse Riding Along the Beach – Ride Through Paradise</h3>
+    <ul>
+      <li>Enjoy a scenic beach ride, guided by professional handlers and suited for all riding levels.</li>
+      <li>Feel the thrill of riding along the shoreline, with waves splashing at your feet.</li>
+      <li>Take stunning photos—this is one of the most picturesque experiences in Zanzibar!</li>
+      <li>Option to ride into the shallow waters, making for a truly magical moment.</li>
+      <li>No experience needed—our horses are well-trained and guides ensure safety for all.</li>
+    </ul>
+
+    <h3>Stop 2: Swim with Turtles – A Unique Wildlife Encounter</h3>
+    <ul>
+      <li>Visit the Nungwi Natural Aquarium, a conservation project protecting Zanzibar’s sea turtles.</li>
+      <li>Swim alongside these gentle creatures in their natural habitat.</li>
+      <li>Learn about turtle rescue and conservation efforts.</li>
+      <li>Feed the turtles and watch them gracefully glide through the water.</li>
+      <li>Eco-friendly experience: turtles are rescued and released back into the ocean.</li>
+    </ul>
+
+    <h3>Stop 3: Nungwi or Kendwa Beach – Relax in Paradise</h3>
+    <ul>
+      <li>Enjoy soft white sand and crystal-clear waters at either Nungwi or Kendwa Beach.</li>
+      <li>Swim in warm turquoise waters with no seaweed and gentle waves.</li>
+      <li>Relax under palm trees, sipping fresh coconut water or tropical cocktails.</li>
+      <li>Dine at beachside restaurants offering delicious seafood and local dishes.</li>
+      <li>Watch kite surfers and enjoy lively beach vibes.</li>
+      <li>Nungwi & Kendwa Beaches don’t have extreme low tides, so you can swim anytime.</li>
+    </ul>
+
+    <h3>Booking & Transportation</h3>
+    <p>Booking your Horse Riding, Swimming with Turtles & Nungwi/Kendwa Beach Tour is simple and hassle-free!</p>
+    <p>Just fill out our booking form or contact us via call or WhatsApp for instant assistance.</p>
+    <p>We provide multiple secure payment options, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it easy to confirm your spot.</p>
+    <p>For a stress-free experience, we offer comfortable transportation directly from your accommodation, ensuring a smooth and seamless adventure from start to finish.</p>
+  `,
+
+  gallery: [
+    "./assets/images/tours/nungwi-bwach-3-768x453.jpg",
+    "./assets/images/tours/nungwi-beach-4.jpg",
+    "./assets/images/tours/Zanzibar-Nungwi-beach.jpg",
+    "./assets/images/tours/kendwa.jpg",
+    "./assets/images/tours/swim-with-turtles-9.jpg",
+    "./assets/images/tours/swim-with-turtles-6.jpg",
+    "./assets/images/tours/swim-with-turtles-7.jpg",
+    "./assets/images/tours/swim-with-turtles-3.jpg",
+    "./assets/images/tours/horse-riding-2.jpg",
+    "./assets/images/tours/horse-riding-4.jpg",
+    "./assets/images/tours/horse-riding.jpg",
+    "./assets/images/tours/horse-riding-8.jpg"
+  ],
+
+  price: `
+    <h2>Tour Price</h2>
+    <ul>
+      <li><strong>1-2 Persons:</strong> $120 per person</li>
+      <li><strong>3-6 Persons:</strong> $105 per person</li>
+      <li><strong>7-14 Persons:</strong> $95 per person</li>
+      <li><strong>15-25 Persons:</strong> $85 per person</li>
+      <li><strong>25+ Persons:</strong> Contact Us</li>
+    </ul>
+    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+  `,
+
+  includes: `
+    <h2>Price Includes</h2>
+    <ul>
+      <li>Professional Tour Guide</li>
+      <li>Entrance fees</li>
+      <li>Swimming Equipment</li>
+      <li>Horse riding gear and safety equipment</li>
+      <li>All government fees</li>
+      <li>Transfer from and return to your hotel available at extra cost</li>
+    </ul>
+  `
+};
+
+
+document.querySelectorAll('.view-tour-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const tourKey = btn.closest('.tour-card').dataset.tour;
+    openTourPopup(tourKey);
+  });
+});
+
+function openTourPopup(tourKey) {
+  const tour = toursData[tourKey];
+  if (!tour) return;
+
+  // Define all possible tabs and their display names
+  const tabs = [
+    { key: 'overview', label: 'Overview' },
+    { key: 'itinerary', label: 'Itinerary' },
+    { key: 'price', label: 'Price' },
+    { key: 'includes', label: 'Includes' },
+    { key: 'gallery', label: 'Gallery' },
+    { key: 'faq', label: 'FAQ' }
+  ];
+
+  // Filter tabs to only those with valid content
+  const availableTabs = tabs.filter(tab => {
+    const content = tour[tab.key];
+    if (content === undefined || content === null) return false;
+    if (typeof content === 'string' && content.trim() === '') return false;
+    if (Array.isArray(content) && content.length === 0) return false;
+    return true;
+  });
+
+  // If no content tabs found, show message and stop
+  if (availableTabs.length === 0) {
+    document.getElementById('popup-tabs').innerHTML = '';
+    document.getElementById('popup-body').innerHTML = '<p>No information available for this tour.</p>';
+    document.getElementById('tour-popup').style.display = 'flex';
+    return;
+  }
+
+  // Create tabs HTML for available tabs only
+  document.getElementById('popup-tabs').innerHTML = `
+    <div class="tabs">
+      ${availableTabs.map(tab => `
+        <button class="tab-btn" data-tab="${tab.key}">
+          ${tab.label}
+        </button>
+      `).join('')}
+    </div>
+  `;
+
+  // Load the first available tab by default
+  loadTabContent(tourKey, availableTabs[0].key);
+
+  // Add click event listeners for tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => loadTabContent(tourKey, btn.dataset.tab));
+  });
+
+  // Add shake animation to tab buttons on click
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.remove('shake');       // Reset animation
+      void btn.offsetWidth;                 // Trigger reflow
+      btn.classList.add('shake');          // Add shake animation
+      setTimeout(() => btn.classList.remove('shake'), 300);
+    });
+  });
+
+  // Show popup
+  document.getElementById('tour-popup').style.display = 'flex';
+}
+
+function loadTabContent(tourKey, tab) {
+  const tour = toursData[tourKey];
+  const popupBody = document.getElementById('popup-body');
+
+  if (tab === 'gallery') {
+    let currentIndex = 0;
+
+    function renderGallery() {
+      popupBody.innerHTML = `
+        <div class="gallery-container">
+          <img src="${tour.gallery[currentIndex]}" class="gallery-img" alt="Gallery Image ${currentIndex + 1}">
+          <div class="gallery-controls">
+            <button id="prev-img">&larr;</button>
+            <button id="next-img">&rarr;</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('prev-img').onclick = () => {
+        currentIndex = (currentIndex - 1 + tour.gallery.length) % tour.gallery.length;
+        renderGallery();
+      };
+      document.getElementById('next-img').onclick = () => {
+        currentIndex = (currentIndex + 1) % tour.gallery.length;
+        renderGallery();
+      };
+    }
+
+    renderGallery();
+  } else {
+    // Safely set innerHTML, fallback if content missing
+    popupBody.innerHTML = tour[tab] || '<p>Content not available.</p>';
+  }
+}
+
+// Close popup handlers
+document.body.addEventListener('click', (e) => {
+  if (e.target.classList.contains('close-btn')) {
+    const popup = document.getElementById('tour-popup');
+    if (popup) {
+      popup.style.display = 'none';
+    }
+  }
+});
+window.addEventListener('click', e => {
+  if (e.target.id === 'tour-popup') {
+    document.getElementById('tour-popup').style.display = 'none';
+  }
+});
