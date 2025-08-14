@@ -2003,17 +2003,16 @@ function openTourPopup(tourKey) {
   const tour = toursData[tourKey];
   if (!tour) return;
 
-  // Define all possible tabs and their display names
   const tabs = [
-    { key: 'overview', label: 'Overview' },
-    { key: 'itinerary', label: 'Itinerary' },
-    { key: 'price', label: 'Price' },
-    { key: 'includes', label: 'Includes' },
-    { key: 'gallery', label: 'Gallery' },
-    { key: 'faq', label: 'FAQ' }
-  ];
+  { key: 'overview', label: 'Overview' },
+  { key: 'itinerary', label: 'Itinerary' },
+  { key: 'price', label: 'Price' },
+  { key: 'includes', label: 'Includes' },
+  { key: 'excludes', label: 'Excludes' },   // <---- Add this
+  { key: 'gallery', label: 'Gallery' },
+  { key: 'faq', label: 'FAQ' }
+];
 
-  // Filter tabs to only those with valid content
   const availableTabs = tabs.filter(tab => {
     const content = tour[tab.key];
     if (content === undefined || content === null) return false;
@@ -2022,50 +2021,33 @@ function openTourPopup(tourKey) {
     return true;
   });
 
-  // If no content tabs found, show message and stop
   if (availableTabs.length === 0) {
-    document.getElementById('popup-tabs').innerHTML = '';
-    document.getElementById('popup-body').innerHTML = '<p>No information available for this tour.</p>';
+    document.getElementById('tour-popup-tabs').innerHTML = '';
+    document.getElementById('tour-popup-body').innerHTML = '<p>No information available for this tour.</p>';
     document.getElementById('tour-popup').style.display = 'flex';
     return;
   }
 
-  // Create tabs HTML for available tabs only
-  document.getElementById('popup-tabs').innerHTML = `
+  document.getElementById('tour-popup-tabs').innerHTML = `
     <div class="tabs">
       ${availableTabs.map(tab => `
-        <button class="tab-btn" data-tab="${tab.key}">
-          ${tab.label}
-        </button>
+        <button class="tab-btn" data-tab="${tab.key}">${tab.label}</button>
       `).join('')}
     </div>
   `;
 
-  // Load the first available tab by default
-  loadTabContent(tourKey, availableTabs[0].key);
+  loadTourTabContent(tourKey, availableTabs[0].key);
 
-  // Add click event listeners for tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => loadTabContent(tourKey, btn.dataset.tab));
+  document.querySelectorAll('#tour-popup .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => loadTourTabContent(tourKey, btn.dataset.tab));
   });
 
-  // Add shake animation to tab buttons on click
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.remove('shake');       // Reset animation
-      void btn.offsetWidth;                 // Trigger reflow
-      btn.classList.add('shake');          // Add shake animation
-      setTimeout(() => btn.classList.remove('shake'), 300);
-    });
-  });
-
-  // Show popup
   document.getElementById('tour-popup').style.display = 'flex';
 }
 
-function loadTabContent(tourKey, tab) {
+function loadTourTabContent(tourKey, tab) {
   const tour = toursData[tourKey];
-  const popupBody = document.getElementById('popup-body');
+  const popupBody = document.getElementById('tour-popup-body');
 
   if (tab === 'gallery') {
     let currentIndex = 0;
@@ -2093,22 +2075,503 @@ function loadTabContent(tourKey, tab) {
 
     renderGallery();
   } else {
-    // Safely set innerHTML, fallback if content missing
     popupBody.innerHTML = tour[tab] || '<p>Content not available.</p>';
   }
 }
 
-// Close popup handlers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const safarisData = {
+  "mikumi-national-park": {
+    overview: `
+      <h2>Experience Summary</h2>
+      <p>This full-day safari to Mikumi National Park is ideal for travelers with limited time in Zanzibar who don't want to miss the chance to see majestic African animals in their natural habitat. With direct flights, a specialized guide, and all the facilities included, you'll enjoy an authentic safari experience—and be returned to your hotel the same day.</p>
+
+      <h2>Trip Highlights</h2>
+      <ul>
+        <li>Direct flight from Zanzibar to Mikumi, saving time and avoiding long hours on the road.</li>
+        <li>Complete safari in a 4×4 vehicle with an open roof, ideal for wildlife observation and photography.</li>
+        <li>Opportunity to see the Big Five (including lions, elephants and buffalo), as well as giraffes, zebras, wildebeest and hippos.</li>
+        <li>Picnic lunch in a natural setting, overlooking the savannah.</li>
+        <li>Professional wildlife guide, fluent in English or French.</li>
+        <li>Spectacular scenery, with open landscapes and rich biodiversity in the heart of Tanzania.</li>
+        <li>A complete experience in just one day, ideal for those with limited time in Zanzibar.</li>
+        <li>Arrive back in Zanzibar before sunset, with comfort and convenience.</li>
+      </ul>
+    `,
+    itinerary: `
+      <h2>Itinerary – 1-Day Safari with Direct Flight</h2>
+      <ul>
+        <li>05:30 – Transfer from the hotel in Zanzibar to the airport.</li>
+        <li>06:30 – Board a direct flight to Mikumi National Park.</li>
+        <li>07:45 – Arrival at the airstrip inside the park and reception by the safari guide.</li>
+        <li>08:00 – 15:30 – Safari in a 4×4 jeep with open roof.</li>
+        <li>In search of lions, elephants, giraffes, zebras, buffaloes, wildebeests, hippos and African birds.</li>
+        <li>Picnic lunch served in a safe, scenic area within the park.</li>
+        <li>15:45 – Return to the runway.</li>
+        <li>16:30 – Flight back to Zanzibar.</li>
+        <li>17:45 – Arrival and transfer to the hotel.</li>
+      </ul>
+    `,
+    includes: `
+      <h2>The package includes</h2>
+      <ul>
+        <li>Domestic roundtrip flights (Zanzibar ↔ Mikumi)</li>
+        <li>Zanzibar hotel transfers (round trip)</li>
+        <li>Full 4×4 Jeep Safari with professional guide (English/French)</li>
+        <li>Park entrance fees and government taxes</li>
+        <li>Picnic lunch</li>
+        <li>Mineral water during the tour</li>
+      </ul>
+    `,
+    excludes: `
+      <h2>Does not include</h2>
+      <ul>
+        <li>International flights</li>
+        <li>Visa and travel insurance fees</li>
+        <li>Alcoholic beverages</li>
+        <li>Tips for the guide</li>
+        <li>Personal items</li>
+      </ul>
+    `,
+    gallery: [
+      "./assets/images/safari/mikumi1.jpg",
+      "./assets/images/safari/mikumi2.jpg",
+      "./assets/images/safari/mikumi3.jpg"
+    ]
+  },
+
+  "ngorongoro-tarangire-2days": {
+    overview: `
+      <h2>Experience Summary</h2>
+      <p>Perfect for those short on time but looking for an authentic safari experience in two of Tanzania's most iconic parks.</p>
+      <p>Explore the unique landscape of Tarangire National Park, famous for its baobab trees and herds of elephants, and then descend to the bottom of the extraordinary Ngorongoro Crater, home to thousands of wild animals, including the rare black rhino.</p>
+      <p>This package includes round-trip domestic flights from Zanzibar, private 4x4 jeep transportation with a professional guide, comfortable full-board accommodation, and all entrance fees.</p>
+      <p><strong>Ideal for:</strong> Travelers with limited time, couples, and nature lovers looking for a short but intense adventure.</p>
+    `,
+    itinerary: `
+      <h2>Complete Itinerary</h2>
+      <h3>Day 1: Tarangire Safari</h3>
+      <ul>
+        <li>Flight from Zanzibar to Arusha Airport</li>
+        <li>Reception by our driver-guide and immediate departure to Tarangire National Park</li>
+        <li>Afternoon safari among elephants, giraffes and the famous baobabs</li>
+        <li>Transfer to Karatu</li>
+        <li>Dinner and overnight stay on a full-board basis at Farm of Dreams Lodge or similar</li>
+      </ul>
+      <h3>Day 2: Ngorongoro Crater & Return</h3>
+      <ul>
+        <li>After breakfast, departure towards the majestic Ngorongoro Crater</li>
+        <li>Safari inside the crater, home to black rhinos, lions and flamingos</li>
+        <li>Picnic lunch in the park</li>
+        <li>Return to Arusha Airport</li>
+        <li>Flight back to Zanzibar departing at 4:45 pm</li>
+      </ul>
+    `,
+    includes: `
+      <h2>The Package Includes</h2>
+      <ul>
+        <li>Domestic round trip flights (Zanzibar – Arusha – Zanzibar)</li>
+        <li>Airport transfer</li>
+        <li>Transportation in a 4×4 Toyota Land Cruiser jeep with sunroof</li>
+        <li>Professional driver-guide fluent in English and/or French</li>
+        <li>Park entrance fees and government fees</li>
+        <li>1.5 liters of mineral water per person per day</li>
+      </ul>
+    `,
+    excludes: `
+      <h2>Does Not Include</h2>
+      <ul>
+        <li>International flights</li>
+        <li>Entry visa and travel insurance</li>
+        <li>Tips for the guide</li>
+        <li>Items of a personal nature</li>
+        <li>Alcoholic beverages</li>
+      </ul>
+    `,
+    gallery: [
+      "./assets/images/safari/ngorongoro1.jpg",
+      "./assets/images/safari/ngorongoro2.jpg",
+      "./assets/images/safari/tarangire1.jpg"
+    ],
+    faq: `
+      <h2>FAQ</h2>
+      <p>Q: Are children allowed?<br>A: Yes, children are welcome but please check age restrictions with us.</p>
+      <p>Q: What languages do the guides speak?<br>A: English, French, and sometimes Portuguese.</p>
+      <p>Q: What should I bring?<br>A: Comfortable clothing, sunscreen, binoculars, and a camera.</p>
+    `
+  },
+
+
+  
+
+  "ngorongoro-tarangire-lake-manyara-3days": {
+    overview: `
+      <h2>Experience Summary</h2>
+      <p>A memorable journey through three of northern Tanzania's most iconic destinations: Tarangire National Park, the magnificent Ngorongoro Crater, and the vibrant Lake Manyara.</p>
+      <p>This itinerary is ideal for those seeking a quick but rich immersion in African nature, combining diverse landscapes with excellent wildlife observation.</p>
+      <p>With domestic flights included, private 4x4 jeep transportation, experienced guides, and full board, this is a comfortable, safe, and exciting experience.</p>
+      <p><strong>Ideal for:</strong> Couples, families and travelers who want to experience the best of safari in a short time.</p>
+
+      <h2>Trip Highlights</h2>
+      <ul>
+        <li>Three Parks in Three Days: Experience Savannah, Forest, and Crater in One Itinerary</li>
+        <li>High animal diversity from elephants in Tarangire to flamingos and tree-climbing lions at Lake Manyara</li>
+        <li>Guide fluent in foreign languages: English, French and/or Portuguese</li>
+        <li>Comfortable accommodation: Two nights at the Farm of Dreams Lodge with full board</li>
+        <li>Personalized safari: In a 4×4 jeep with panoramic roof and private driver</li>
+        <li>Optional activity: Visit to a traditional Maasai village</li>
+      </ul>
+    `,
+    itinerary: `
+      <h2>Detailed Itinerary</h2>
+      <h3>Day 1: Zanzibar to Tarangire</h3>
+      <ul>
+        <li>Flight from Zanzibar to Arusha</li>
+        <li>Direct departure to Tarangire National Park for a late afternoon game drive</li>
+        <li>Transfer to Karatu</li>
+        <li>Dinner and overnight at Farm of Dreams Lodge (full board)</li>
+      </ul>
+      <h3>Day 2: Ngorongoro Crater</h3>
+      <ul>
+        <li>Breakfast and departure to the Ngorongoro Conservation Area</li>
+        <li>Safari inside the crater with picnic</li>
+        <li>Return to the lodge in Karatu</li>
+        <li>Dinner and overnight at Farm of Dreams Lodge</li>
+      </ul>
+      <h3>Day 3: Lake Manyara & Return</h3>
+      <ul>
+        <li>Morning visit to Lake Manyara National Park</li>
+        <li>Transfer to Arusha Airport</li>
+        <li>Return flight to Zanzibar departing at 5:00 p.m.</li>
+      </ul>
+    `,
+    includes: `
+      <h2>What's Included</h2>
+      <ul>
+        <li>Domestic round trip flights (Zanzibar – Arusha – Zanzibar)</li>
+        <li>Transportation in a 4×4 Toyota Land Cruiser jeep with panoramic roof</li>
+        <li>Professional driver-guide fluent in English and/or French</li>
+        <li>All park and crater entrance fees</li>
+        <li>1.5 liters of mineral water per person per day</li>
+      </ul>
+    `,
+    excludes: `
+      <h2>Does Not Include</h2>
+      <ul>
+        <li>International flights</li>
+        <li>Visa and travel insurance fees</li>
+        <li>Alcoholic beverages</li>
+        <li>Tips for the guide</li>
+        <li>Items of a personal nature</li>
+      </ul>
+    `,
+    notes: `
+      <h2>Important Note</h2>
+      <ul>
+        <li>On the day of the Stone Town tour, it is necessary to wear clothing that covers up to the knees, out of respect for the local culture.</li>
+        <li>On the day of the dolphin activity in Mnemba, there will be no drone or photographer accompanying you.</li>
+        <li>However, a drone will be available during the sunset dhow cruise to capture beautiful moments.</li>
+        <li>On one of the days, it will not be possible to hold the special dinner on Nakupenda Island due to high tide. Instead, the tour includes lunch at Nakupenda Sandbank during the day, with beautiful decoration but without live music.</li>
+      </ul>
+    `,
+    gallery: [
+      "./assets/images/safari/ngorongoro tarangire and lago manyara.jpg",
+      // add more images here if you have
+    ],
+  },
+
+
+  "serengeti-ngorongoro-3days": {
+  overview: `
+    <h2>Experience Summary</h2>
+    <p>This full-day safari to Mikumi National Park is ideal for travelers with limited time in Zanzibar who don't want to miss the chance to see majestic African animals in their natural habitat. With direct flights, a specialized guide, and all the facilities included, you'll enjoy an authentic safari experience—and be returned to your hotel the same day.</p>
+
+    <h2>Trip Highlights</h2>
+    <ul>
+      <li>Direct flight from Zanzibar to Mikumi, saving time and avoiding long hours on the road.</li>
+      <li>Complete safari in a 4×4 vehicle with an open roof, ideal for wildlife observation and photography.</li>
+      <li>Opportunity to see the Big Five (including lions, elephants and buffalo), as well as giraffes, zebras, wildebeest and hippos.</li>
+      <li>Picnic lunch in a natural setting, overlooking the savannah.</li>
+      <li>Professional wildlife guide, fluent in English or French.</li>
+      <li>Spectacular scenery, with open landscapes and rich biodiversity in the heart of Tanzania.</li>
+      <li>A complete experience in just one day, ideal for those with limited time in Zanzibar.</li>
+      <li>Arrive back in Zanzibar before sunset, with comfort and convenience.</li>
+    </ul>
+  `,
+  itinerary: `
+    <h2>Itinerary – 1-Day Safari with Direct Flight</h2>
+    <ul>
+      <li>05:30 – Transfer from the hotel in Zanzibar to the airport.</li>
+      <li>06:30 – Board a direct flight to Mikumi National Park.</li>
+      <li>07:45 – Arrival at the airstrip inside the park and reception by the safari guide.</li>
+      <li>08:00 – 15:30 – Safari in a 4×4 jeep with open roof.</li>
+      <li>In search of lions, elephants, giraffes, zebras, buffaloes, wildebeests, hippos and African birds.</li>
+      <li>Picnic lunch served in a safe, scenic area within the park.</li>
+      <li>15:45 – Return to the runway.</li>
+      <li>16:30 – Flight back to Zanzibar.</li>
+      <li>17:45 – Arrival and transfer to the hotel.</li>
+    </ul>
+  `,
+  includes: `
+    <h2>The package includes</h2>
+    <ul>
+      <li>Domestic roundtrip flights (Zanzibar ↔ Mikumi)</li>
+      <li>Zanzibar hotel transfers (round trip)</li>
+      <li>Full 4×4 Jeep Safari with professional guide (English/French)</li>
+      <li>Park entrance fees and government taxes</li>
+      <li>Picnic lunch</li>
+      <li>Mineral water during the tour</li>
+    </ul>
+  `,
+  excludes: `
+    <h2>Does not include</h2>
+    <ul>
+      <li>International flights</li>
+      <li>Visa and travel insurance fees</li>
+      <li>Alcoholic beverages</li>
+      <li>Tips for the guide</li>
+      <li>Personal items</li>
+    </ul>
+  `,
+  gallery: [
+    "./assets/images/safari/serenget and ngorongoro.jpg",
+    // add more images if you have
+  ]
+},
+"serengeti-tarangire-ngorongoro-4days": {
+  overview: `
+    <h2>Experience Summary</h2>
+    <p>Embark on an unforgettable journey through three of Tanzania's most iconic safari destinations: Serengeti, Ngorongoro Crater, and Tarangire National Park. Over four days and three nights, you'll be immersed in African wildlife, stunning landscapes, and rich ecological diversity, all with the comfort and security of an experienced guide.</p>
+    <p>Beginning with a scenic flight from Zanzibar to the Serengeti, you'll enjoy thrilling safaris across endless plains teeming with wildlife. On the second day, a full Serengeti safari reveals the grandeur of the savannah and the chance to spot the Big Five.</p>
+    <p>On the third day, you'll descend to the famous Ngorongoro Crater, a true natural paradise, home to an impressive density of wildlife. Rounding out the adventure, Tarangire National Park will captivate you with its landscape of baobabs and elephants before returning to Zanzibar.</p>
+    <p>With comfortable accommodations in select camps and lodges, full meals, and breathtaking scenery, this experience offers the best of African nature in a compact and memorable itinerary.</p>
+
+    <h2>Trip Highlights</h2>
+    <ul>
+      <li>Scenic flight from Zanzibar to the Serengeti, with stunning views of the Tanzanian landscape.</li>
+      <li>Unforgettable safaris in the Serengeti, home of the Great Migration and the legendary Big Five.</li>
+      <li>(Optional): Sunrise balloon ride over the Serengeti, with breakfast in the savannah.</li>
+      <li>Descent into the Ngorongoro Crater, considered one of the natural wonders of Africa and a UNESCO World Heritage Site.</li>
+      <li>Explore Tarangire National Park, famous for its large herds of elephants and ancient baobab trees.</li>
+      <li>Selected accommodations in comfortable camps and lodges, with full board.</li>
+      <li>Accompaniment by a professional, experienced driver-guide fluent in English (or other languages upon request).</li>
+      <li>Meals included throughout the itinerary (breakfast, lunch and dinner).</li>
+      <li>Incredible photography opportunities of African wildlife and landscapes.</li>
+    </ul>
+  `,
+  itinerary: `
+    <h2>Complete Itinerary</h2>
+    <h3>Day 1: Zanzibar to Serengeti</h3>
+    <ul>
+      <li>Take a flight from Zanzibar to the heart of the Serengeti.</li>
+      <li>Reception at the airport by our specialized driver-guide.</li>
+      <li>Full-day safari across the vast plains of the Serengeti.</li>
+      <li>In the evening, transfer to the camp.</li>
+      <li>Dinner and overnight stay on a full board basis.</li>
+      <li><strong>Accommodation:</strong> Serengeti Camp (full board)</li>
+    </ul>
+    <h3>Day 2: Serengeti – Full Day Safari</h3>
+    <ul>
+      <li>Day dedicated to safari in Serengeti National Park.</li>
+      <li>Explore different areas of the park in search of the Big Five and the rich wildlife.</li>
+      <li>(Optional): Sunrise balloon ride with breakfast in the savannah (not included).</li>
+      <li>Return to camp at the end of the day.</li>
+      <li>Dinner and overnight stay.</li>
+      <li><strong>Accommodation:</strong> Serengeti Camp (full board)</li>
+    </ul>
+    <h3>Day 3: Serengeti → Ngorongoro Crater → Karatu</h3>
+    <ul>
+      <li>After breakfast, departure from the Serengeti towards the Ngorongoro Conservation Area.</li>
+      <li>Descent to the bottom of the Ngorongoro Crater, considered one of the natural wonders of Africa.</li>
+      <li>Safari with lunch break in designated area.</li>
+      <li>In the afternoon, continue to Karatu.</li>
+      <li>Dinner and overnight stay at the lodge.</li>
+      <li><strong>Accommodation:</strong> Lodge in Karatu (full board)</li>
+    </ul>
+    <h3>Day 4: Karatu → Tarangire National Park → Arusha → Zanzibar</h3>
+    <ul>
+      <li>After breakfast, departure for Tarangire National Park, known for its landscapes marked by baobab trees and large herds of elephants.</li>
+      <li>Last safari of the trip, enjoying the region's diverse fauna.</li>
+      <li>In the afternoon, transfer to Arusha Airport for your return flight to Zanzibar.</li>
+    </ul>
+  `,
+  includes: `
+    <h2>The package includes</h2>
+    <ul>
+      <li>Domestic roundtrip flights (Zanzibar – Serengeti / Arusha – Zanzibar)</li>
+      <li>Reception at Seronera Airstrip and transfer to Arusha Airport</li>
+      <li>Park entrance fees, crater fees, and government taxes</li>
+      <li>Transportation in a 4×4 Toyota Land Cruiser jeep with sunroof</li>
+      <li>Professional driver-guide fluent in English, French and/or Portuguese</li>
+      <li>Accommodation in a family room with full board</li>
+      <li>1.5L of mineral water per person per day</li>
+    </ul>
+  `,
+  excludes: `
+    <h2>Does not include</h2>
+    <ul>
+      <li>International flights</li>
+      <li>Travel insurance and visa fees</li>
+      <li>Alcoholic beverages</li>
+      <li>Tips for the guide</li>
+      <li>Personal expenses</li>
+    </ul>
+  `,
+  gallery: [
+    "./assets/images/safari/serengeti tarangire and ngorongoro.jpg"
+    // Add more images if you have
+  ]
+}
+};
+
+
+document.querySelectorAll('.safari-card .view-safari-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const safariKey = btn.closest('.safari-card').dataset.safari;
+    openSafariPopup(safariKey);
+  });
+});
+
+function openSafariPopup(safariKey) {
+  const safari = safarisData[safariKey];
+  if (!safari) return;
+
+  const tabs = [
+  { key: 'overview', label: 'Overview' },
+  { key: 'itinerary', label: 'Itinerary' },
+  { key: 'price', label: 'Price' },
+  { key: 'includes', label: 'Includes' },
+  { key: 'excludes', label: 'Excludes' },   
+  {key:'notes',label:'Notes'},
+  { key: 'gallery', label: 'Gallery' },
+  { key: 'faq', label: 'FAQ' }
+];
+
+  const availableTabs = tabs.filter(tab => {
+    const content = safari[tab.key];
+    if (!content) return false;
+    if (typeof content === 'string' && content.trim() === '') return false;
+    if (Array.isArray(content) && content.length === 0) return false;
+    return true;
+  });
+
+  if (availableTabs.length === 0) {
+    document.getElementById('safari-popup-tabs').innerHTML = '';
+    document.getElementById('safari-popup-body').innerHTML = '<p>No information available for this safari.</p>';
+    document.getElementById('safari-popup').style.display = 'flex';
+    return;
+  }
+
+  document.getElementById('safari-popup-tabs').innerHTML = `
+    <div class="tabs">
+      ${availableTabs.map(tab => `
+        <button class="tab-btn" data-tab="${tab.key}">${tab.label}</button>
+      `).join('')}
+    </div>
+  `;
+
+  loadSafariTabContent(safariKey, availableTabs[0].key);
+
+  document.querySelectorAll('#safari-popup .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => loadSafariTabContent(safariKey, btn.dataset.tab));
+  });
+
+  document.getElementById('safari-popup').style.display = 'flex';
+}
+
+function loadSafariTabContent(safariKey, tab) {
+  const safari = safarisData[safariKey];
+  const popupBody = document.getElementById('safari-popup-body');
+
+  if (tab === 'gallery') {
+    let currentIndex = 0;
+
+    function renderGallery() {
+      popupBody.innerHTML = `
+        <div class="gallery-container">
+          <img src="${safari.gallery[currentIndex]}" class="gallery-img" alt="Gallery Image ${currentIndex + 1}">
+          <div class="gallery-controls">
+            <button id="prev-img">&larr;</button>
+            <button id="next-img">&rarr;</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('prev-img').onclick = () => {
+        currentIndex = (currentIndex - 1 + safari.gallery.length) % safari.gallery.length;
+        renderGallery();
+      };
+      document.getElementById('next-img').onclick = () => {
+        currentIndex = (currentIndex + 1) % safari.gallery.length;
+        renderGallery();
+      };
+    }
+
+    renderGallery();
+  } else {
+    popupBody.innerHTML = safari[tab] || '<p>Content not available.</p>';
+  }
+}
+
+
+
+// CLOSE BUTTON
+
+
 document.body.addEventListener('click', (e) => {
   if (e.target.classList.contains('close-btn')) {
-    const popup = document.getElementById('tour-popup');
-    if (popup) {
-      popup.style.display = 'none';
-    }
+    const tourPopup = document.getElementById('tour-popup');
+    const safariPopup = document.getElementById('safari-popup');
+    if (tourPopup) tourPopup.style.display = 'none';
+    if (safariPopup) safariPopup.style.display = 'none';
   }
 });
 window.addEventListener('click', e => {
   if (e.target.id === 'tour-popup') {
     document.getElementById('tour-popup').style.display = 'none';
+  } else if (e.target.id === 'safari-popup') {
+    document.getElementById('safari-popup').style.display = 'none';
   }
 });
+
+
+
+const toggleBtn = document.getElementById("toggleSocials");
+const icons = document.querySelector(".social-icons");
+
+let autoExpand = true;
+
+toggleBtn.addEventListener("click", () => {
+  icons.classList.toggle("show");
+  toggleBtn.textContent = icons.classList.contains("show") ? "×" : "+";
+  autoExpand = false; // stop auto-expand when user manually interacts
+});
+
+// Auto-expand every 5 seconds if user hasn't clicked yet
+setInterval(() => {
+  if (autoExpand) {
+    icons.classList.add("show");
+    toggleBtn.textContent = "×";
+    setTimeout(() => {
+      icons.classList.remove("show");
+      toggleBtn.textContent = "+";
+    }, 2000); // stays open for 2 seconds before closing
+  }
+}, 5000);

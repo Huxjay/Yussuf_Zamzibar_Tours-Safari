@@ -279,23 +279,19 @@
   <a href="tour-details.php?tour=horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination" class="view-tour-btn">View Tour</a>
 </div>
 
-<!-- toue popup -->
+<!-- Tour Popup -->
 <div id="tour-popup" class="popup">
   <div class="popup-content">
     <span class="close-btn">&times;</span>
-    <div id="popup-header"></div>
-    <div id="popup-tabs"></div>
-    <div id="popup-body"></div>
-
-    <!-- One shared button -->
+    <div id="tour-popup-tabs"></div>      <!-- unique ID -->
+    <div id="tour-popup-body"></div>      <!-- unique ID -->
     <div class="popup-footer">
       <a href="booking-page.php" class="book-btn">BOOK THIS TOUR</a>
     </div>
   </div>
 </div>
-</div>
-</section>
 
+</section>
 
 <section class="safaris-section">
 
@@ -308,55 +304,98 @@
   </div>
 
   <div class="safari-grid">
-   <div class="safari-card" data-safari="mikumi-national-park">
-  <img src="./assets/images/safari/mikumi national park.webp" alt="Spice farm, Jozani forest & The Rock Restaurant Tour Combination">
-  <h3>Mikumi National Park</h3>
-  <p class="safari-subtitle">(Full-Day Safari with Direct Flight from Zanzibar)</p>
-  <a href="safari-details.php?safari=mikumi-national-park" class="view-safari-btn">View Safari</a>
-</div>
 
-<div class="safari-card" data-safari="ngorongoro-tarangire-2days">
-  <img src="./assets/images/safari/ngorongoro and tarangire.webp" alt="Ngorongoro & Tarangire - 2 Days / 1 Night Safari">
-  <h3>Ngorongoro & Tarangire</h3>
-  <p class="safari-subtitle">(2 Days / 1 Night - Safari)</p>
-  <a href="safari-details.php?safari=ngorongoro-tarangire-2days" class="view-safari-btn">View Safari</a>
-</div>
+    <div class="safari-card" data-safari="mikumi-national-park">
+      <img src="./assets/images/safari/mikumi national park.webp" alt="Mikumi National Park Safari">
+      <h3>Mikumi National Park</h3>
+      <p class="safari-subtitle">(Full-Day Safari with Direct Flight from Zanzibar)</p>
+      <a href="#" class="view-safari-btn">View Safari</a>
+    </div>
 
-<div class="safari-card" data-safari="ngorongoro-tarangire-lake-manyara-3days">
-  <img src="./assets/images/safari/ngorongoro tarangire and lago manyara.jpg" alt="Ngorongoro, Tarangire & Lake Manyara - 3 Days / 2 Nights Safari">
-  <h3>Ngorongoro, Tarangire & Lake Manyara</h3>
-  <p class="safari-subtitle">(3 Days / 2 Nights – Safari)</p>
-  <a href="safari-details.php?safari=ngorongoro-tarangire-lake-manyara-3days" class="view-safari-btn">View Safari</a>
-</div>
+    <div class="safari-card" data-safari="ngorongoro-tarangire-2days">
+      <img src="./assets/images/safari/ngorongoro and tarangire.webp" alt="Ngorongoro & Tarangire - 2 Days / 1 Night Safari">
+      <h3>Ngorongoro & Tarangire</h3>
+      <p class="safari-subtitle">(2 Days / 1 Night - Safari)</p>
+      <a href="#" class="view-safari-btn">View Safari</a>
+    </div>
 
-<div class="safari-card" data-safari="serengeti-ngorongoro-3days">
-  <img src="./assets/images/safari/serenget and ngorongoro.jpg" alt="Serengeti & Ngorongoro - 3 Days / 2 Nights Safari">
-  <h3>Serengeti & Ngorongoro</h3>
-  <p class="safari-subtitle">(3 Days / 2 Nights Safari)</p>
-  <a href="safari-details.php?safari=serengeti-ngorongoro-3days" class="view-safari-btn">View Safari</a>
-</div>
+    <div class="safari-card" data-safari="ngorongoro-tarangire-lake-manyara-3days">
+      <img src="./assets/images/safari/ngorongoro tarangire and lago manyara.jpg" alt="Ngorongoro, Tarangire & Lake Manyara - 3 Days / 2 Nights Safari">
+      <h3>Ngorongoro, Tarangire & Lake Manyara</h3>
+      <p class="safari-subtitle">(3 Days / 2 Nights – Safari)</p>
+      <a href="#" class="view-safari-btn">View Safari</a>
+    </div>
 
-<div class="safari-card" data-safari="serengeti-tarangire-ngorongoro-4days">
-  <img src="./assets/images/safari/serengeti tarangire and ngorongoro.jpg" alt="Serengeti, Tarangire & Ngorongoro - 4 Days / 3 Nights Safari">
-  <h3>Serengeti, Tarangire & Ngorongoro</h3>
-  <p class="safari-subtitle">(4 Days / 3 Nights Safari)</p>
-  <a href="safari-details.php?safari=serengeti-tarangire-ngorongoro-4days" class="view-safari-btn">View Safari</a>
-</div>
+    <div class="safari-card" data-safari="serengeti-ngorongoro-3days">
+      <img src="./assets/images/safari/serenget and ngorongoro.jpg" alt="Serengeti & Ngorongoro - 3 Days / 2 Nights Safari">
+      <h3>Serengeti & Ngorongoro</h3>
+      <p class="safari-subtitle">(3 Days / 2 Nights Safari)</p>
+      <a href="#" class="view-safari-btn">View Safari</a>
+    </div>
+
+    <div class="safari-card" data-safari="serengeti-tarangire-ngorongoro-4days">
+      <img src="./assets/images/safari/serengeti tarangire and ngorongoro.jpg" alt="Serengeti, Tarangire & Ngorongoro - 4 Days / 3 Nights Safari">
+      <h3>Serengeti, Tarangire & Ngorongoro</h3>
+      <p class="safari-subtitle">(4 Days / 3 Nights Safari)</p>
+      <a href="#" class="view-safari-btn">View Safari</a>
+    </div>
+
   </div>
+
+
+<!-- Safari Popup -->
+<div id="safari-popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <div id="safari-popup-tabs"></div>    <!-- unique ID -->
+    <div id="safari-popup-body"></div>    <!-- unique ID -->
+    <div class="popup-footer">
+      <a href="booking-page.php" class="book-btn">BOOK THIS SAFARI</a>
+    </div>
+  </div>
+</div>
 
 </section>
 
-
-<!-- WhatsApp Chat Widget -->
-<div class="whatsapp-chat-wrapper" id="whatsappWidget">
-  <div class="whatsapp-chat-bubble">📩 Need help planning your trip?</div>
-  <a href="https://wa.me/255712345678?text=Hello%20Yussuf!%20I%27m%20interested%20in%20your%20Zanzibar%20tour%20packages." 
-     class="whatsapp-float" 
-     target="_blank" 
-     title="Chat with us on WhatsApp">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"/>
-  </a>
+<!-- Floating Social Media Widget -->
+<div class="social-media-widget">
+  <div class="toggle-btn" id="toggleSocials">+</div>
+  <div class="social-icons">
+    <a href="https://wa.me/255714610794" target="_blank" title="WhatsApp">
+      <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp"/>
+    </a>
+    <a href="https://www.instagram.com/yourpage" target="_blank" title="Instagram">
+      <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram"/>
+    </a>
+    <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
+      <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"/>
+    </a>
+    <a href="https://www.tiktok.com/@yourpage" target="_blank" title="TikTok">
+      <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok"/>
+    </a>
+   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yussufzanzibar611@gmail.com" target="_blank" title="Email">
+  <img src="https://img.icons8.com/color/48/new-post.png" alt="Email"/>
+</a>
+    <a href="https://www.snapchat.com/add/yussufzanzibar?share_id=5SFLXv7dZfE&locale=en-GB " target="_blank" title="Snapchat">
+      <img src="https://img.icons8.com/color/48/snapchat-circled-logo--v1.png" alt="Snapchat"/>
+    </a>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
