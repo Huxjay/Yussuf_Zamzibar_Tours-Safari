@@ -1,25 +1,6 @@
 function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
-    }
-
-  const bubble = document.querySelector('.whatsapp-chat-bubble');
-
-  function toggleBubble(show) {
-    if (show) {
-      bubble.style.display = 'inline-block';
-    } else {
-      bubble.style.display = 'none';
-    }
-  }
-
-  // Initial: Show, then hide after 7 seconds
-  setTimeout(() => toggleBubble(false), 7000);
-
-  // Loop: Show every 22 seconds, hide after 7 seconds
-  setInterval(() => {
-    toggleBubble(true);
-    setTimeout(() => toggleBubble(false), 7000);
-  }, 22000);
+  document.getElementById('sidebar').classList.toggle('open');
+}
 
 
 

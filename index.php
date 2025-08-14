@@ -8,27 +8,67 @@
   <link rel="stylesheet" href="./assets/css/index.css">
 
 </head>
-<body>
-
-  <header>
+<body><header>
     <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
     <h1>Yussuf Zanzibar Tour & Safari</h1>
     <nav class="desktop-nav">
-      <a href="#">Home</a>
-      <a href="#">Vacations</a>
-      <a href="#">Safari</a>
+      <a href="index.php">Home</a>
+      <a href="index.php#tours">Tours</a>
+      <a href="index.php#safari">Safari</a>
+      <a href="index.php?page=transfer">Transfer</a>
+      <a href="#">Admin Login</a>
       <a href="#">Contact</a>
     </nav>
-  </header>
+</header>
 
-  <div id="sidebar">
+<div id="sidebar">
     <div class="close-btn" onclick="toggleSidebar()">✖</div>
     <ul>
-      <li><a href="#">Package</a></li>
-      <li><a href="#">Transfer</a></li>
-      <li><a href="#">Safari from Zanzibar</a></li>
+      <li><a href="index.php#tours">Tours</a></li>
+      <li><a href="index.php#safari">Safari</a></li>
+      <li><a href="index.php?page=transfer">Transfer</a></li>
+      <li><a href="#">Admin Login</a></li>
     </ul>
-  </div>
+</div>
+
+<!-- Main Content Area -->
+<main>
+<?php
+$page = $_GET['page'] ?? 'home';
+
+switch ($page) {
+    case 'transfer':
+        include 'transfer.php';
+        break;
+
+    default:
+        // Your homepage content
+        ?>
+<section class="intro">
+    <h2>Welcome to Zanzibar — Where Paradise Meets Adventure 🌴</h2>
+    <p>
+      Escape to a breathtaking island where turquoise waters kiss sunlit shores. From dreamy beaches to thrilling safaris, <strong>Yussuf Zanzibar Tour & Safari</strong> invites you to experience magic.
+    </p>
+
+    <div class="carousel-container">
+      <div class="slider">
+        <div class="slide"><img src="./assets/images/1716972340113.jpg" alt="Zanzibar 1"></div>
+        <div class="slide"><img src="./assets/images/IMG_20230120_215855_247.jpg" alt="Safari 1"></div>
+        <div class="slide"><img src="./assets/images/1699389072930.jpg" alt="Zanzibar 2"></div>
+        <div class="slide"><img src="./assets/images/IMG_20231026_181133_720.jpg" alt="Safari 2"></div>
+        <div class="slide"><img src="./assets/images/1716972340113.jpg" alt="Zanzibar 3"></div>
+        <div class="slide"><img src="./assets/images/IMG_20230120_215855_247.jpg" alt="Safari 3"></div>
+        <div class="slide"><img src="./assets/images/1699389072930.jpg" alt="Zanzibar 4"></div>
+        <div class="slide"><img src="./assets/images/IMG_20231026_181133_720.jpg" alt="Safari 4"></div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="explore-btn">Explore Now</button>
+    </div>
+  </section>
+
+
 
   <section class="intro">
     <h2>Welcome to Zanzibar — Where Paradise Meets Adventure 🌴</h2>
@@ -54,6 +94,7 @@
     </div>
   </section>
 
+
   <section class="difference">
     <h2 class="section-title">Why Travel with Yussuf Zanzibar?</h2>
     <div class="features">
@@ -76,9 +117,8 @@
   </section>
 
 
-
-
-<section class="tours-section">
+       
+<section id="tours" class="tours-section">
 
 
 
@@ -293,7 +333,13 @@
 
 </section>
 
-<section class="safaris-section">
+
+
+
+
+
+
+        <section id = "safari" class="safaris-section">
 
   <div class="safaris-intro">
     <h2>Journey Into the Heart of Wild Tanzania with Yussuf Safaris</h2>
@@ -357,6 +403,9 @@
 
 </section>
 
+
+
+
 <!-- Floating Social Media Widget -->
 <div class="social-media-widget">
   <div class="toggle-btn" id="toggleSocials">+</div>
@@ -382,26 +431,41 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <footer>
+<footer>
     📞 WhatsApp: +255 XXX  | 🌐 Yussuf Zanzibar Tour & Safari
   </footer>
+
+
+        <?php
+}
+?>
+</main>
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <script src="./assets/js/index.js"></script>
 </body>
 </html>
