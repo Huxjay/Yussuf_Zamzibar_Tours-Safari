@@ -51,6 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// JavaScript for scroll animation (using unique classes)
+document.addEventListener('DOMContentLoaded', function() {
+  const featureCards = document.querySelectorAll('.feature-card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  featureCards.forEach(card => {
+    observer.observe(card);
+  });
+});
+
+
 const toursData = {
   "safari-blue": {
     overview: `

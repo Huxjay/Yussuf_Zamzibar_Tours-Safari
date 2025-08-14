@@ -8,37 +8,62 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="why-choose-us scroll-animate">
+<section class="why-choose-us">
   <h2>Why Choose Us?</h2>
   <div class="features">
-    <div class="card scroll-animate">
-      <div class="icon">
-        <!-- Watch/Time SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <!-- Modern Clock Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="15"/>
+          <circle cx="12" cy="12" r="6" opacity="0.3"/>
+          <line x1="12" y1="6" x2="12" y2="12"/>
+          <line x1="16" y1="12" x2="12" y2="12"/>
+        </svg>
       </div>
       <h3>Reliable Service</h3>
       <p>Professional Drivers, Always on time</p>
     </div>
-    <div class="card scroll-animate">
-      <div class="icon">
-        <!-- Car SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <!-- Modern Car Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 17H3v-5h18v5h-2m-8 0H9m5 0h-1"/>
+          <rect x="3" y="9" width="18" height="5" rx="1"/>
+          <circle cx="7" cy="17" r="2"/>
+          <circle cx="17" cy="17" r="2"/>
+        </svg>
       </div>
       <h3>Great Vehicles</h3>
       <p>Air-conditioned and spacious cars.</p>
     </div>
-    <div class="card scroll-animate">
-      <div class="icon">
-        <!-- Dollar/Price SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <!-- Dollar Sign with Gradient -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="url(#money-gradient)" d="M12 1v22m5-17H9.5a3.5 3.5 0 1 0 0 7H14a3.5 3.5 0 1 1 0 7H6"/>
+          <defs>
+            <linearGradient id="money-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="currentColor"/>
+              <stop offset="100%" stop-color="var(--color-light)"/>
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
       <h3>Affordable Rates</h3>
       <p>No hidden fees, competitive pricing.</p>
     </div>
-    <div class="card scroll-animate">
-      <div class="icon">
-        <!-- 24/7 Support SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-headphones"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 18a3 3 0 0 1-3 3h-1a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h1a3 3 0 0 1 3 3v3z"/><path d="M3 18a3 3 0 0 0 3 3h1a3 3 0 0 0 3-3v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3z"/></svg>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <!-- Headphones with Fill -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="#fff" stroke-width="0.5">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+          <path d="M21 18a3 3 0 0 1-3 3h-1a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h1a3 3 0 0 1 3 3v3z"/>
+          <path d="M3 18a3 3 0 0 0 3 3h1a3 3 0 0 0 3-3v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3z"/>
+        </svg>
       </div>
       <h3>24/7 Availability</h3>
       <p>Round-the-clock service for all flight schedules.</p>
