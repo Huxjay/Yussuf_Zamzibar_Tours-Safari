@@ -1441,3 +1441,239 @@ transform: scale(1.05);
 .social-links img:hover {
   transform: scale(1.1);
 }
+
+
+
+
+/* ================= TRANSFER PAGE STYLING ================= */
+
+/* ===== Buttons (Transfer Page) ===== */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #009688, #00bfa5);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #FFDD00, #FFC107);
+  color: #006D77;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== Hero Section ===== */
+.transfer-hero {
+  background: url('../images/transfar/zanzibar-abeid-amani-karume-international-airport-htza-294378-1682085624-jzc0n.jpg') center/cover no-repeat;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.4);
+  padding: 50px 40px;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  animation: fadeInUp 1s ease forwards;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.hero-overlay h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+/* ===== Scroll Animations ===== */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Section Styling ===== */
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #006D77;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #009688, #00bfa5);
+  display: block;
+  margin: 15px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ===== Cards Styling ===== */
+.features, .service-cards, .steps, .car-cards, .route-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card, .service-card, .step, .car-card, .route-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover, .service-card:hover, .step:hover, .car-card:hover, .route-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card img, .service-card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+/* ===== Airport Info ===== */
+.airport-info {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.airport-info .content {
+  max-width: 600px;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+/* ===== Prices Table ===== */
+.prices table {
+  width: 100%;
+  max-width: 950px;
+  margin: 30px auto 0 auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.prices th, .prices td {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.prices th {
+  background: linear-gradient(135deg, #009688, #00bfa5);
+  color: white;
+  font-size: 18px;
+}
+
+.prices tr:hover {
+  background: #f1f1f1;
+}
+
+/* ===== Booking Form ===== */
+.booking-form form {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form input, .booking-form select, .booking-form button {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.booking-form button {
+  border: none;
+  background: linear-gradient(135deg, #009688, #00bfa5);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Animations Keyframes ===== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .airport-info {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .features, .service-cards, .steps, .car-cards, .route-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-overlay h1 {
+    font-size: 32px;
+  }
+
+  .hero-overlay p {
+    font-size: 18px;
+  }
+}

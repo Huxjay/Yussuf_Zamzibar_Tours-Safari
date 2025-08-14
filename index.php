@@ -7,6 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/index.css">
 
+<style>
+    /* Fade Animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
 </head>
 <body><header>
     <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
@@ -406,6 +419,23 @@ switch ($page) {
 
 
 
+
+
+
+        <?php
+}
+?>
+</main>
+
+  
+
+  
+
+
+
+
+
+
 <!-- Floating Social Media Widget -->
 <div class="social-media-widget">
   <div class="toggle-btn" id="toggleSocials">+</div>
@@ -434,23 +464,6 @@ switch ($page) {
 <footer>
     📞 WhatsApp: +255 XXX  | 🌐 Yussuf Zanzibar Tour & Safari
   </footer>
-
-
-        <?php
-}
-?>
-</main>
-
-  
-
-  
-
-
-
-
-
-
-
 
 
 
