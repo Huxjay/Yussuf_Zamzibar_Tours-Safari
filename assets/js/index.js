@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+
 const toursData = {
   "safari-blue": {
     overview: `
@@ -2618,3 +2621,27 @@ setInterval(() => {
     }, 2000); // stays open for 2 seconds before closing
   }
 }, 5000);
+
+document.getElementById('loginLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    fetch('login.php')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('main-content').innerHTML = html;
+        });
+});
+
+function flipLoginCard() {
+    document.getElementById("loginCard").classList.toggle("flip");
+}
+
+// Optional: handle button clicks
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("loginBtn").addEventListener("click", () => {
+        alert("Login logic goes here");
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+        alert("Password reset logic goes here");
+    });
+});

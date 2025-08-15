@@ -29,7 +29,7 @@
       <a href="index.php#tours">Tours</a>
       <a href="index.php#safari">Safari</a>
       <a href="index.php?page=transfer">Transfer</a>
-      <a href="#">Admin Login</a>
+      <a href="index.php?page=login">Adimin Login</a>
       <a href="#">Contact</a>
     </nav>
 </header>
@@ -39,8 +39,9 @@
     <ul>
       <li><a href="index.php#tours">Tours</a></li>
       <li><a href="index.php#safari">Safari</a></li>
-      <li><a href="index.php?page=transfer">Transfer</a></li>
-      <li><a href="#">Admin Login</a></li>
+      <li><a href="index.php?page=transfer">transfer</a></li>
+      <li><a href="index.php?page=login">Adimin Login</a></li>
+      
     </ul>
 </div>
 
@@ -52,6 +53,10 @@ $page = $_GET['page'] ?? 'home';
 switch ($page) {
     case 'transfer':
         include 'transfer.php';
+        break;
+
+         case 'login':
+        include 'login.php';
         break;
 
     default:
@@ -81,31 +86,6 @@ switch ($page) {
     </div>
   </section>
 
-
-
-  <section class="intro">
-    <h2>Welcome to Zanzibar — Where Paradise Meets Adventure 🌴</h2>
-    <p>
-      Escape to a breathtaking island where turquoise waters kiss sunlit shores. From dreamy beaches to thrilling safaris, <strong>Yussuf Zanzibar Tour & Safari</strong> invites you to experience magic.
-    </p>
-
-    <div class="carousel-container">
-      <div class="slider">
-        <div class="slide"><img src="./assets/images/1716972340113.jpg" alt="Zanzibar 1"></div>
-        <div class="slide"><img src="./assets/images/IMG_20230120_215855_247.jpg" alt="Safari 1"></div>
-        <div class="slide"><img src="./assets/images/1699389072930.jpg" alt="Zanzibar 2"></div>
-        <div class="slide"><img src="./assets/images/IMG_20231026_181133_720.jpg" alt="Safari 2"></div>
-        <div class="slide"><img src="./assets/images/1716972340113.jpg" alt="Zanzibar 3"></div>
-        <div class="slide"><img src="./assets/images/IMG_20230120_215855_247.jpg" alt="Safari 3"></div>
-        <div class="slide"><img src="./assets/images/1699389072930.jpg" alt="Zanzibar 4"></div>
-        <div class="slide"><img src="./assets/images/IMG_20231026_181133_720.jpg" alt="Safari 4"></div>
-      </div>
-    </div>
-
-    <div class="button-container">
-      <button class="explore-btn">Explore Now</button>
-    </div>
-  </section>
 
 
   <section class="difference">

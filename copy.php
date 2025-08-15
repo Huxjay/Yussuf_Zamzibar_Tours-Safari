@@ -1,90 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yussuf Zanzibar Tour & Safari</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Fade Animation */
-    .fade {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Login / Forgot Password</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #00b4d8, #0077b6);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
+
+    .card-container {
+        width: 350px;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        position: relative;
+        transition: transform 0.5s ease;
     }
-  </style>
+
+    .form-container {
+        padding: 30px;
+        transition: opacity 0.5s ease;
+    }
+
+    h2 {
+        margin: 0 0 20px 0;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #0077b6;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: #023e8a;
+    }
+
+    .toggle-link {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+        color: #0077b6;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    /* Animation for slide */
+    .card-container.flip .login-form {
+        display: none;
+    }
+
+    .card-container.flip .forgot-form {
+        display: block;
+    }
+
+    .forgot-form {
+        display: none;
+    }
+</style>
 </head>
 <body>
 
-<header>
-    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
-    <h1>Yussuf Zanzibar Tour & Safari</h1>
-    <nav class="desktop-nav">
-      <a href="index.php">Home</a>
-      <a href="index.php#tours">Tours</a>
-      <a href="index.php#safari">Safari</a>
-      <a href="index.php?page=transfer">Transfer</a>
-      <a href="#">Admin Login</a>
-      <a href="#">Contact</a>
-    </nav>
-</header>
+<div class="card-container" id="cardContainer">
 
-<div id="sidebar">
-    <div class="close-btn" onclick="toggleSidebar()">✖</div>
-    <ul>
-      <li><a href="index.php#tours">Tours</a></li>
-      <li><a href="index.php#safari">Safari</a></li>
-      <li><a href="index.php?page=transfer">Transfer</a></li>
-      <li><a href="#">Admin Login</a></li>
-    </ul>
+    <!-- Login Form -->
+    <div class="form-container login-form">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Login</button>
+        <span class="toggle-link" onclick="flipCard()">Forgot Password?</span>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div class="form-container forgot-form">
+        <h2>Forgot Password</h2>
+        <input type="email" placeholder="Enter your email" />
+        <button>Reset Password</button>
+        <span class="toggle-link" onclick="flipCard()">Back to Login</span>
+    </div>
+
 </div>
 
-<!-- Main Content Area -->
-<main id="mainContent" class="fade">
-<?php
-$page = $_GET['page'] ?? 'home';
-
-switch ($page) {
-    case 'transfer':
-        include 'transfer.php';
-        break;
-
-    default:
-        ?>
-        <section id="tours" class="tours-section">
-            <h2>Tours</h2>
-            <p>All tours info here...</p>
-        </section>
-
-        <section id="safari" class="safari-section">
-            <h2>Safari</h2>
-            <p>All safari info here...</p>
-        </section>
-        <?php
-}
-?>
-</main>
-
 <script>
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-}
-
-// Fade-in effect after load
-window.addEventListener('DOMContentLoaded', () => {
-  const mainContent = document.getElementById('mainContent');
-  setTimeout(() => {
-    mainContent.classList.add('show');
-  }, 50);
-});
+    function flipCard() {
+        document.getElementById('cardContainer').classList.toggle('flip');
+    }
 </script>
 
 </body>
 </html>
-
-
-
