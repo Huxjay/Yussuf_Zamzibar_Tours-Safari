@@ -1812,14 +1812,20 @@ section h2::after {
   animation: pulse 1.5s infinite;
 }
 
-
-
 /* Wrapper */
 .login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #caf0f8, #90e0ef);
+    animation: backgroundFloat 15s ease-in-out infinite alternate;
+}
+
+/* Floating animation for background */
+@keyframes backgroundFloat {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
 }
 
 /* Main Card */
@@ -1828,10 +1834,19 @@ section h2::after {
     width: 750px;
     height: 420px;
     background: #fff;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.6s ease-in-out;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.68,-0.55,0.265,1.55);
+    animation: floatCard 6s ease-in-out infinite alternate;
+}
+
+/* Floating card animation */
+@keyframes floatCard {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Image Panel */
@@ -1845,15 +1860,23 @@ section h2::after {
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.login-image-panel:hover {
+    transform: scale(1.05) rotateZ(1deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .login-image-panel h1 {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
 .login-image-panel p {
     font-size: 16px;
+    opacity: 0.9;
 }
 
 /* Forms Container */
@@ -1873,29 +1896,38 @@ section h2::after {
 .login-form input,
 .forgot-form input {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
     border: 1px solid #ccc;
     outline: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.login-form input:focus,
+.forgot-form input:focus {
+    box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+    transform: translateY(-2px);
 }
 
 .login-form button,
 .forgot-form button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     border: none;
     background: #0077b6;
     color: white;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .login-form button:hover,
 .forgot-form button:hover {
     background: #023e8a;
+    transform: scale(1.05) rotateZ(1deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* Toggle Link */
@@ -1906,6 +1938,12 @@ section h2::after {
     color: #0077b6;
     cursor: pointer;
     font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+    color: #023e8a;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 
 /* Hide forgot form initially */
@@ -1927,4 +1965,53 @@ section h2::after {
 .login-card.flip .forgot-form {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Vibration effect for invalid input */
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    animation: vibrate 0.3s linear;
+}
+
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: 14px 40px 14px 14px; /* space for the icon */
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #0077b6;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: #023e8a;
+    transform: scale(1.2);
 }

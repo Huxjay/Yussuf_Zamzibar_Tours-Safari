@@ -42,6 +42,7 @@
       <li><a href="index.php?page=transfer">transfer</a></li>
       <li><a href="index.php?page=login">Adimin Login</a></li>
       
+      
     </ul>
 </div>
 
@@ -58,6 +59,11 @@ switch ($page) {
          case 'login':
         include 'login.php';
         break;
+
+           case 'admin':
+        include 'admin.php';
+        break;
+
 
     default:
         // Your homepage content

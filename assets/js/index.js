@@ -2637,11 +2637,22 @@ function flipLoginCard() {
 
 // Optional: handle button clicks
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("loginBtn").addEventListener("click", () => {
+    const loginBtn = document.getElementById("loginBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    loginBtn.addEventListener("click", () => {
         alert("Login logic goes here");
     });
 
-    document.getElementById("resetBtn").addEventListener("click", () => {
+    resetBtn.addEventListener("click", () => {
         alert("Password reset logic goes here");
     });
 });
+
+
+// view password
+function togglePassword() {
+    const passwordInput = document.getElementById("passwordInput");
+    const type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
+}
