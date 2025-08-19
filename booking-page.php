@@ -1,61 +1,3 @@
-i get problem here with this desging the booking-page.php
-
-
-first o all the tour cards are sgaring the same booking button like this 
-
-
-<div class="tour-card" data-tour="spice-farm-prison-island-stone-town-tour-combination">
-  <img src="./assets/images/tours/Spice-Tour-07-768x512.jpg" alt="Spice Farm, Prison Island & Stone Town Tour Combination">
-  <h3>Spice Farm, Prison Island & Stone Town Tour Combination</h3>
-  <a href="tour-details.php?tour=spice-farm-prison-island-stone-town-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
-
-
-<div class="tour-card" data-tour="spice-farm-jozani-forest-rock-restaurant-tour-combination">
-  <img src="./assets/images/tours/Dining-at-The-Rock-Zanzibar-01-768x512.jpg" alt="Spice farm, Jozani forest & The Rock Restaurant Tour Combination">
-  <h3>Spice farm, Jozani forest & The Rock Restaurant Tour Combination</h3>
-  <a href="tour-details.php?tour=spice-farm-jozani-forest-rock-restaurant-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
-
-<div class="tour-card" data-tour="mnemba-island-swimming-with-turtles-nungwi-kendwa-tour-combination">
-  <img src="./assets/images/tours/Zanzibar-Nungwi-beach-768x575.webp" alt="Mnemba Island, Swimming with Turtles & Nungwi/Kendwa Beach Tour Combination">
-  <h3>Mnemba Island, Swimming with Turtles & Nungwi/Kendwa Beach Tour Combination</h3>
-  <a href="tour-details.php?tour=mnemba-island-swimming-with-turtles-nungwi-kendwa-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
-
-
-<div class="tour-card" data-tour="horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination">
-  <img src="./assets/images/tours/nungwi-bwach-3-768x453.jpg" alt="Horse Riding, Swimming with Turtles & Nungwi/Kendwa beach Tour Combination">
-  <h3>Horse Riding, Swimming with Turtles & Nungwi/Kendwa beach Tour Combination</h3>
-  <a href="tour-details.php?tour=horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
-
-<!-- Tour Popup -->
-<div id="tour-popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn">&times;</span>
-    <div id="tour-popup-tabs"></div>      <!-- unique ID -->
-    <div id="tour-popup-body"></div>      <!-- unique ID -->
-    <div class="popup-footer">
-    <a href="index.php?page=booking-page" class="book-btn">BOOK THIS TOUR</a>
-    </div>
-  </div>
-</div>
-
-
-so i did it to make sure we handle that issue and is successful, also the main idea is the when the user select tour take to the
-booktour-page where they van feel form ,
-then down there there is check box button so user can choose multiple  tours, so can click proceesd chossing tour then when he choose the another tour 
-the checkbutton is outo check will the first info filled remain the same, also the first checked box reamain
-
-problem is that when i click book tour and button checked,when i go and click another tour information remain but the first checkebox unchecked
-
-
-
-
-this is my booking-page.php 
-
-
 <?php
 // tours list (normally you would fetch from DB)
 $tours = [
@@ -167,8 +109,7 @@ $selectedTour = $_GET['tour'] ?? '';
       
       <!-- Buttons -->
       <div class="buttons">
-        <button type="button" class="proceed" id="proceedBtn">Proceed with Choosing Tours</button>
-        <button type="submit" class="complete">Complete Booking</button>
+<a href="index.php#tours" class="proceed">Proceed with Choosing Tours</a><button type="submit" class="complete">Complete Booking</button>
       </div>
     </form>
   </div>
@@ -188,34 +129,41 @@ $selectedTour = $_GET['tour'] ?? '';
       }
     });
   });
-
-  // Load form data when page loads
-  window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("#bookingForm input, #bookingForm textarea").forEach(el => {
-      if (el.type !== "checkbox" && localStorage.getItem(el.name)) {
-        el.value = localStorage.getItem(el.name);
-      }
-    });
-
-    // Restore tours
-    if (localStorage.getItem("tours")) {
-      let tours = JSON.parse(localStorage.getItem("tours"));
-      document.querySelectorAll("input[name='tours[]']").forEach(c => {
-        if (tours.includes(c.value)) c.checked = true;
-      });
+// Load form data when page loads
+window.addEventListener("DOMContentLoaded", () => {
+  // Restore saved text/number/email/date/textarea
+  document.querySelectorAll("#bookingForm input, #bookingForm textarea").forEach(el => {
+    if (el.type !== "checkbox" && localStorage.getItem(el.name)) {
+      el.value = localStorage.getItem(el.name);
     }
   });
 
-  // Handle Proceed button
-  document.getElementById("proceedBtn").addEventListener("click", () => {
-    // Save everything before leaving
-    document.querySelectorAll("#bookingForm input, #bookingForm textarea").forEach(el => {
-      if (el.type !== "checkbox") {
-        localStorage.setItem(el.name, el.value);
+  // ✅ Restore tours from localStorage
+  let savedTours = [];
+  if (localStorage.getItem("tours")) {
+    savedTours = JSON.parse(localStorage.getItem("tours"));
+    document.querySelectorAll("input[name='tours[]']").forEach(c => {
+      if (savedTours.includes(c.value)) c.checked = true;
+    });
+  }
+
+  // ✅ Force check the currently selected tour from URL (PHP echo)
+  const preselected = "<?= htmlspecialchars($tours[$selectedTour] ?? '') ?>";
+  if (preselected) {
+    document.querySelectorAll("input[name='tours[]']").forEach(c => {
+      if (c.value === preselected && !savedTours.includes(preselected)) {
+        c.checked = true;
+        savedTours.push(preselected);
       }
     });
-    window.location.href = "index.php#tours";
-  });
+    localStorage.setItem("tours", JSON.stringify(savedTours));
+  }
+});
+
+
+
+
+
   </script>
 
   <footer>
@@ -225,32 +173,3 @@ $selectedTour = $_GET['tour'] ?? '';
   <script src="./assets/js/index.js"></script>
 </body>
 </html>
-
-
-then this is the part of it in extermal js at index.js 
-
-
-
-  // ✅ Update the BOOK button dynamically
-  const bookBtn = document.querySelector('#tour-popup .book-btn');
-  if (bookBtn) {
-    bookBtn.href = `booking-page.php?tour=${encodeURIComponent(tourKey)}`;
-  }
-
-
-
-
-  then this one
-
-
-
-
-
-
-  $tours = [
-   "mikumi-national-park" => "Mikumi National Park",
-   "ngorongoro-tarangire-2days" => "Ngorongoro & Tarangire",
-   "ngorongoro-tarangire-lake-manyara-3days" => "Ngorongoro, Tarangire & Lake Manyara",
-   "serengeti-ngorongoro-3days" => "Serengeti & Ngorongoro",
-   "serengeti-tarangire-ngorongoro-4days" => "Serengeti, Tarangire & Ngorongoro"
-];

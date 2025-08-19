@@ -454,7 +454,7 @@ toursData["stone-town-prison-island-nakupenda-sandbank-tour-combination"] = {
 };
 
 
-toursData["spice-farm-jozani-forest-paje-beach-tour-combination"] = {
+toursData["jozani-forest-cave-swimming-tour-combination"] = {
   overview: `
     <h2>Overview</h2>
     <p>Looking for a tour that combines Zanzibar’s exotic spices, incredible wildlife, and stunning beaches?</p>
@@ -2036,7 +2036,6 @@ toursData["horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination"] =
   `
 };
 
-
 document.querySelectorAll('.view-tour-btn').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
@@ -2050,14 +2049,14 @@ function openTourPopup(tourKey) {
   if (!tour) return;
 
   const tabs = [
-  { key: 'overview', label: 'Overview' },
-  { key: 'itinerary', label: 'Itinerary' },
-  { key: 'price', label: 'Price' },
-  { key: 'includes', label: 'Includes' },
-  { key: 'excludes', label: 'Excludes' },   // <---- Add this
-  { key: 'gallery', label: 'Gallery' },
-  { key: 'faq', label: 'FAQ' }
-];
+    { key: 'overview', label: 'Overview' },
+    { key: 'itinerary', label: 'Itinerary' },
+    { key: 'price', label: 'Price' },
+    { key: 'includes', label: 'Includes' },
+    { key: 'excludes', label: 'Excludes' },
+    { key: 'gallery', label: 'Gallery' },
+    { key: 'faq', label: 'FAQ' }
+  ];
 
   const availableTabs = tabs.filter(tab => {
     const content = tour[tab.key];
@@ -2087,6 +2086,12 @@ function openTourPopup(tourKey) {
   document.querySelectorAll('#tour-popup .tab-btn').forEach(btn => {
     btn.addEventListener('click', () => loadTourTabContent(tourKey, btn.dataset.tab));
   });
+
+  // ✅ Update the BOOK button dynamically
+  const bookBtn = document.querySelector('#tour-popup .book-btn');
+  if (bookBtn) {
+    bookBtn.href = `booking-page.php?tour=${encodeURIComponent(tourKey)}`;
+  }
 
   document.getElementById('tour-popup').style.display = 'flex';
 }
@@ -2124,7 +2129,6 @@ function loadTourTabContent(tourKey, tab) {
     popupBody.innerHTML = tour[tab] || '<p>Content not available.</p>';
   }
 }
-
 
 
 
@@ -2656,3 +2660,20 @@ function togglePassword() {
     const type = passwordInput.type === "password" ? "text" : "password";
     passwordInput.type = type;
 }
+
+
+// Handle "Book this tour" click
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("bookTourBtn")) {
+        e.preventDefault();
+        const tourKey = e.target.dataset.tour; // get which tour button clicked
+
+        fetch("booking-page.php?tour=" + tourKey)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("main-content").innerHTML = html;
+                document.getElementById("main-content").scrollIntoView({ behavior: "smooth" });
+            });
+    }
+});
+

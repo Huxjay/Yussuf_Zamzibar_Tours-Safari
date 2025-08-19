@@ -30,6 +30,7 @@
       <a href="index.php#safari">Safari</a>
       <a href="index.php?page=transfer">Transfer</a>
       <a href="index.php?page=login">Adimin Login</a>
+
       <a href="#">Contact</a>
     </nav>
 </header>
@@ -41,10 +42,15 @@
       <li><a href="index.php#safari">Safari</a></li>
       <li><a href="index.php?page=transfer">transfer</a></li>
       <li><a href="index.php?page=login">Adimin Login</a></li>
+
+      
+
       
       
     </ul>
 </div>
+
+
 
 <!-- Main Content Area -->
 <main>
@@ -63,6 +69,11 @@ switch ($page) {
            case 'admin':
         include 'admin.php';
         break;
+
+           case 'booking-page':
+        include 'booking-page.php';
+        break;
+
 
 
     default:
@@ -325,10 +336,14 @@ switch ($page) {
     <div id="tour-popup-tabs"></div>      <!-- unique ID -->
     <div id="tour-popup-body"></div>      <!-- unique ID -->
     <div class="popup-footer">
-      <a href="booking-page.php" class="book-btn">BOOK THIS TOUR</a>
+    <a href="index.php?page=booking-page" class="book-btn">BOOK THIS TOUR</a>
     </div>
   </div>
 </div>
+
+
+
+
 
 </section>
 
@@ -395,7 +410,7 @@ switch ($page) {
     <div id="safari-popup-tabs"></div>    <!-- unique ID -->
     <div id="safari-popup-body"></div>    <!-- unique ID -->
     <div class="popup-footer">
-      <a href="booking-page.php" class="book-btn">BOOK THIS SAFARI</a>
+      <a href="safaribooking-page.php" class="book-btn">BOOK THIS SAFARI</a>
     </div>
   </div>
 </div>

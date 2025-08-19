@@ -2015,3 +2015,190 @@ section h2::after {
     color: #023e8a;
     transform: scale(1.2);
 }
+
+/* ===== Booking Page Styling (unique classes) ===== */
+.booking-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 0.6s ease;
+}
+
+.booking-container h1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #006D77;
+  margin-bottom: 20px;
+}
+
+/* ===== Compact Inputs ===== */
+#bookingForm label {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 6px 0 3px;
+  display: block;
+  color: #444;
+}
+
+#bookingForm input,
+#bookingForm textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #fff;
+  transition: 0.25s ease;
+}
+
+#bookingForm input:focus,
+#bookingForm textarea:focus {
+  border-color: #009688;
+  box-shadow: 0 0 6px rgba(0, 150, 136, 0.2);
+  outline: none;
+}
+
+#bookingForm textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* ===== Tours List Compact Cards ===== */
+.tours-list {
+  margin-top: 15px;
+}
+
+.tours-list h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #006D77;
+}
+
+
+
+/* ===== Tours List Compact Cards (2 Columns) ===== */
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.tours-grid1 label {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: 0.25s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tours-grid1 input[type="checkbox"] {
+  transform: scale(1.1);
+  accent-color: #009688;
+}
+
+.tours-grid1 label:hover {
+  background: #f0fdfb;
+  border-color: #009688;
+  transform: translateY(-2px);
+}
+
+.tours-list label {
+  display: block;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+.tours-list input[type="checkbox"] {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scale(1.1);
+  accent-color: #009688;
+}
+
+.tours-list label:hover {
+  background: #f0fdfb;
+  border-color: #009688;
+  transform: translateY(-2px);
+}
+
+/* ===== Buttons Styling ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.buttons button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.buttons .proceed {
+  background: linear-gradient(135deg, #009688, #00796b);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(0,150,136,0.3);
+}
+
+.buttons .proceed:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.buttons .complete {
+  background: linear-gradient(135deg, #FF9800, #e67e00);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(255,152,0,0.3);
+}
+
+.buttons .complete:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(25px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .booking-container {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .buttons button {
+    width: 100%;
+  }
+}
