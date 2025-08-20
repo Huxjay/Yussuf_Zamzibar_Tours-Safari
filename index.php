@@ -362,45 +362,59 @@ switch ($page) {
       <path d="M10 10 Q 30 0 50 10 T 90 10" />
     </svg>
   </div>
-
-  <div class="safari-grid">
+<div class="safari-grid">
 
     <div class="safari-card" data-safari="mikumi-national-park">
       <img src="./assets/images/safari/mikumi national park.webp" alt="Mikumi National Park Safari">
       <h3>Mikumi National Park</h3>
       <p class="safari-subtitle">(Full-Day Safari with Direct Flight from Zanzibar)</p>
-      <a href="#" class="view-safari-btn">View Safari</a>
+      <div class="card-buttons">
+        <a href="#" class="view-safari-btn">View Safari</a>
+        <a href="safaribooking-page.php?safari=mikumi-national-park" class="book-safari-btn">Book Now</a>
+      </div>
     </div>
 
     <div class="safari-card" data-safari="ngorongoro-tarangire-2days">
       <img src="./assets/images/safari/ngorongoro and tarangire.webp" alt="Ngorongoro & Tarangire - 2 Days / 1 Night Safari">
       <h3>Ngorongoro & Tarangire</h3>
       <p class="safari-subtitle">(2 Days / 1 Night - Safari)</p>
-      <a href="#" class="view-safari-btn">View Safari</a>
+      <div class="card-buttons">
+        <a href="#" class="view-safari-btn">View Safari</a>
+        <a href="safaribooking-page.php?safari=ngorongoro-tarangire-2days" class="book-safari-btn">Book Now</a>
+      </div>
     </div>
 
     <div class="safari-card" data-safari="ngorongoro-tarangire-lake-manyara-3days">
       <img src="./assets/images/safari/ngorongoro tarangire and lago manyara.jpg" alt="Ngorongoro, Tarangire & Lake Manyara - 3 Days / 2 Nights Safari">
       <h3>Ngorongoro, Tarangire & Lake Manyara</h3>
       <p class="safari-subtitle">(3 Days / 2 Nights – Safari)</p>
-      <a href="#" class="view-safari-btn">View Safari</a>
+      <div class="card-buttons">
+        <a href="#" class="view-safari-btn">View Safari</a>
+        <a href="safaribooking-page.php?safari=ngorongoro-tarangire-lake-manyara-3days" class="book-safari-btn">Book Now</a>
+      </div>
     </div>
 
     <div class="safari-card" data-safari="serengeti-ngorongoro-3days">
       <img src="./assets/images/safari/serenget and ngorongoro.jpg" alt="Serengeti & Ngorongoro - 3 Days / 2 Nights Safari">
       <h3>Serengeti & Ngorongoro</h3>
       <p class="safari-subtitle">(3 Days / 2 Nights Safari)</p>
-      <a href="#" class="view-safari-btn">View Safari</a>
+      <div class="card-buttons">
+        <a href="#" class="view-safari-btn">View Safari</a>
+        <a href="safaribooking-page.php?safari=serengeti-ngorongoro-3days" class="book-safari-btn">Book Now</a>
+      </div>
     </div>
 
     <div class="safari-card" data-safari="serengeti-tarangire-ngorongoro-4days">
       <img src="./assets/images/safari/serengeti tarangire and ngorongoro.jpg" alt="Serengeti, Tarangire & Ngorongoro - 4 Days / 3 Nights Safari">
       <h3>Serengeti, Tarangire & Ngorongoro</h3>
       <p class="safari-subtitle">(4 Days / 3 Nights Safari)</p>
-      <a href="#" class="view-safari-btn">View Safari</a>
+      <div class="card-buttons">
+        <a href="#" class="view-safari-btn">View Safari</a>
+        <a href="safaribooking-page.php?safari=serengeti-tarangire-ngorongoro-4days" class="book-safari-btn">Book Now</a>
+      </div>
     </div>
 
-  </div>
+</div>
 
 
 <!-- Safari Popup -->
@@ -410,7 +424,6 @@ switch ($page) {
     <div id="safari-popup-tabs"></div>    <!-- unique ID -->
     <div id="safari-popup-body"></div>    <!-- unique ID -->
     <div class="popup-footer">
-      <a href="safaribooking-page.php" class="book-btn">BOOK THIS SAFARI</a>
     </div>
   </div>
 </div>

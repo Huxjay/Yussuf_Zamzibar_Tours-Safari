@@ -2202,3 +2202,40 @@ section h2::after {
     width: 100%;
   }
 }
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.view-safari-btn, .book-safari-btn {
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
+}
+
+.view-safari-btn {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.view-safari-btn:hover {
+  background-color: #e9ecef;
+}
+
+.book-safari-btn {
+  background-color: #f0ad4e;
+  color: white;
+  border: 1px solid #eea236;
+}
+
+.book-safari-btn:hover {
+  background-color: #ec971f;
+  transform: translateY(-2px);
+}
