@@ -427,7 +427,7 @@ $selectedTour = $_GET['safari'] ?? null;
     </div>
     <?php endif; ?>
     
-    <form method="post" action="save_booking.php" id="bookingForm">
+    <form method="post" action="safari_save.php" id="bookingForm">
       <label>Name</label>
       <input type="text" name="name" required>
 

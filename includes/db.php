@@ -3,7 +3,7 @@
 $servername = "localhost";    // Usually localhost
 $username = "root";           // Your DB username
 $password = "";               // Your DB password
-$dbname = "tourism_system";   // Your database name
+$dbname = "tourism_db";   // Your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

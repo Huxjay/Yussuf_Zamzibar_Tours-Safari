@@ -71,7 +71,7 @@ $selectedTour = $_GET['tour'] ?? '';
 <style></style>
   <div class="booking-container">
     <h1>Tour Booking</h1>
-    <form action="process-booking.php" method="POST" id="bookingForm">
+    <form action="tour_save.php" method="POST" id="bookingForm">
       
       <!-- Personal Info -->
       <label>Full Name</label>
@@ -108,9 +108,14 @@ $selectedTour = $_GET['tour'] ?? '';
       <textarea name="preferences" rows="3" placeholder="Write your special requests or preferences..."></textarea>
       
       <!-- Buttons -->
-      <div class="buttons">
-<a href="index.php#tours" class="proceed">Proceed with Choosing Tours</a><button type="submit" class="complete">Complete Booking</button>
-      </div>
+      <!-- Buttons -->
+<div class="buttons">
+  <!-- Back link (just navigation, not DB) -->
+  <a href="index.php#tours" class="proceed">← Back to Tours</a>
+  
+  <!-- This one saves data to DB via process-booking.php -->
+  <button type="submit" class="complete">✅ Complete Booking</button>
+</div>
     </form>
   </div>
 
@@ -159,10 +164,6 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("tours", JSON.stringify(savedTours));
   }
 });
-
-
-
-
 
   </script>
 
