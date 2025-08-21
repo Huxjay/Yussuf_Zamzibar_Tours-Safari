@@ -96,13 +96,12 @@ $selectedTour = $_GET['tour'] ?? '';
     <?php foreach ($tours as $slug => $title): ?>
       <label>
         <?= htmlspecialchars($title) ?>
-        <input type="checkbox" name="tours[]" value="<?= htmlspecialchars($title) ?>"
+        <input type="checkbox" name="tours[]" value="<?= htmlspecialchars($slug) ?>"
           <?= ($slug === $selectedTour) ? 'checked' : '' ?>>
       </label>
     <?php endforeach; ?>
   </div>
 </div>
-      
       <!-- Approval Preference -->
       <label>Preferences About Tour Approval</label>
       <textarea name="preferences" rows="3" placeholder="Write your special requests or preferences..."></textarea>

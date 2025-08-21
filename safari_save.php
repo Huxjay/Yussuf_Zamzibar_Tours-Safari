@@ -1,6 +1,16 @@
 <?php
 // safari_save.php
 include 'includes/db.php'; // database connection
+require 'send_email.php';  // include email functions
+
+// Safari list (same as in your booking form)
+$tours = [
+  "mikumi-national-park" => "Mikumi National Park (Full-Day Safari with Direct Flight from Zanzibar)",
+  "ngorongoro-tarangire-2days" => "Ngorongoro & Tarangire (2 Days / 1 Night - Safari)",
+  "ngorongoro-tarangire-lake-manyara-3days" => "Ngorongoro, Tarangire & Lake Manyara (3 Days / 2 Nights – Safari)",
+  "serengeti-ngorongoro-3days" => "Serengeti & Ngorongoro (3 Days / 2 Nights Safari)",
+  "serengeti-tarangire-ngorongoro-4days" => "Serengeti, Tarangire & Ngorongoro (4 Days / 3 Nights Safari)",
+];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name       = $_POST['name'];
@@ -21,6 +31,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssssiss", $name, $email, $whatsapp, $safariDate, $people, $requests, $selectedSafari);
 
     if ($stmt->execute()) {
+        // ✅ Send admin notification email
+        $bookingData = [
+            'name'     => $name,
+            'email'    => $email,
+            'whatsapp' => $whatsapp,
+            'date'     => $safariDate,
+            'people'   => $people,
+            'requests' => $requests,
+            'safari'   => $safari
+        ];
+
+        $adminEmail = "husseinjuma0097@gmail.com"; // change to your real admin email
+        sendSafariBookingEmail($adminEmail, $bookingData, $tours);
+
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -84,7 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <div id="success-popup" class="popup">
             <div class="popup-content">
               <h2>✅ Safari Booking Submitted</h2>
-              <p>Your safari booking was submitted successfully!</p>
+              <p>Your safari booking was submitted successfully!<br>
+                 Our admin has been notified via email.</p>
               <button onclick="closePopup()">OK</button>
             </div>
           </div>
