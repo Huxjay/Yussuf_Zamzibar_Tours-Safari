@@ -198,7 +198,7 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
       <li><a href="admin.php" class="active">Welcome</a></li>
       <li><a href="admin.php?page=toursafari">Tours & Safari Management</a></li>
       <li><a href="admin.php?page=transfer_admin_side">Transport</a></li>
-      <li><a href="admin.php?page=reports">Reports</a></li>
+      <li><a href="admin.php?page=gallary">gallary</a></li>
       <li><a href="admin.php?page=notifications">Notifications</a></li>
       <li><a href="admin.php?page=settings">Settings</a></li>
       <li><a href="logout.php">Logout</a></li>
@@ -233,8 +233,8 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
           include 'transfer_admin_side.php';
           break;
 
-        case 'reports':
-          include 'reports.php';
+        case 'gallary':
+          include 'gallary.php';
           break;
 
         case 'notifications':
