@@ -199,7 +199,7 @@
 <section id="booking" class="booking-form scroll-animate">
   <div class="booking-container">
     <h2>Book Your Transfer</h2>
-    <form action="transport_save.php" method="POST" id="transportForm">
+    <form action="transfer_save.php" method="POST" id="transportForm">
       
       <!-- Personal Info -->
       <label>Full Name</label>
