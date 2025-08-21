@@ -195,18 +195,196 @@
     </div>
   </div>
 </section>
-
-<!-- Booking Form -->
+<!-- Transport Booking Form -->
 <section id="booking" class="booking-form scroll-animate">
-  <h2>Book Your Transfer</h2>
-  <form action="submit_booking.php" method="POST">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="text" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="pickup" placeholder="Pickup Location" required>
-    <input type="text" name="dropoff" placeholder="Drop-off Location" required>
-    <input type="date" name="date" required>
-    <input type="time" name="time" required>
-    <button type="submit" class="btn-primary">Book Now</button>
-  </form>
+  <div class="booking-container">
+    <h2>Book Your Transfer</h2>
+    <form action="transport_save.php" method="POST" id="transportForm">
+      
+      <!-- Personal Info -->
+      <label>Full Name</label>
+      <input type="text" name="name" placeholder="Enter your full name" required>
+      
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      
+      <label>Phone Number</label>
+      <input type="text" name="phone" placeholder="Enter your phone number" required>
+      
+      <!-- Location Details -->
+      <label>Pickup Location</label>
+      <input type="text" name="pickup" placeholder="Where should we pick you up?" required>
+      
+      <label>Drop-off Location</label>
+      <input type="text" name="dropoff" placeholder="Where would you like to be dropped?" required>
+      
+      <!-- Date and Time -->
+      <div class="datetime-row">
+        <div class="form-group">
+          <label>Pickup Date</label>
+          <input type="date" name="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Pickup Time</label>
+          <input type="time" name="time" required>
+        </div>
+      </div>
+      
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="index.php#transport" class="proceed">← Back to Services</a>
+        <button type="submit" class="complete">🚗 Book Transfer</button>
+      </div>
+    </form>
+  </div>
 </section>
+
+<style>
+.booking-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.booking-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 28px;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="date"],
+.booking-form input[type="time"],
+.booking-form input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.booking-form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.datetime-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.datetime-row .form-group {
+  flex: 1;
+}
+
+.datetime-row .form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.proceed {
+  padding: 12px 20px;
+  background: #95a5a6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.proceed:hover {
+  background: #7f8c8d;
+}
+
+.complete {
+  padding: 12px 25px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.complete:hover {
+  background: #219a52;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .datetime-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .proceed, .complete {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+// Scroll animation
+document.addEventListener('DOMContentLoaded', function() {
+  const animateElement = document.querySelector('.scroll-animate');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (animateElement) {
+    observer.observe(animateElement);
+  }
+});
+</script>
