@@ -230,3 +230,105 @@ body {
     margin-left: 0;
   }
 }
+
+
+/* gallary and price styling */
+
+.admin-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+.admin-card:hover {
+  transform: translateY(-6px);
+}
+.admin-card h3 {
+  color: #1abc9c;
+  margin-bottom: 10px;
+}
+.admin-card p {
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+.admin-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn-price {
+  background: #4facfe;
+  color: white;
+}
+.btn-price:hover {
+  background: #00c6ff;
+}
+.btn-gallery {
+  background: #f093fb;
+  color: white;
+}
+.btn-gallery:hover {
+  background: #f5576c;
+}
+
+
+/* pup model for gallarey and price */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #1e2537;
+  color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+}
+.modal .close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+  gap: 10px;
+  margin: 15px 0;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.gallery-grid .delete-btn {
+  display: block;
+  margin-top: 5px;
+  padding: 5px;
+  background: #e74c3c;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
