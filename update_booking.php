@@ -1,32 +1,49 @@
-
-
-
 <?php
 // update_booking.php
 include 'includes/db.php'; // Database connection
+include 'admin_send_email.php'; // Include the new email functions
 session_start();
 
 // Handle form submissions for tour and safari bookings
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['type'])) {
         $type = $_POST['type'];
+        $status = isset($_POST['approve']) ? 'confirmed' : 'cancelled';
         
         if ($type === 'tour') {
             // Handle tour booking updates
             $id = $_POST['booking_id'];
             
-            if (isset($_POST['approve'])) {
-                $stmt = $conn->prepare("UPDATE tourbookings SET status = 'confirmed' WHERE booking_id = ?");
-            } elseif (isset($_POST['cancel'])) {
-                $stmt = $conn->prepare("UPDATE tourbookings SET status = 'cancelled' WHERE booking_id = ?");
-            }
+            // Get booking details first
+            $stmt = $conn->prepare("SELECT * FROM tourbookings WHERE booking_id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $booking = $result->fetch_assoc();
+            $stmt->close();
             
-            if (isset($stmt)) {
+            if ($booking) {
+                // Update the status
+                if ($status === 'confirmed') {
+                    $stmt = $conn->prepare("UPDATE tourbookings SET status = 'confirmed' WHERE booking_id = ?");
+                } else {
+                    $stmt = $conn->prepare("UPDATE tourbookings SET status = 'cancelled' WHERE booking_id = ?");
+                }
+                
                 $stmt->bind_param("i", $id);
                 $stmt->execute();
                 $stmt->close();
                 
-                $_SESSION['message'] = "Tour booking updated successfully!";
+                // Send email to customer
+                $bookingDetails = [
+                    'date' => $booking['tour_date'],
+                    'people' => $booking['people'],
+                    'tours' => $booking['selected_tours']
+                ];
+                
+                sendTourStatusEmail($booking['email'], $booking['name'], $status, $bookingDetails);
+                
+                $_SESSION['message'] = "Tour booking updated and customer notified!";
                 $_SESSION['message_type'] = "success";
             }
             
@@ -34,18 +51,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Handle safari booking updates
             $id = $_POST['id'];
             
-            if (isset($_POST['approve'])) {
-                $stmt = $conn->prepare("UPDATE safaribookings SET status = 'confirmed' WHERE id = ?");
-            } elseif (isset($_POST['cancel'])) {
-                $stmt = $conn->prepare("UPDATE safaribookings SET status = 'cancelled' WHERE id = ?");
-            }
+            // Get booking details first
+            $stmt = $conn->prepare("SELECT * FROM safaribookings WHERE id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $booking = $result->fetch_assoc();
+            $stmt->close();
             
-            if (isset($stmt)) {
+            if ($booking) {
+                // Update the status
+                if ($status === 'confirmed') {
+                    $stmt = $conn->prepare("UPDATE safaribookings SET status = 'confirmed' WHERE id = ?");
+                } else {
+                    $stmt = $conn->prepare("UPDATE safaribookings SET status = 'cancelled' WHERE id = ?");
+                }
+                
                 $stmt->bind_param("i", $id);
                 $stmt->execute();
                 $stmt->close();
                 
-                $_SESSION['message'] = "Safari booking updated successfully!";
+                // Send email to customer
+                $bookingDetails = [
+                    'date' => $booking['safari_date'],
+                    'people' => $booking['people'],
+                    'safari' => $booking['selected_safari']
+                ];
+                
+                sendSafariStatusEmail($booking['email'], $booking['name'], $status, $bookingDetails);
+                
+                $_SESSION['message'] = "Safari booking updated and customer notified!";
                 $_SESSION['message_type'] = "success";
             }
         }
