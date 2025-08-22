@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // ✅ Send Email Notification to Admin
         $adminEmail = "husseinjuma0097@gmail.com"; // Change if needed
 
-        // Example tours list (slug => full name) - adjust as per your DB
+        // Example tours list (slug => full name) - adjust as per DB
         $toursList = [
             "stone-town"    => "Stone Town Tour",
             "prison-island" => "Prison Island Tour",

@@ -77,7 +77,7 @@ switch ($page) {
 
 
     default:
-        // Your homepage content
+        // homepage content
         ?>
 <section class="intro">
     <h2>Welcome to Zanzibar — Where Paradise Meets Adventure 🌴</h2>

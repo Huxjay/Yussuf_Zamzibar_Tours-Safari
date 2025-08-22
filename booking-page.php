@@ -1,5 +1,5 @@
 <?php
-// tours list (normally you would fetch from DB)
+// tours list (normally it would fetch from DB)
 $tours = [
     "safari-blue" => "Zanzibar Safari Blue Tour",
     "sunset-dhow-cruise" => "Sunset Dhow Cruise Zanzibar",

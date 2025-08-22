@@ -2,7 +2,7 @@
 // transport_save.php
 include 'includes/db.php'; // Database connection
 
-// In your update_booking.php file, add this case:
+// In  update_booking.php file, add this case:
 if (isset($_POST['type']) && $_POST['type'] === 'transport') {
     $id = $_POST['id'];
     
@@ -16,7 +16,7 @@ if (isset($_POST['type']) && $_POST['type'] === 'transport') {
     $stmt->execute();
     $stmt->close();
     
-    header("Location: transfer_admin_side.php");
+    header("Location: admin.php?page=transfer_admin_side");
     exit();
 }
 

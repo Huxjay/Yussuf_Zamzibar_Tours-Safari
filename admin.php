@@ -179,7 +179,7 @@ $todayBookings = $conn->query("
     ) as today
 ")->fetch_assoc()['total'];
 
-// Revenue (assuming average prices - you can adjust these)
+// Revenue (assuming average prices - we can adjust these)
 $safariRevenue = $conn->query("SELECT COUNT(*) as count FROM safaribookings WHERE status = 'confirmed'")->fetch_assoc()['count'] * 150;
 $tourRevenue = $conn->query("SELECT COUNT(*) as count FROM tourbookings WHERE status = 'confirmed'")->fetch_assoc()['count'] * 80;
 $transportRevenue = $conn->query("SELECT COUNT(*) as count FROM transport_booking WHERE status = 'confirmed'")->fetch_assoc()['count'] * 50;
@@ -237,8 +237,8 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
           include 'gallaryprice.php';
           break;
 
-        case 'notifications':
-          include 'notifications.php';
+        case 'toursafari':
+          include 'toursafari.php';
           break;
 
         case 'settings':

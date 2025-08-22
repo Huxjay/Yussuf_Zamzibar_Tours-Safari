@@ -8,7 +8,8 @@ $tourBookings = $conn->query("SELECT * FROM tourbookings ORDER BY created_at DES
 // Fetch Safari
 $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at DESC");
 ?>
-<style>/* ====== Booking Cards ====== */
+<style>
+/* ====== Booking Cards ====== */
 .booking-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -54,6 +55,34 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
 .booking-info b {
   color: #1abc9c;
   font-weight: 500;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.status-pending {
+  background-color: rgba(241, 196, 15, 0.2);
+  color: #f1c40f;
+  border: 1px solid rgba(241, 196, 15, 0.4);
+}
+
+.status-confirmed {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.status-cancelled {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.4);
 }
 
 /* Actions */
@@ -130,7 +159,8 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
     font-size: 13px;
     padding: 7px 12px;
   }
-}</style>
+}
+</style>
 <!-- Main Content -->
 <div class="main-content2">
   <h1>Tours & Safari Management</h1>
@@ -139,9 +169,16 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
   <!-- Tours Section -->
   <h2>Tour Bookings</h2>
   <div class="booking-container">
-    <?php while($tour = $tourBookings->fetch_assoc()): ?>
+    <?php while($tour = $tourBookings->fetch_assoc()): 
+      $statusClass = 'status-' . $tour['status'];
+    ?>
       <div class="booking-card">
-        <h3><?php echo htmlspecialchars($tour['name']); ?></h3>
+        <h3>
+          <?php echo htmlspecialchars($tour['name']); ?>
+          <span class="status-badge <?php echo $statusClass; ?>">
+            <?php echo ucfirst($tour['status']); ?>
+          </span>
+        </h3>
         <div class="booking-info">
           <p><b>Email:</b> <?php echo $tour['email']; ?></p>
           <p><b>WhatsApp:</b> <?php echo $tour['whatsapp']; ?></p>
@@ -149,20 +186,25 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
           <p><b>People:</b> <?php echo $tour['people']; ?></p>
           <p><b>Preferences:</b> <?php echo $tour['preferences']; ?></p>
           <p><b>Selected Tours:</b> <?php echo $tour['selected_tours']; ?></p>
-          <p><b>Status:</b> <?php echo ucfirst($tour['status']); ?></p>
           <p><b>Booked On:</b> <?php echo $tour['created_at']; ?></p>
         </div>
         <div class="booking-actions">
-          <form method="post" action="update_booking.php">
-            <input type="hidden" name="booking_id" value="<?php echo $tour['booking_id']; ?>">
-            <input type="hidden" name="type" value="tour">
-            <button type="submit" name="approve" class="btn-approve">Approve</button>
-          </form>
-          <form method="post" action="update_booking.php">
-            <input type="hidden" name="booking_id" value="<?php echo $tour['booking_id']; ?>">
-            <input type="hidden" name="type" value="tour">
-            <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
-          </form>
+          <?php if ($tour['status'] != 'confirmed'): ?>
+            <form method="post" action="update_booking.php">
+              <input type="hidden" name="booking_id" value="<?php echo $tour['booking_id']; ?>">
+              <input type="hidden" name="type" value="tour">
+              <button type="submit" name="approve" class="btn-approve">Approve</button>
+            </form>
+          <?php endif; ?>
+          
+          <?php if ($tour['status'] != 'cancelled'): ?>
+            <form method="post" action="update_booking.php">
+              <input type="hidden" name="booking_id" value="<?php echo $tour['booking_id']; ?>">
+              <input type="hidden" name="type" value="tour">
+              <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
+            </form>
+          <?php endif; ?>
+          
           <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $tour['whatsapp']); ?>" target="_blank" class="btn-whatsapp">WhatsApp</a>
         </div>
       </div>
@@ -172,9 +214,16 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
   <!-- Safari Section -->
   <h2>Safari Bookings</h2>
   <div class="booking-container">
-    <?php while($safari = $safariBookings->fetch_assoc()): ?>
+    <?php while($safari = $safariBookings->fetch_assoc()): 
+      $statusClass = 'status-' . $safari['status'];
+    ?>
       <div class="booking-card">
-        <h3><?php echo htmlspecialchars($safari['name']); ?></h3>
+        <h3>
+          <?php echo htmlspecialchars($safari['name']); ?>
+          <span class="status-badge <?php echo $statusClass; ?>">
+            <?php echo ucfirst($safari['status']); ?>
+          </span>
+        </h3>
         <div class="booking-info">
           <p><b>Email:</b> <?php echo $safari['email']; ?></p>
           <p><b>WhatsApp:</b> <?php echo $safari['whatsapp']; ?></p>
@@ -182,20 +231,25 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
           <p><b>People:</b> <?php echo $safari['people']; ?></p>
           <p><b>Preferences:</b> <?php echo $safari['requests']; ?></p>
           <p><b>Safari:</b> <?php echo $safari['selected_safari']; ?></p>
-          <p><b>Status:</b> <?php echo ucfirst($safari['status']); ?></p>
           <p><b>Booked On:</b> <?php echo $safari['created_at']; ?></p>
         </div>
         <div class="booking-actions">
-          <form method="post" action="update_booking.php">
-            <input type="hidden" name="id" value="<?php echo $safari['id']; ?>">
-            <input type="hidden" name="type" value="safari">
-            <button type="submit" name="approve" class="btn-approve">Approve</button>
-          </form>
-          <form method="post" action="update_booking.php">
-            <input type="hidden" name="id" value="<?php echo $safari['id']; ?>">
-            <input type="hidden" name="type" value="safari">
-            <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
-          </form>
+          <?php if ($safari['status'] != 'confirmed'): ?>
+            <form method="post" action="update_booking.php">
+              <input type="hidden" name="id" value="<?php echo $safari['id']; ?>">
+              <input type="hidden" name="type" value="safari">
+              <button type="submit" name="approve" class="btn-approve">Approve</button>
+            </form>
+          <?php endif; ?>
+          
+          <?php if ($safari['status'] != 'cancelled'): ?>
+            <form method="post" action="update_booking.php">
+              <input type="hidden" name="id" value="<?php echo $safari['id']; ?>">
+              <input type="hidden" name="type" value="safari">
+              <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
+            </form>
+          <?php endif; ?>
+          
           <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $safari['whatsapp']); ?>" target="_blank" class="btn-whatsapp">WhatsApp</a>
         </div>
       </div>

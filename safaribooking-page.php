@@ -1,5 +1,5 @@
 <?php
-// Safari tours - updated to match your index.php safari cards
+// Safari tours - updated to match  index.php safari cards
 $tours = [
   "mikumi-national-park" => "Mikumi National Park (Full-Day Safari with Direct Flight from Zanzibar)",
   "ngorongoro-tarangire-2days" => "Ngorongoro & Tarangire (2 Days / 1 Night - Safari)",
@@ -547,7 +547,7 @@ $selectedTour = $_GET['safari'] ?? null;
         });
         localStorage.setItem("safari", JSON.stringify(selectedTours));
         
-        // Redirect to index page - make sure this matches your page structure
+        // Redirect to index page - make sure this matches  page structure
         window.location.href = "index.php#safari";
       });
       
