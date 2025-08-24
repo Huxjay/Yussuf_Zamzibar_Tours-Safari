@@ -31,22 +31,17 @@
       <a href="index.php?page=transfer">Transfer</a>
       <a href="index.php?page=login">Adimin Login</a>
 
-      <a href="#">Contact</a>
     </nav>
 </header>
 
 <div id="sidebar">
     <div class="close-btn" onclick="toggleSidebar()">✖</div>
     <ul>
+      <li><a href="index.php">Home</a></li>
       <li><a href="index.php#tours">Tours</a></li>
       <li><a href="index.php#safari">Safari</a></li>
       <li><a href="index.php?page=transfer">transfer</a></li>
       <li><a href="index.php?page=login">Adimin Login</a></li>
-
-      
-
-      
-      
     </ul>
 </div>
 
@@ -163,12 +158,6 @@ switch ($page) {
 </div>
 
 
-<div class="tour-card" data-tour="swimming-with-dolphins-in-zanzibar">
-  <img src="./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar_M4kn3.jpeg" 
-       alt="Swimming With Dolphins in Zanzibar">
-  <h3>Swimming With Dolphins in Zanzibar</h3>
-  <a href="#" class="view-tour-btn">View Tour</a>
-</div>
 
 
 <div class="tour-card" data-tour="jozani-forest-cave-swimming-tour-combination">
@@ -188,24 +177,6 @@ switch ($page) {
 </div>
 
 
-<div class="tour-card" data-tour="spice-farm-jozani-forest-paje-beach-tour-combination">
-  <img src="./assets/images/tours/Spice-Tour-05-768x512.jpg" alt="Zanzibar Spice Farm Tour">
-  <h3>Spice farm, Jozani forest & Paje beach Tour Combination</h3>
-  <a href="tour-details.php?tour=spice-farm-jozani-forest-paje-beach-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
-
-
-<div class="tour-card" data-tour="zanzibar-spice-farm-tour">
-  <img src="./assets/images/tours/spice tour.jpg" alt="Zanzibar Spice Farm Tour">
-  <h3>Zanzibar Spice Farm Tour</h3>
-  <a href="tour-details.php?tour=zanzibar-spice-farm-tour" class="view-tour-btn">View Tour</a>
-</div>
-
-<div class="tour-card" data-tour="jozan-forest-tour-zanzibar">
-  <img src="./assets/images/tours/Jozani-Forest-Tour-01-1.jpg" alt="Jozan Forest Tour Zanzibar">
-  <h3>Jozan Forest Tour Zanzibar</h3>
-  <a href="tour-details.php?tour=jozan-forest-tour-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
 
 
 <div class="tour-card" data-tour="nakupenda-sandbank-tour-zanzibar">
@@ -214,18 +185,7 @@ switch ($page) {
   <a href="tour-details.php?tour=nakupenda-sandbank-tour-zanzibar" class="view-tour-btn">View Tour</a>
 </div>
 
-<div class="tour-card" data-tour="prison-island-tour-zanzibar">
-  <img src="./assets/images/tours/Prison-Island-Tour-09-1-768x512.jpg" alt="Prison Island Tour Zanzibar">
-  <h3>Prison Island Tour Zanzibar</h3>
-  <a href="tour-details.php?tour=prison-island-tour-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
 
-
-<div class="tour-card" data-tour="village-tour-zanzibar">
-  <img src="./assets/images/tours/nungwi.jpg" alt="Village Tour Zanzibar: Experience the Real Island Life">
-  <h3>Village Tour Zanzibar: Experience the Real Island Life</h3>
-  <a href="tour-details.php?tour=village-tour-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
 
 <div class="tour-card" data-tour="mnemba-atoll-snorkeling-trip-zanzibar">
   <img src="./assets/images/tours/atoll.jpg" alt="Mnemba Atoll Snorkeling Trip Zanzibar">
@@ -233,23 +193,7 @@ switch ($page) {
   <a href="tour-details.php?tour=mnemba-atoll-snorkeling-trip-zanzibar" class="view-tour-btn">View Tour</a>
 </div>
 
-<div class="tour-card" data-tour="cave-swimming-in-zanzibar">
-  <img src="./assets/images/tours/Cultural-Experience-at-Kuza-Cave-with-Dining-at-The-Rock-Restaurant-01-768x512.jpg" alt="Cave swimming in Zanzibar: Maalum Cave, Kuza Cave or Swahili Cave">
-  <h3>Cave swimming in Zanzibar: Maalum Cave, Kuza Cave or Swahili Cave</h3>
-  <a href="tour-details.php?tour=cave-swimming-in-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
 
-<div class="tour-card"  data-tour= "swimming-with-turtles-in-zanzibar">
-  <img src="./assets/images/tours/swim-with-turtles-2.jpg" alt="Swimming with Turtles in Zanzibar">
-  <h3>Swimming with Turtles in Zanzibar</h3>
-  <a href="tour-details.php?tour=swimming-with-turtles-in-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
-
-<div class="tour-card" data-tour="horse-riding-in-zanzibar">
-  <img src="./assets/images/tours/horse-riding-9-768x536.jpg" alt="Horse Riding in Zanzibar">
-  <h3>Horse Riding in Zanzibar</h3>
-  <a href="tour-details.php?tour=horse-riding-in-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
 
 
 <div class="tour-card" data-tour="quad-biking-in-zanzibar">
@@ -258,17 +202,9 @@ switch ($page) {
   <a href="tour-details.php?tour=quad-biking-in-zanzibar" class="view-tour-btn">View Tour</a>
 </div>
 
-<div class="tour-card" data-tour="kite-surfing-zanzibar">
-  <img src="./assets/images/tours/kite-surfing-4.webp" alt="Kite Surfing Zanzibar">
-  <h3>Kite Surfing Zanzibar</h3>
-  <a href="tour-details.php?tour=kite-surfing-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
 
-<div class="tour-card" data-tour="scuba-diving-in-zanzibar">
-  <img src="./assets/images/tours/scuba-diving-768x512.jpg" alt="Scuba Diving in Zanzibar">
-  <h3>Scuba Diving in Zanzibar</h3>
-  <a href="tour-details.php?tour=scuba-diving-in-zanzibar" class="view-tour-btn">View Tour</a>
-</div>
+
+
 
 <div class="tour-card" data-tour="game-fishing-zanzibar">
   <img src="./assets/images/tours/game-fishing-3-768x576.jpg" alt="Game Fishing Zanzibar">
@@ -283,11 +219,6 @@ switch ($page) {
 </div>
 
 
-<div class="tour-card" data-tour="spice-farm-stone-town-tour-combination">
-  <img src="./assets/images/tours/Stone-Town-Walking-Tour-05-768x512.jpg" alt="Stone Town & Prison Island Tour Combination">
-  <h3>Stone Town & Prison Island Tour Combination</h3>
-  <a href="tour-details.php?tour=stone-town-prison-island-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
 
 <div class="tour-card" data-tour="spice-farm-jozani-forest-tour-combination">
   <img src="./assets/images/tours/Jozani-Forest-Tour-01-1-768x512.jpg" alt="Spice Farm & Jozani Forest Tour Combination">
@@ -296,25 +227,8 @@ switch ($page) {
 </div>
 
 
-<div class="tour-card" data-tour="village-tour-stone-town-tour-combination">
-  <img src="./assets/images/tours/village-tour-768x489.webp" alt="Village Tour & Stone Town Tour Combination">
-  <h3>Village Tour & Stone Town Tour Combination</h3>
-  <a href="tour-details.php?tour=village-tour-stone-town-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
 
 
-<div class="tour-card" data-tour="spice-farm-prison-island-stone-town-tour-combination">
-  <img src="./assets/images/tours/Spice-Tour-07-768x512.jpg" alt="Spice Farm, Prison Island & Stone Town Tour Combination">
-  <h3>Spice Farm, Prison Island & Stone Town Tour Combination</h3>
-  <a href="tour-details.php?tour=spice-farm-prison-island-stone-town-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
-
-
-<div class="tour-card" data-tour="spice-farm-jozani-forest-rock-restaurant-tour-combination">
-  <img src="./assets/images/tours/Dining-at-The-Rock-Zanzibar-01-768x512.jpg" alt="Spice farm, Jozani forest & The Rock Restaurant Tour Combination">
-  <h3>Spice farm, Jozani forest & The Rock Restaurant Tour Combination</h3>
-  <a href="tour-details.php?tour=spice-farm-jozani-forest-rock-restaurant-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
 
 <div class="tour-card" data-tour="mnemba-island-swimming-with-turtles-nungwi-kendwa-tour-combination">
   <img src="./assets/images/tours/Zanzibar-Nungwi-beach-768x575.webp" alt="Mnemba Island, Swimming with Turtles & Nungwi/Kendwa Beach Tour Combination">
@@ -323,11 +237,7 @@ switch ($page) {
 </div>
 
 
-<div class="tour-card" data-tour="horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination">
-  <img src="./assets/images/tours/nungwi-bwach-3-768x453.jpg" alt="Horse Riding, Swimming with Turtles & Nungwi/Kendwa beach Tour Combination">
-  <h3>Horse Riding, Swimming with Turtles & Nungwi/Kendwa beach Tour Combination</h3>
-  <a href="tour-details.php?tour=horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination" class="view-tour-btn">View Tour</a>
-</div>
+
 
 <!-- Tour Popup -->
 <div id="tour-popup" class="popup">

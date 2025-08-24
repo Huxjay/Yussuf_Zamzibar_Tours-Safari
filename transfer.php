@@ -132,17 +132,17 @@
   <h2>Our Cars</h2>
   <div class="car-cards">
     <div class="car-card scroll-animate">
-      <img src="images/toyota-alphard.jpg" alt="Toyota Alphard">
+      <!-- <img src="./assets/images/transfar/0.jpg" alt="Toyota Alphard"> -->
       <h3>Toyota Alphard</h3>
       <p>For 1-6 passengers</p>
     </div>
     <div class="car-card scroll-animate">
-      <img src="images/coaster-bus.jpg" alt="Coaster Bus">
+      <!-- <img src="./assets/images/transfar/.jpg" alt="Coaster Bus"> -->
       <h3>Coaster Bus</h3>
       <p>For 15-28 passengers</p>
     </div>
     <div class="car-card scroll-animate">
-      <img src="images/hiace.jpg" alt="Toyota Hiace">
+      <!-- <img src="./assets/images/transfarjpg" alt="Toyota Hiace"> -->
       <h3>Toyota Hiace</h3>
       <p>For 7-14 passengers</p>
     </div>

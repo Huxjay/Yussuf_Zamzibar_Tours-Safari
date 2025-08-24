@@ -141,24 +141,20 @@ const toursData = {
     `,
     price: `
       <h2>Price</h2>
-      <p><strong>$50 per person</strong> (includes transport, lunch, and snorkeling gear)</p>
+      <p><strong>$115 per person</strong> (includes transport ,food and soft drinks)</p>
 
     `,
-    includes: `
-      <h2>Includes</h2>
-      <ul>
-        <li>Transport to/from hotel</li>
-        <li>Seafood lunch</li>
-        <li>Snorkeling gear</li>
-        <li>Drinks & fruits</li>
-        <li>Guide services</li>
-      </ul>
-
-    `,
+    
     gallery: [
-      "./assets/images/20240119_125319.jpg",
-      "./assets/images/20240119_125307.jpg",
-      "./assets/images/tours/Safari-Blue-Adventure-08 (2).jpg"
+      "./assets/images/tours/BlueSafari/0.jpg",
+      "./assets/images/tours/BlueSafari/1.jpg",
+      "./assets/images/tours/BlueSafari/2.jpg",
+      "./assets/images/tours/BlueSafari/3.jpg",
+      "./assets/images/tours/BlueSafari/4.jpg",
+      "./assets/images/tours/BlueSafari/5.jpg",
+      "./assets/images/tours/BlueSafari/6.jpg",
+      "./assets/images/tours/BlueSafari/8.jpg",
+     
     ]
     ,
     faq: `
@@ -207,23 +203,19 @@ toursData["sunset-dhow-cruise"] = {
   `,
   price: `
     <h2>Price</h2>
-    <p><strong>$40 per person</strong> (includes drinks, snacks, and hotel transfers)</p>
+    <p><strong>70 per person</strong> (includes transport ,soft drinks,)</p>
   `,
-  includes: `
-    <h2>Includes</h2>
-    <ul>
-      <li>Hotel pickup & drop-off</li>
-      <li>Traditional dhow cruise</li>
-      <li>Snacks & drinks</li>
-      <li>Music & entertainment</li>
-      <li>Friendly crew & guide</li>
-    </ul>
-  `,
+  
   gallery: [
-    "./assets/images/tours/Sunset-Dhow-Cruise-01.jpg",
-    "./assets/images/tours/Sunset-Dhow-Cruise-02.jpg",
-    "./assets/images/tours/Sunset-Dhow-Cruise-03.jpg",
-    "./assets/images/tours/Sunset-Dhow-Cruise-04.jpg"
+      "./assets/images/tours/sunset/0.jpg",
+      "./assets/images/tours/sunset/1.jpg",
+      "./assets/images/tours/sunset/2.jpg",
+      "./assets/images/tours/sunset/3.jpg",
+      "./assets/images/tours/sunset/4.jpg",
+      "./assets/images/tours/sunset/5.jpg",
+      "./assets/images/tours/sunset/6.jpg",
+      "./assets/images/tours/sunset/7.jpg",
+      "./assets/images/tours/sunset/8.jpg",
   ],
   faq: `
     <h2>FAQ</h2>
@@ -233,107 +225,6 @@ toursData["sunset-dhow-cruise"] = {
   `
 };
 
-
-
-toursData["swimming-with-dolphins-in-zanzibar"] = {
-  overview: `
-    <h2>Overview</h2>
-    <p>Swimming with Dolphins in Zanzibar offers an unforgettable experience in the crystal-clear waters of the Indian Ocean.</p>
-    <p>The two main spots for dolphin tours are Mnemba Atoll and Kizimkazi.</p>
-    <p>At Blue Green Zanzibar Tours, we prefer dolphin experiences around Mnemba Atoll, and trust us—it’s the best spot for this magical encounter!</p>
-
-    <h3>Why Mnemba Over Kizimkazi?</h3>
-    <ul>
-      <li><strong>More Ethical & Less Crowded:</strong> Unlike Kizimkazi, where multiple boats often chase the dolphins, Mnemba offers a more relaxed, ethical, and less intrusive experience. The dolphins here are more comfortable, making for a better and more natural swim.</li>
-      <li><strong>Clearer, Calmer Waters:</strong> Mnemba is known for its turquoise, glass-like waters, offering better visibility when swimming or snorkeling. You won’t just see dolphins—you’ll see them in their full, breathtaking beauty.</li>
-    </ul>
-
-    <h3>More Than Just Dolphins</h3>
-    <p>After your dolphin encounter, you’ll explore Mnemba’s world-famous coral reefs, home to tropical fish, sea turtles, and stunning marine life. It’s a two-in-one adventure!</p>
-
-    <h3>Less Travel, More Fun</h3>
-    <p>Mnemba is closer to most hotels in the north (Nungwi, Kendwa, Matemwe), meaning less time on the road and more time in the water!</p>
-
-    <p><em>Prefer Kizimkazi? Contact us!</em></p>
-
-    <h3>Booking & Transportation</h3>
-    <p>Booking your Dolphin Tour with Blue Green Zanzibar Tours is super easy! You can reserve online, via WhatsApp, or call us. We offer flexible payments and provide hotel pickup and drop-off for a smooth, stress-free experience.</p>
-    <p>Just relax and get ready for an unforgettable adventure swimming with dolphins.</p>
-  `,
-
-  itinerary: `
-    <h2>Trip Itinerary</h2>
-    <p><strong>Tour Duration:</strong> Half-Day (Approximately 3-4 Hours)</p>
-    <p><strong>Best Time:</strong> Early Morning (06:00 AM – 10:00 AM)</p>
-    <p><strong>Location:</strong> Mnemba Atoll, Zanzibar</p>
-
-    <h3>Hotel Pick-up</h3>
-    <ul>
-      <li>Your driver will pick you up from your hotel.</li>
-      <li>Transfer to Matemwe, the departure point for Mnemba Atoll.</li>
-    </ul>
-
-    <h3>Boat Departure to Mnemba Atoll</h3>
-    <ul>
-      <li>Meet your boat captain and guide.</li>
-      <li>Briefing on safety, snorkeling techniques, and responsible dolphin encounters.</li>
-      <li>Life jackets and snorkeling gear provided.</li>
-    </ul>
-
-    <h3>Dolphin Spotting & Swimming</h3>
-    <ul>
-      <li>Sail to the dolphin hotspot near Mnemba Atoll.</li>
-      <li>Observe wild bottlenose and spinner dolphins in their natural habitat.</li>
-      <li>Swim alongside them while respecting their space.</li>
-    </ul>
-
-    <h3>Snorkeling at Mnemba Coral Reef</h3>
-    <ul>
-      <li>Discover vibrant marine life and coral formations.</li>
-      <li>Relax in the crystal-clear waters.</li>
-    </ul>
-
-    <h3>Refreshments & Relaxation</h3>
-    <ul>
-      <li>Enjoy fresh tropical fruits and water on the boat.</li>
-      <li>Relax or swim around the atoll.</li>
-    </ul>
-
-    <h3>Return & Drop-off</h3>
-    <ul>
-      <li>Boat ride back to Matemwe.</li>
-      <li>Hotel drop-off, concluding the tour.</li>
-    </ul>
-  `,
-
-  price: `
-    <h2>Price</h2>
-    <p><strong>$40 per person</strong> (includes transport, snorkeling gear, and refreshments)</p>
-  `,
-
-  includes: `
-    <h2>Includes</h2>
-    <ul>
-      <li>Hotel pickup & drop-off</li>
-      <li>Snorkeling gear</li>
-      <li>Life jackets</li>
-      <li>Fresh tropical fruits & water</li>
-      <li>Guide services</li>
-    </ul>
-  `,
-
-  gallery: [
-    "./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar_M4kn3.jpeg"
-  ],
-
-  faq: `
-    <h2>FAQ</h2>
-    <p><strong>Q:</strong> Do I need to be a good swimmer?<br><strong>A:</strong> Not necessarily—life jackets are provided.</p>
-    <p><strong>Q:</strong> Is it guaranteed to see dolphins?<br><strong>A:</strong> We can’t guarantee, but sightings are very common at Mnemba.</p>
-    <p><strong>Q:</strong> Can children join this tour?<br><strong>A:</strong> Yes, but parental supervision is required.</p>
-  `
-};
-  
 
 
 
@@ -364,24 +255,20 @@ toursData["jozani-forest-cave-swimming-tour-combination"] = {
   `,
   price: `
     <h2>Price</h2>
-    <p>Contact us for the latest rates — we offer competitive pricing for individuals and groups.</p>
-    <p>Includes transport, park entry fees, guide services, and cave swimming access.</p>
+    <p><strong>120 per person</strong> (includes transport ,soft drinks,)</p>
   `,
-  includes: `
-    <h2>Includes</h2>
-    <ul>
-      <li>Hotel pickup & drop-off</li>
-      <li>Experienced local guide</li>
-      <li>Jozani Forest park fees</li>
-      <li>Cave swimming entry</li>
-      <li>Freshwater swimming</li>
-    </ul>
-  `,
+  
   gallery: [
-    "./assets/images/tours/Jozani-Forest-Tour-01-1 (1).jpg",
-    "./assets/images/tours/jozani-monkeys.jpg",
-    "./assets/images/tours/jozani-mangrove.jpg",
-    "./assets/images/tours/cave-swimming.jpg"
+    "./assets/images/tours/jozan/0.jpg",
+      "./assets/images/tours/jozan/1.jpg",
+      "./assets/images/tours/jozan/2.jpg",
+      "./assets/images/tours/jozan/3.jpg",
+      "./assets/images/tours/jozan/4.jpg",
+      "./assets/images/tours/jozan/5.jpg",
+      "./assets/images/tours/jozan/6.jpg",
+      "./assets/images/tours/jozan/7.jpg",
+      "./assets/images/tours/jozan/8.jpg",
+      "./assets/images/tours/jozan/9.jpg",
   ],
   faq: `
     <h2>FAQ</h2>
@@ -427,23 +314,18 @@ toursData["stone-town-prison-island-nakupenda-sandbank-tour-combination"] = {
   `,
   price: `
     <h2>Price</h2>
-    <p>Please contact us for the latest pricing. Rates include guided tours, entry fees, lunch, and all activities.</p>
+    <p><strong>150 per person</strong> (includes transport ,soft drinks,)</p>
   `,
-  includes: `
-    <h2>Includes</h2>
-    <ul>
-      <li>Hotel pickup & drop-off</li>
-      <li>Professional guide</li>
-      <li>Entry fees to Stone Town sites & Prison Island</li>
-      <li>Snorkeling gear</li>
-      <li>Seafood lunch at Nakupenda</li>
-    </ul>
-  `,
+ 
   gallery: [
-    "./assets/images/tours/Stone-Town-Walking-Tour-02-768x512.jpg",
-    "./assets/images/tours/stone-town-doors.jpg",
-    "./assets/images/tours/prison-island-tortoises.jpg",
-    "./assets/images/tours/nakupenda-sandbank.jpg"
+   "./assets/images/tours/nakupenda/0.jpg",
+      "./assets/images/tours/nakupenda/1.jpg",
+      "./assets/images/tours/nakupenda/2.jpg",
+      "./assets/images/tours/nakupenda/3.jpg",
+      "./assets/images/tours/nakupenda/4.jpg",
+      "./assets/images/tours/nakupenda/5.jpg",
+      "./assets/images/tours/nakupenda/7.jpg",
+      "./assets/images/tours/nakupenda/8.jpg",
   ],
   faq: `
     <h2>FAQ</h2>
@@ -454,229 +336,6 @@ toursData["stone-town-prison-island-nakupenda-sandbank-tour-combination"] = {
 };
 
 
-toursData["jozani-forest-cave-swimming-tour-combination"] = {
-  overview: `
-    <h2>Overview</h2>
-    <p>Looking for a tour that combines Zanzibar’s exotic spices, incredible wildlife, and stunning beaches?</p>
-    <p>Our Spice Farm, Jozani Forest & Paje Beach Tour is the ultimate mix of adventure and relaxation!</p>
-    <p>Immerse yourself in the rich aromas of Zanzibar’s famous spices, walk among the rare Red Colobus Monkeys in Jozani Forest, and end your day on the white sandy shores of Paje Beach, one of the most beautiful beaches on the island.</p>
-
-    <h3>Stop 1: Spice Farm – Smell, Taste & Experience Zanzibar’s Spice Heritage</h3>
-    <ul>
-      <li>See, touch, and taste fresh spices like cloves, vanilla, cinnamon, nutmeg, and cardamom.</li>
-      <li>Learn about traditional spice farming and how these flavors have shaped Zanzibar’s culture.</li>
-      <li>Watch a coconut tree climber in action and sip fresh coconut water straight from the source.</li>
-      <li>Smell the rich aroma of exotic herbs and fruits growing all around you.</li>
-      <li><em>Bonus:</em> Take home organic, locally grown spices as the perfect souvenir!</li>
-    </ul>
-
-    <h3>Stop 2: Jozani Forest – Walk Among the Red Colobus Monkeys</h3>
-    <ul>
-      <li>Spot the friendly monkeys swinging from the trees—don’t be surprised if they come close for a better look!</li>
-      <li>Walk through the beautiful mahogany and eucalyptus trees, soaking in the fresh air.</li>
-      <li>Discover the magical mangrove boardwalk, where you’ll see crabs, fish, and unique swamp vegetation.</li>
-      <li>Learn about conservation efforts to protect Zanzibar’s rare wildlife and fragile ecosystem.</li>
-      <li><em>Fun Fact:</em> The Red Colobus Monkeys are completely fearless of humans, making them super easy to photograph up close!</li>
-    </ul>
-
-    <h3>Stop 3: Paje Beach – The Ultimate Tropical Escape</h3>
-    <ul>
-      <li>Relax on soft white sand while enjoying the warm Indian Ocean breeze.</li>
-      <li>Swim in crystal-clear turquoise waters—perfect for cooling off after your tour.</li>
-      <li>Try out some beachside restaurants and cafés, serving fresh seafood, tropical juices, and refreshing cocktails.</li>
-      <li>Watch kite surfers in action—Paje is one of the top kitesurfing destinations in the world!</li>
-      <li><em>Insider Tip:</em> If you’re feeling adventurous, you can try kitesurfing, paddleboarding, or even a sunset beach walk!</li>
-    </ul>
-
-    <h3>Booking & Transportation</h3>
-    <p>Booking your Spice Farm, Jozani Forest & Paje Beach Tour is quick and hassle-free! Simply fill out our booking form or reach out via call or WhatsApp for instant assistance.</p>
-    <p>We offer multiple payment options to suit your convenience, including credit cards (Visa, MasterCard, American Express), bank transfers, and cash, making it easy to secure your spot.</p>
-    <p>For a stress-free experience, we provide comfortable transportation directly from your accommodation, ensuring a smooth and seamless journey from start to finish.</p>
-  `,
-  itinerary: null,  // No itinerary content provided; set to null to avoid 'undefined'
-  price: null,      // You can fill this if needed, or keep null
-  includes: null,   // You can fill this if needed, or keep null
-  gallery: [
-    "./assets/images/tours/Jozani-Forest-Tour-08-1-768x512.jpg",
-    "./assets/images/tours/spice-farm.jpg",
-    "./assets/images/tours/paje-beach.jpg"
-  ],
-  faq: null         // You can add FAQs here or keep null
-};
-
-
-
-toursData["zanzibar-spice-farm-tour"] = {
-  overview: `
-    <h2>Overview</h2>
-    <p>Ready for an adventure that will tickle your senses and deepen your love for nature?</p>
-    <p>Zanzibar Spice Farm Tour is an absolute must when you’re on the island.</p>
-    <p>Picture this:</p>
-    <p>You’re walking through lush green plantations, where the air is alive with the scent of exotic spices like cinnamon, vanilla, and cloves—spices that have shaped Zanzibar’s history and made it famous around the world.</p>
-    <p>Our friendly and knowledgeable guides will take you behind the scenes of this magical world, showing you how these spices grow, are harvested, and turned into the flavors you enjoy.</p>
-    <p>And here’s the fun part—you’ll get to touch, smell, and even taste these spices straight from the source. It’s a full sensory experience!</p>
-    <p>We also include a fruit tasting session, where you’ll try tropical delights like jackfruit, starfruit, and Zanzibari bananas.</p>
-    <p>Trust us, they taste different when eaten right where they’re grown.</p>
-    <p>But it’s not just about the spices!</p>
-    <p>You’ll also get a glimpse into the local culture, meet the farmers who dedicate their lives to this craft, and even learn about the traditional uses of spices in Swahili cooking and medicine.</p>
-    <p>Plus, there’s always a chance for a little fun with coconut climbing demonstrations—get your cameras ready for that!</p>
-    <p>This tour is perfect for food lovers, culture enthusiasts, or anyone looking to do something uniquely Zanzibari.</p>
-    <p>So, come along and let us take you on this sensory adventure—you’ll never look at spices the same way again!</p>
-    <h3>Booking and Transportation</h3>
-    <p>Booking your Zanzibar Spice Farm Tour with Blue Green Zanzibar Tours is as easy as pie!</p>
-    <p>You can reserve your spot online using our simple booking form, reach out to us via WhatsApp, or give us a quick call—we’re always here to make the process smooth and stress-free.</p>
-    <p>We also offer flexible payment options to fit your preferences, whether you’d like to pay by credit card, bank transfer, or good old-fashioned cash.</p>
-    <p>And don’t worry about getting there—we’ve got your transportation covered!</p>
-    <p>Relax with our comfortable pick-up and drop-off service from your hotel, so you can fully immerse yourself in the sights, scents, and tastes of Zanzibar’s spice farms without a single worry.</p>
-    <p>Let us handle the logistics while you focus on enjoying this unforgettable experience!</p>
-  `,
-
-  itinerary: `
-    <h2>Spice Farm Tour Itinerary</h2>
-    <p><strong>Duration:</strong> Approximately 3-4 hours</p>
-    <p><strong>Start Time:</strong> Flexible, based on your preference</p>
-    <ul>
-      <li><strong>Pick-up from Your Hotel:</strong> We’ll pick you up from your hotel in a comfortable, air-conditioned vehicle. Sit back, relax, and enjoy the scenic drive through Zanzibar’s picturesque countryside.</li>
-      <li><strong>Arrival at the Spice Farm:</strong> Welcome to one of Zanzibar’s lush spice plantations! Our friendly guide will greet you and give a quick introduction to the tour.</li>
-      <li><strong>Spice Walk & Exploration:</strong> Stroll through the farm as your guide unveils the secrets of Zanzibar’s most famous spices—cinnamon, cloves, vanilla, nutmeg, and more! Learn how these spices are grown, harvested, and used in daily life. Touch, smell, and taste fresh spices directly from the plants.</li>
-      <li><strong>Spice Shopping (Optional):</strong> Browse and buy fresh spices, handmade soaps, and other unique products to take a piece of Zanzibar home with you.</li>
-      <li><strong>Optional Lunch:</strong> Enjoy an authentic Zanzibari lunch (optional, add-on), infused with the spices you just explored, served in a serene setting on the farm.</li>
-      <li><strong>Return to Your Hotel:</strong> We’ll drop you off at your hotel, leaving you with unforgettable memories and maybe a bag of fresh spices to treasure.</li>
-    </ul>
-  `,
-
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1 Person:</strong> $25</li>
-      <li><strong>2 Persons:</strong> $20 per person</li>
-      <li><strong>3-6 Persons:</strong> $17 per person</li>
-      <li><strong>7-14 Persons:</strong> $15 per person</li>
-      <li><strong>15-28 Persons:</strong> $10 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included in the listed prices, as they depend on the distance from your hotel. Please get in touch with us, and we’ll provide a tailored quote that includes transfer costs based on your hotel’s location.</p>
-  `,
-
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>Soft Drinks</li>
-      <li>Tropical fruits</li>
-      <li>All government fees</li>
-      <li>Traditional spiced meal (for extra cost)</li>
-      <li>Transfer from and return to your hotel available for extra cost</li>
-    </ul>
-  `,
-
-  gallery: [
-    "./assets/images/tours/Spice-Tour-07.jpg",
-    "./assets/images/tours/Spice-Tour-06.jpg",
-    "./assets/images/tours/Spice-Tour-05.jpg",
-    "./assets/images/tours/Spice-Tour-03.jpg",
-    "./assets/images/tours/Spice-Tour-08.jpg",
-    "./assets/images/tours/Spice-Tour-01.jpg",
-    "./assets/images/tours/Spice-Tour-02.jpg",
-    "./assets/images/tours/Spice-Tour-04.jpg"
-  ],
-
-  faq: `
-    <h2>FAQs About the Spice Farm Tour</h2>
-    <p><strong>Is this tour suitable for children?</strong><br>Yes, the tour is family-friendly and suitable for children of all ages.</p>
-    <p><strong>Can I combine this tour with other activities?</strong><br>Yes, you can combine this tour with other tours or activities. Please contact us for details.</p>
-    <p><strong>Do I need to book in advance?</strong><br>It is recommended to book in advance to secure your preferred date and time.</p>
-    <p><strong>What language is the tour conducted in?</strong><br>The tour is conducted in English by knowledgeable local guides.</p>
-    <p><strong>Can I buy spices during the tour?</strong><br>Yes, there are opportunities to purchase fresh spices and handmade products at the farm.</p>
-  `
-};
-
-
-
-
-toursData["jozan-forest-tour-zanzibar"] = {
-  overview: `
-    <h2>Overview</h2>
-    <p>If you’re visiting Zanzibar and looking for something that combines nature, adventure, and a little bit of wonder, let us take you on an unforgettable journey to Jozani Forest!</p>
-    <p>This is the place to experience the wild, natural beauty of Zanzibar.</p>
-    <p>As the island’s only national park, it’s home to the famous and endangered Red Colobus Monkeys—trust me, seeing these little guys up close is a treat! They’re not shy, so you’ll have plenty of time to snap some great photos while they swing through the treetops or curiously watch you back.</p>
-    <p>But the monkeys are just the start! Jozani Forest is also a vibrant ecosystem filled with towering mahogany trees, exotic birds, butterflies, and even medicinal plants that locals have been using for centuries.</p>
-    <p>Our guides are experts—not only will they walk you through the lush forest trails, but they’ll also share cool stories about the plants, wildlife, and the cultural significance of the area.</p>
-    <p>Oh, and here’s something you’ll love: Jozani isn’t just about the forest. We’ll also take you to explore the mangrove boardwalk—a peaceful, almost magical place where the tides meet the forest. The mangroves are critical for Zanzibar’s ecosystem, and walking through them feels like stepping into another world.</p>
-    <p>This tour is perfect for nature lovers, families, couples—basically, anyone looking to connect with the heart of Zanzibar.</p>
-    <h3>Booking and Transportation</h3>
-    <p>We make it super easy to book your Jozani Forest adventure with Blue Green Zanzibar Tours! You can reserve your spot online (booking form), through WhatsApp, or simply give us a call.</p>
-    <p>We also offer flexible payment options to suit your needs—credit cards, bank transfers, or good old cash are all welcome.</p>
-    <p>And to make your experience completely stress-free, we’ll provide comfortable transportation to and from your hotel. Relax, we’ve got everything covered so you can focus on enjoying the magic of Jozani Forest!</p>
-  `,
-
-  itinerary: `
-    <h2>Jozan Forest Tour Itinerary</h2>
-    <p><strong>Duration:</strong> Approx. 3-4 hours.</p>
-    <p><strong>Morning or Afternoon Departure:</strong> We offer flexible departure times—choose between a morning or afternoon tour to suit your schedule.</p>
-    <ul>
-      <li><strong>Hotel Pickup:</strong> Our friendly driver will pick you up from your hotel in a comfortable, air-conditioned vehicle. Sit back, relax, and enjoy the scenic drive to Jozani Forest.</li>
-      <li><strong>Arrival at Jozani Forest:</strong> Upon arrival, meet your professional guide who will give you a quick introduction to the forest and what to expect during the tour.</li>
-      <li><strong>Guided Nature Walk:</strong>
-        <ul>
-          <li><strong>Red Colobus Monkey Encounter:</strong> Explore the heart of the forest and meet the famous Zanzibar Red Colobus Monkeys! Watch these playful, endangered creatures in their natural habitat as your guide shares fascinating facts about their behavior and conservation efforts.</li>
-          <li><strong>Forest Trail Exploration:</strong> Walk through lush trails lined with towering mahogany and tropical plants. Discover unique trees, medicinal plants, and spot colorful birds and butterflies along the way.</li>
-        </ul>
-      </li>
-      <li><strong>Mangrove Boardwalk:</strong> Head to the peaceful mangrove forest, where you’ll stroll along a wooden boardwalk surrounded by tidal mangroves. Learn about this important ecosystem and how it supports Zanzibar’s coastal environment.</li>
-      <li><strong>Leisure Time and Photos:</strong> Take some time to soak in the serenity of Jozani Forest, snap some photos, and enjoy the tranquil atmosphere.</li>
-      <li><strong>Return Journey:</strong> After the tour, we’ll take you back to your hotel, ensuring a safe and comfortable ride.</li>
-    </ul>
-  `,
-
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1 Person:</strong> $50</li>
-      <li><strong>2 Persons:</strong> $40 per person</li>
-      <li><strong>3-6 Persons:</strong> $35 per person</li>
-      <li><strong>7-14 Persons:</strong> $30 per person</li>
-      <li><strong>15-28 Persons:</strong> $25 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included in the listed prices, as they depend on the distance from your hotel. Please get in touch with us, and we’ll provide a tailored quote that includes transfer costs based on your hotel’s location.</p>
-  `,
-
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>Soft Drinks</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available only for extra cost</li>
-    </ul>
-  `,
-
-  gallery: [
-    "./assets/images/tours/Jozani-Forest-Tour-07.jpg",
-    "./assets/images/tours/Jozani Forest (1).jpg",
-    "./assets/images/tours/jozani-1.jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-05.jpg",
-    "./assets/images/tours/Cave swimming Maalum cave (8).jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-02.jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-06.jpg",
-    "./assets/images/tours/Jozani Forest (2).jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-08.jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-09.jpg",
-    "./assets/images/tours/Jozani Forest (3).jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-01.jpg"
-  ],
-
-  faq: `
-    <h2>FAQs About the Jozan Forest Tour</h2>
-    <p><strong>Can children join the tour?</strong><br>Absolutely! The tour is family-friendly and perfect for kids who love nature and wildlife.</p>
-    <p><strong>Do I need a guide?</strong><br>Yes, the tour is guided by knowledgeable professionals to enhance your experience.</p>
-    <p><strong>Do I need to book in advance?</strong><br>It is recommended to book in advance to secure your preferred date and time.</p>
-    <p>If you have additional questions, feel free to contact us directly. We’re here to help make this tour an unforgettable experience!</p>
-  `
-};
 
 
 toursData["nakupenda-sandbank-tour-zanzibar"] = {
@@ -710,40 +369,22 @@ toursData["nakupenda-sandbank-tour-zanzibar"] = {
     </ul>
   `,
 
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1 Person:</strong> $100</li>
-      <li><strong>2 Persons:</strong> $70 per person</li>
-      <li><strong>3-6 Persons:</strong> $60 per person</li>
-      <li><strong>7-14 Persons:</strong> $55 per person</li>
-      <li><strong>15-28 Persons:</strong> $45 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included as they depend on the distance from your hotel. Please contact us for a tailored transfer quote.</p>
+   price: `
+    <h2>Price</h2>
+    <p><strong>110 per person</strong> (includes transport ,soft drinks,)</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Private Boat</li>
-      <li>Swimming Equipment</li>
-      <li>Lunch (Seafood BBQ, Chicken, or Vegetarian options)</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available for extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
-    "./assets/images/tours/nakupenda sandbank 6.jpg",
-    "./assets/images/tours/Nakupenda-Sandbank-Picnic-09.jpg",
-    "./assets/images/tours/Nakupenda-Sandbank-Picnic-01.jpg",
-    "./assets/images/tours/nakupenda sandbank 4.jpg",
-    "./assets/images/tours/nakupenda.jpg",
-    "./assets/images/tours/Nakupenda-Sandbank-Picnic.jpg",
-    "./assets/images/tours/nakupenda-sandbank-2.jpg",
-    "./assets/images/tours/nakupenda sandbank 3.jpg"
+    "./assets/images/tours/nakupenda/0.jpg",
+      "./assets/images/tours/nakupenda/1.jpg",
+      "./assets/images/tours/nakupenda/2.jpg",
+      "./assets/images/tours/nakupenda/3.jpg",
+      "./assets/images/tours/nakupenda/4.jpg",
+      "./assets/images/tours/nakupenda/5.jpg",
+      "./assets/images/tours/nakupenda/7.jpg",
+      "./assets/images/tours/nakupenda/8.jpg",
   ],
 
   faq: `
@@ -755,86 +396,6 @@ toursData["nakupenda-sandbank-tour-zanzibar"] = {
   `
 };
 
-
-toursData["prison-island-tour-zanzibar"] = {
-  overview: `
-    <h2>Overview</h2>
-    <p>The Prison Island Tour in Zanzibar is a popular half-day trip to Changuu Island, about 5.6 km from Stone Town (a short 30-minute boat ride).</p>
-    <p>But don’t let the name scare you—this place is nothing like a gloomy prison! Instead, it’s an island paradise packed with history, turquoise waters, and some of the coolest giant tortoises you’ll ever meet.</p>
-    <h3>What to expect</h3>
-    <ul>
-      <li><strong>Scenic Boat Ride:</strong> Cruise across the stunning Indian Ocean with endless blue views.</li>
-      <li><strong>Meet the Giant Tortoises:</strong> Aldabra tortoises over 100 years old; feed, photograph, and learn their stories.</li>
-      <li><strong>Explore the Old Prison Ruins:</strong> Originally built to house rebellious slaves but never used as a prison; later a quarantine station.</li>
-      <li><strong>Beach Time:</strong> Swim in crystal-clear waters or relax on white sandy beaches.</li>
-    </ul>
-    <h3>Booking and Transportation for Your Prison Island Tour</h3>
-    <p>Booking your Prison Island Tour with Blue Green Zanzibar Tours is super easy! Reserve online, via WhatsApp, or call. We offer flexible payment options including credit cards, bank transfers, and cash.</p>
-    <p>To make your experience smoother, we provide comfortable transport to and from your hotel—just sit back, relax, and enjoy your island adventure!</p>
-  `,
-
-  itinerary: `
-    <h2>Prison Island Tour Itinerary</h2>
-    <p><strong>Duration:</strong> 3–4 Hours</p>
-    <p><strong>Departure Point:</strong> Stone Town</p>
-    <ul>
-      <li>Pick-Up & Transfer to the Dock: Pickup from your hotel (if requested), transfer to Stone Town dock.</li>
-      <li>Boat Ride to Prison Island (~30 minutes): Enjoy stunning views of Zanzibar’s coastline.</li>
-      <li>Explore Prison Island:
-        <ul>
-          <li>Giant Tortoises Sanctuary: Meet, feed, and photograph these gentle giants.</li>
-          <li>Prison Ruins: Learn about the island’s history and former quarantine use.</li>
-          <li>Scenic Beach: Relax and take photos.</li>
-        </ul>
-      </li>
-      <li>Beach Time (Optional): Swim or relax on soft white sand.</li>
-      <li>Return Boat Ride to Stone Town.</li>
-      <li>Hotel Drop-Off: Return transfer to your hotel or central location.</li>
-    </ul>
-    <p>You’ll return with a heart full of memories and a camera full of stunning photos!</p>
-  `,
-
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1 Person:</strong> $55</li>
-      <li><strong>2-5 Persons:</strong> $50 per person</li>
-      <li><strong>6-10 Persons:</strong> $45 per person</li>
-      <li><strong>11-27 Persons:</strong> $40 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included and vary by hotel distance. Contact us for a tailored quote.</p>
-  `,
-
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Boat ride</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `,
-
-  gallery: [
-    "./assets/images/tours/prison island.jpg",
-    "./assets/images/tours/Prison-Island-Tour.jpg",
-    "./assets/images/tours/Prison-Island-Tour-01.jpg",
-    "./assets/images/tours/Prison-Island-Tour-08.jpg",
-    "./assets/images/tours/Prison-Island-Tour-07.jpg",
-    "./assets/images/tours/Prison-Island-Tour-06.jpg",
-    "./assets/images/tours/Prison-Island-Tour-09.jpg",
-    "./assets/images/tours/Prison-Island-Tour-02.jpg"
-  ],
-
-  faq: `
-    <h2>FAQs About the Prison Island Tour</h2>
-    <p><strong>Why is it called Prison Island?</strong><br>The island was originally intended to house prisoners but was later used as a quarantine station for yellow fever patients. Despite its name, no prisoners were ever kept there.</p>
-    <p><strong>Is the tour suitable for kids?</strong><br>Yes, the tour is family-friendly and suitable for children.</p>
-    <p>If you have more questions, feel free to reach out. We’re here to make this tour everything you’ve dreamed of and more!</p>
-  `
-};
 
 toursData["village-tour-zanzibar"] = {
   overview: `
@@ -883,17 +444,7 @@ toursData["village-tour-zanzibar"] = {
     <p><em>Important Note:</em> Transportation costs depend on your hotel’s location and are not included in the listed prices. Contact us for a tailored transfer quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>All activities fees</li>
-      <li>Bottle of water</li>
-      <li>All government fees</li>
-      <li>Traditional food available at extra cost</li>
-      <li>Transfer to/from hotel available for extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
     "./assets/images/tours/Nungwi-Cultural-Village-Tour-04.jpg",
@@ -947,44 +498,21 @@ toursData["mnemba-atoll-snorkeling-trip-zanzibar"] = {
   `,
 
   price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1 Person:</strong> $90</li>
-      <li><strong>2 Persons:</strong> $70 per person</li>
-      <li><strong>3-6 Persons:</strong> $60 per person</li>
-      <li><strong>7-14 Persons:</strong> $45 per person</li>
-      <li><strong>15-28 Persons:</strong> $27 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Note:</em> Transportation costs depend on your hotel’s location and are not included. Contact us for a tailored transfer quote.</p>
+    <h2>Price</h2>
+    <p><strong>120 per person</strong> (includes transport ,soft drinks,)</p>
   `,
-
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Boat</li>
-      <li>Snorkeling gear</li>
-      <li>Life Jackets</li>
-      <li>Soft Drinks & Tropical Fruits</li>
-      <li>All government fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
+  
 
   gallery: [
-    "./assets/images/tours/mnemba-snorkelling.jpg",
-    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-05.jpg",
-    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-07.jpg",
-    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-02.jpg",
-    "./assets/images/tours/Mnemba-Tours-7.jpg",
-    "./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar.jpg",
-    "./assets/images/tours/Mnemba-Tours-13.jpg",
-    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-04.jpg",
-    "./assets/images/tours/Mnemba-Tours-10.jpg",
-    "./assets/images/tours/Mnemba-Tours-2.jpg",
-    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-01.jpg",
-    "./assets/images/tours/mnemba-snorkeling.jpg"
+    "./assets/images/tours/mnemba/0.jpg",
+      "./assets/images/tours/mnemba/1.jpg",
+      "./assets/images/tours/mnemba/2.jpg",
+      "./assets/images/tours/mnemba/3.jpg",
+      "./assets/images/tours/mnemba/4.jpg",
+      "./assets/images/tours/mnemba/5.jpg",
+      "./assets/images/tours/mnemba/7.jpg",
+      "./assets/images/tours/mnemba/8.jpg",
+      "./assets/images/tours/mnemba/9.jpg",
   ],
 
   faq: `
@@ -1039,15 +567,7 @@ toursData["cave-swimming-in-zanzibar"] = {
     <p><em>Note:</em> Transportation costs vary by hotel distance and are not included. Contact us for a customized transfer quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance Fees</li>
-      <li>All Government Fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
     "./assets/images/tours/Cave-swimming-Maalum-Cave.jpg",
@@ -1112,15 +632,7 @@ toursData["swimming-with-turtles-in-zanzibar"] = {
     <p><em>Note:</em> Transportation costs depend on your hotel’s location and are not included. Contact us for a tailored transfer quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
     "./assets/images/tours/swim-with-turtles-5.jpg",
@@ -1168,16 +680,7 @@ toursData["horse-riding-in-zanzibar"] = {
     <p>For the latest pricing and details, please reach out to us directly. Our team is happy to assist you and tailor your horseback riding experience.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Riding Gear</li>
-      <li>Bottle of Water</li>
-      <li>All fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
     "./assets/images/tours/horse-riding-9-768x536.jpg",
@@ -1221,34 +724,21 @@ toursData["quad-biking-in-zanzibar"] = {
   `,
 
   price: `
-    <h2>Tour Price</h2>
-    <p><strong>Duration:</strong> 3 hours</p>
-    <p><strong>Price:</strong> $110 per person</p>
-    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel’s location. Contact us for a tailored transfer quote.</p>
+    <h2>Price</h2>
+    <p><strong>120 per person</strong> (includes transport ,soft drinks,)</p>
   `,
-
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Guide</li>
-      <li>High-quality, well-maintained quad bike with fuel</li>
-      <li>Safety Gear</li>
-      <li>Bottle of Water</li>
-      <li>All government fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
-    "./assets/images/tours/quad-biking-10-768x512.jpg",
-    "./assets/images/tours/quad-biking-9.jpg",
-    "./assets/images/tours/quad-biking-6.jpg",
-    "./assets/images/tours/quad-biking-8.jpg",
-    "./assets/images/tours/quad-biking-7.jpg",
-    "./assets/images/tours/quad-biking-5.jpg",
-    "./assets/images/tours/quad-biking-3.jpg",
-    "./assets/images/tours/quad-biking-2.jpg",
-    "./assets/images/tours/quad-biking-4.jpg"
+  "./assets/images/tours/baking/0.jpg",
+      "./assets/images/tours/baking/1.jpg",
+      "./assets/images/tours/baking/2.jpg",
+      "./assets/images/tours/baking/3.jpg",
+      "./assets/images/tours/baking/4.jpg",
+      "./assets/images/tours/baking/5.jpg",
+      "./assets/images/tours/baking/7.jpg",
+      "./assets/images/tours/baking/8.jpg",
+      "./assets/images/tours/baking/9.jpg",
   ],
 
   faq: `
@@ -1292,16 +782,7 @@ toursData["kite-surfing-zanzibar"] = {
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel’s location. Contact us for a tailored transfer quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Guided Sessions</li>
-      <li>All Equipment</li>
-      <li>Lunch (for full day package)</li>
-      <li>All government fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
+ 
 
   gallery: [
     "./assets/images/tours/kite-surfing-4.webp",
@@ -1367,17 +848,7 @@ toursData["scuba-diving-in-zanzibar"] = {
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel’s location. Please contact us for a tailored transfer quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional dive instructor</li>
-      <li>All diving equipment</li>
-      <li>Boat</li>
-      <li>All government fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
-
+  
   faq: `
     <h2>FAQs About Scuba Diving in Zanzibar</h2>
     <p><strong>Do I need prior diving experience?</strong><br>
@@ -1417,29 +888,21 @@ toursData["game-fishing-zanzibar"] = {
   `,
 
   gallery: [
-    "./assets/images/tours/game-fishing-3-768x576.jpg"
+    "./assets/images/tours/fishing/0.jpg",
+      "./assets/images/tours/fishing/1.jpg",
+      "./assets/images/tours/fishing/2.jpg",
+      "./assets/images/tours/fishing/4.jpg",
+      "./assets/images/tours/fishing/5.jpg",
+      "./assets/images/tours/fishing/6.jpg",
+     
   ],
 
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>Half Day:</strong> $350</li>
-      <li><strong>Full Day:</strong> $800</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included and vary based on your hotel’s location. Contact us for a tailored transfer quote.</p>
+   price: `
+    <h2>Price</h2>
+    <p><strong>120 per person</strong> (includes transport ,soft drinks,)</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional fishing crew</li>
-      <li>All fishing equipment</li>
-      <li>Boat</li>
-      <li>Lunch (for full day game)</li>
-      <li>All government fees</li>
-      <li>Transfer to/from hotel available at extra cost</li>
-    </ul>
-  `,
+ 
 
   faq: `
     <h2>FAQs About the Game Fishing Zanzibar Tour</h2>
@@ -1487,38 +950,24 @@ toursData["spice-farm-stone-town-tour-combination"] = {
   `,
 
   gallery: [
-    "./assets/images/tours/Stone-Town-Walking-Tour-07.jpg",
-    "./assets/images/tours/Stone-Town-Walking-Tour-04.jpg",
-    "./assets/images/tours/Stone-Town-Walking-Tour-08.jpg",
-    "./assets/images/tours/Stone-Town-Walking-Tour-06.jpg",
-    "./assets/images/tours/Spice-Tour-05.jpg",
-    "./assets/images/tours/Spice-Tour-03.jpg",
-    "./assets/images/tours/Spice-Tour-08.jpg",
-    "./assets/images/tours/Spice-Tour-07.jpg"
+    "./assets/images/tours/spice/0.jpg",
+      "./assets/images/tours/spice/1.jpg",
+      "./assets/images/tours/spice/2.jpg",
+      "./assets/images/tours/spice/3.jpg",
+      "./assets/images/tours/spice/4.jpg",
+      "./assets/images/tours/spice/5.jpg",
+      "./assets/images/tours/spice/6.jpg",
+      "./assets/images/tours/spice/8.jpg",
+      "./assets/images/tours/spice/9.jpg",
   ],
 
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1 Person:</strong> $55</li>
-      <li><strong>2 Persons:</strong> $45 per person</li>
-      <li><strong>3-6 Persons:</strong> $40 per person</li>
-      <li><strong>7-14 Persons:</strong> $35 per person</li>
-      <li><strong>15-28 Persons:</strong> $25 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included in the listed prices as they depend on your hotel location. Please contact us for a tailored transfer quote.</p>
+   price: `
+    <h2>Price</h2>
+    <p><strong>70 per person</strong> (includes transport ,soft drinks,)</p>
   `,
+  
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel is available at extra cost</li>
-    </ul>
-  `
+
 };
 
 toursData["stone-town-prison-island-tour-combination"] = {
@@ -1579,16 +1028,7 @@ toursData["stone-town-prison-island-tour-combination"] = {
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Boat</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+  
 };
 
 
@@ -1625,37 +1065,23 @@ toursData["spice-farm-jozani-forest-tour-combination"] = {
   `,
 
   gallery: [
-    "./assets/images/tours/Spice-Tour-05.jpg",
-    "./assets/images/tours/Spice-Tour-03.jpg",
-    "./assets/images/tours/Spice-Tour-08.jpg",
-    "./assets/images/tours/Spice-Tour-07.jpg",
-    "./assets/images/tours/jozani-1.jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-07.jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-09.jpg",
-    "./assets/images/tours/Jozani-Forest-Tour-02.jpg"
+        "./assets/images/tours/farm/0.jpg",
+      "./assets/images/tours/farm/1.jpg",
+      "./assets/images/tours/farm/2.jpg",
+      "./assets/images/tours/farm/3.jpg",
+      "./assets/images/tours/farm/4.jpg",
+      "./assets/images/tours/farm/5.jpg",
+      "./assets/images/tours/farm/6.jpg",
+      "./assets/images/tours/farm/7.jpg",
+      "./assets/images/tours/farm/8.jpg",
+      "./assets/images/tours/farm/9.jpg",
   ],
 
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1-2 Persons:</strong> $50 per person</li>
-      <li><strong>3-6 Persons:</strong> $40 per person</li>
-      <li><strong>7-14 Persons:</strong> $35 per person</li>
-      <li><strong>15-28 Persons:</strong> $25 per person</li>
-      <li><strong>28+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+ price: `
+    <h2>Price</h2>
+    <p><strong>70 per person</strong> (includes transport ,soft drinks,)</p>
   `,
-
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+ 
 };
 
 toursData["village-tour-stone-town-tour-combination"] = {
@@ -1713,15 +1139,7 @@ toursData["village-tour-stone-town-tour-combination"] = {
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+
 };
 
 
@@ -1793,16 +1211,7 @@ toursData["spice-farm-prison-island-stone-town-tour-combination"] = {
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Boat</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+ 
 };
 
 toursData["spice-farm-jozani-forest-rock-restaurant-tour-combination"] = {
@@ -1860,15 +1269,7 @@ toursData["spice-farm-jozani-forest-rock-restaurant-tour-combination"] = {
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+
 };
 
 toursData["mnemba-island-swimming-with-turtles-nungwi-kendwa-tour-combination"] = {
@@ -1912,44 +1313,24 @@ toursData["mnemba-island-swimming-with-turtles-nungwi-kendwa-tour-combination"] 
   `,
 
   gallery: [
-    "./assets/images/tours/nungwi-bwach-3.jpg",
-    "./assets/images/tours/nungwi-beach-4.jpg",
-    "./assets/images/tours/Zanzibar-Nungwi-beach.jpg",
-    "./assets/images/tours/kendwa.jpg",
-    "./assets/images/tours/swim-with-turtles-9.jpg",
-    "./assets/images/tours/swim-with-turtles-6.jpg",
-    "./assets/images/tours/swim-with-turtles-7.jpg",
-    "./assets/images/tours/swim-with-turtles-3.jpg",
-    "./assets/images/tours/dolphin-tour-with-snorkeling-at-mnemba-island-zanzibar_M4kn3.jpg",
-    "./assets/images/tours/mnemba-snorkelling.jpg",
-    "./assets/images/tours/mnemba-snorkeling.jpg",
-    "./assets/images/tours/Snorkeling-at-Mnemba-Atoll-05.jpg"
+           "./assets/images/tours/nungwi/0.jpg",
+      "./assets/images/tours/nungwi/1.jpg",
+      "./assets/images/tours/nungwi/2.jpg",
+      "./assets/images/tours/nungwi/3.jpg",
+      "./assets/images/tours/nungwi/4.jpg",
+      "./assets/images/tours/nungwi/5.jpg",
+      "./assets/images/tours/nungwi/6.jpg",
+      "./assets/images/tours/nungwi/7.jpg",
+      "./assets/images/tours/nungwi/8.jpg",
+      "./assets/images/tours/nungwi/9.jpg",
   ],
 
-  price: `
-    <h2>Tour Price</h2>
-    <ul>
-      <li><strong>1-2 Persons:</strong> $125 per person</li>
-      <li><strong>3-6 Persons:</strong> $90 per person</li>
-      <li><strong>7-14 Persons:</strong> $80 per person</li>
-      <li><strong>15-25 Persons:</strong> $60 per person</li>
-      <li><strong>25+ Persons:</strong> Contact Us</li>
-    </ul>
-    <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
+   price: `
+    <h2>Price</h2>
+    <p><strong>120 per person</strong> (includes transport ,soft drinks,)</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Boat</li>
-      <li>Entrance fees</li>
-      <li>Swimming Equipment</li>
-      <li>Tropical Fruits</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+  
 };
 
 
@@ -2023,17 +1404,7 @@ toursData["horse-riding-swimming-with-turtles-nungwi-kendwa-tour-combination"] =
     <p><em>Important Note:</em> Transportation costs are not included and depend on your hotel location. Please contact us for a tailored quote.</p>
   `,
 
-  includes: `
-    <h2>Price Includes</h2>
-    <ul>
-      <li>Professional Tour Guide</li>
-      <li>Entrance fees</li>
-      <li>Swimming Equipment</li>
-      <li>Horse riding gear and safety equipment</li>
-      <li>All government fees</li>
-      <li>Transfer from and return to your hotel available at extra cost</li>
-    </ul>
-  `
+  
 };
 
 document.querySelectorAll('.view-tour-btn').forEach(btn => {
@@ -2200,9 +1571,17 @@ const safarisData = {
       </ul>
     `,
     gallery: [
-      "./assets/images/safari/mikumi1.jpg",
-      "./assets/images/safari/mikumi2.jpg",
-      "./assets/images/safari/mikumi3.jpg"
+      "./assets/images/safari/mikumi/1.jpg",
+      "./assets/images/safari/mikumi/2.jpg",
+      "./assets/images/safari/mikumi/3.jpg",
+      "./assets/images/safari/mikumi/4.jpg",
+      "./assets/images/safari/mikumi/5.jpg",
+      "./assets/images/safari/mikumi/6.jpg",
+      "./assets/images/safari/mikumi/7.jpg",
+      "./assets/images/safari/mikumi/8.jpg",
+      "./assets/images/safari/mikumi/9.jpg",
+      
+    
     ]
   },
 
@@ -2255,9 +1634,17 @@ const safarisData = {
       </ul>
     `,
     gallery: [
-      "./assets/images/safari/ngorongoro1.jpg",
-      "./assets/images/safari/ngorongoro2.jpg",
-      "./assets/images/safari/tarangire1.jpg"
+      "./assets/images/safari/ngorongoro/0.jpg",
+      "./assets/images/safari/ngorongoro/1.jpg",
+      "./assets/images/safari/ngorongoro/2.jpg",
+      "./assets/images/safari/ngorongoro/3.jpg",
+      "./assets/images/safari/ngorongoro/4.jpg",
+      "./assets/images/safari/ngorongoro/5.jpg",
+      "./assets/images/safari/ngorongoro/6.jpg",
+      "./assets/images/safari/ngorongoro/7.jpg",
+      "./assets/images/safari/ngorongoro/8.jpg",
+      "./assets/images/safari/ngorongoro/9.jpg",
+      
     ],
     faq: `
       <h2>FAQ</h2>
@@ -2341,8 +1728,16 @@ const safarisData = {
       </ul>
     `,
     gallery: [
-      "./assets/images/safari/ngorongoro tarangire and lago manyara.jpg",
-      // add more images here if you have
+       "./assets/images/safari/manyara/0.jpg",
+      "./assets/images/safari/manyara/1.jpg",
+      "./assets/images/safari/manyara/2.jpg",
+      "./assets/images/safari/manyara/3.jpg",
+      "./assets/images/safari/manyara/4.jpg",
+      "./assets/images/safari/manyara/5.jpg",
+      "./assets/images/safari/manyara/6.jpg",
+      "./assets/images/safari/manyara/7.jpg",
+      "./assets/images/safari/manyara/8.jpg",
+      "./assets/images/safari/manyara/9.jpg",
     ],
   },
 
@@ -2400,8 +1795,16 @@ const safarisData = {
     </ul>
   `,
   gallery: [
-    "./assets/images/safari/serenget and ngorongoro.jpg",
-    // add more images if you have
+       "./assets/images/safari/serengeti/0.jpg",
+      "./assets/images/safari/serengeti/1.jpg",
+      "./assets/images/safari/serengeti/2.jpg",
+      "./assets/images/safari/serengeti/3.jpg",
+      "./assets/images/safari/serengeti/4.jpg",
+      "./assets/images/safari/serengeti/5.jpg",
+      "./assets/images/safari/serengeti/6.jpg",
+      "./assets/images/safari/serengeti/7.jpg",
+      "./assets/images/safari/serengeti/8.jpg",
+      "./assets/images/safari/serengeti/9.jpg",
   ]
 },
 "serengeti-tarangire-ngorongoro-4days": {
@@ -2484,8 +1887,16 @@ const safarisData = {
     </ul>
   `,
   gallery: [
-    "./assets/images/safari/serengeti tarangire and ngorongoro.jpg"
-    // Add more images if you have
+      "./assets/images/safari/tarangire/0.jpg",
+      "./assets/images/safari/tarangire/1.jpg",
+      "./assets/images/safari/tarangire/2.jpg",
+      "./assets/images/safari/tarangire/3.jpg",
+      "./assets/images/safari/tarangire/4.jpg",
+      "./assets/images/safari/tarangire/5.jpg",
+      "./assets/images/safari/tarangire/6.jpg",
+      "./assets/images/safari/tarangire/7.jpg",
+      "./assets/images/safari/tarangire/8.jpg",
+      "./assets/images/safari/tarangire/9.jpg",
   ]
 }
 };
