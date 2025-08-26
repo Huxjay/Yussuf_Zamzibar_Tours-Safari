@@ -1,6 +1,5 @@
 <?php
 include 'includes/db.php'; // Database connection
-session_start();
 
 // Fetch Tours
 $tourBookings = $conn->query("SELECT * FROM tourbookings ORDER BY created_at DESC");

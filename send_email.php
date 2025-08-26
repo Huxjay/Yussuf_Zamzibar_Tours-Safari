@@ -20,7 +20,7 @@ function sendSafariBookingEmail($adminEmail, $bookingData, $toursList) {
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        $mail->setFrom('husseinjuma0097@gmail.com', 'Yussuf Zanzibar Tour & Safari');
+        $mail->setFrom('yussufzanzibar611@gmail.com', 'Yussuf Zanzibar Tour & Safari');
         $mail->addAddress($adminEmail, 'Admin');
         $mail->isHTML(true);
         $mail->Subject = "📩 New Safari Booking - " . $bookingData['name'];
@@ -77,7 +77,7 @@ function sendTourBookingEmail($adminEmail, $bookingData, $toursList) {
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        $mail->setFrom('husseinjuma0097@gmail.com', 'Yussuf Zanzibar Tour & Safari');
+        $mail->setFrom('yussufzanzibar611@gmail.com', 'Yussuf Zanzibar Tour & Safari');
         $mail->addAddress($adminEmail, 'Admin');
         $mail->isHTML(true);
         $mail->Subject = "📩 New Tour Booking - " . $bookingData['name'];
@@ -134,7 +134,7 @@ function sendTransferBookingEmail($adminEmail, $bookingData) {
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        $mail->setFrom('husseinjuma0097@gmail.com', 'Yussuf Zanzibar Tour & Safari');
+        $mail->setFrom('yussufzanzibar611@gmail.com', 'Yussuf Zanzibar Tour & Safari');
         $mail->addAddress($adminEmail, 'Admin');
         $mail->isHTML(true);
         $mail->Subject = "🚖 New Transfer Booking - " . $bookingData['name'];

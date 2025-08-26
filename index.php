@@ -364,16 +364,16 @@ switch ($page) {
 <div class="social-media-widget">
   <div class="toggle-btn" id="toggleSocials">+</div>
   <div class="social-icons">
-    <a href="https://wa.me/255714610794" target="_blank" title="WhatsApp">
+    <a href="https://wa.me/+255714221365" target="_blank" title="WhatsApp">
       <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp"/>
     </a>
-    <a href="https://www.instagram.com/yourpage" target="_blank" title="Instagram">
+    <a href="https://www.instagram.com/yussuf_zanzibar?utm_source=qr&igsh=MTFrOGZseGM5MXpjaA==" target="_blank" title="Instagram">
       <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram"/>
     </a>
-    <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
-      <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"/>
+    <!-- <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
+      <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"/> -->
     </a>
-    <a href="https://www.tiktok.com/@yourpage" target="_blank" title="TikTok">
+    <a href="https://vm.tiktok.com/ZMHGVqMyLweMv-izxci/" target="_blank" title="TikTok">
       <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok"/>
     </a>
    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yussufzanzibar611@gmail.com" target="_blank" title="Email">

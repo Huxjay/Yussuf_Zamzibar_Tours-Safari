@@ -27,17 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Verify password
             if (password_verify($password, $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['role'] = $user['role'];
+    $_SESSION['user_id'] = $user['user_id'];   // correct column
+    $_SESSION['username'] = $user['name'];     // correct column
+    $_SESSION['role'] = $user['role'];
 
-                if ($user['role'] === 'admin') {
-                    header("Location: admin.php");
-                    exit();
-                } else {
-                    $error = "You do not have admin access.";
-                }
-            } else {
+    if ($user['role'] === 'admin') {
+        header("Location: admin.php");
+        exit();
+    } else {
+        $error = "You do not have admin access.";
+    }
+} else {
                 $error = "Invalid password. Please try again.";
             }
         } else {

@@ -1,6 +1,5 @@
 <?php
 include 'includes/db.php'; // Database connection
-session_start();
 
 // Fetch Transport Bookings
 $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY created_at DESC");

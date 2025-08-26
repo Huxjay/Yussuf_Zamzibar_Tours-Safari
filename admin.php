@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -200,7 +209,7 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
       <li><a href="admin.php?page=transfer_admin_side">Transport</a></li>
       <!-- <li><a href="admin.php?page=gallaryprice">gallary&price</a></li> -->
       <!-- <li><a href="admin.php?page=notifications">Notifications</a></li> -->
-      <li><a href="admin.php?page=settings">Settings</a></li>
+      <li><a href="admin.php?page=change_password">change password</a></li>
       <li><a href="logout.php">Logout</a></li>
     </ul>
   </div>
@@ -241,8 +250,8 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
           include 'toursafari.php';
           break;
 
-        case 'settings':
-          include 'settings.php';
+        case 'change_password':
+          include 'change_password.php';
           break;
 
         default:

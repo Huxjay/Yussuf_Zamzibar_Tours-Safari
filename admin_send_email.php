@@ -21,7 +21,7 @@ function sendTourStatusEmail($customerEmail, $customerName, $status, $bookingDet
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        $mail->setFrom('husseinjuma0097@gmail.com', 'Yussuf Zanzibar Tour & Safari');
+        $mail->setFrom('yussufzanzibar611@gmail.com', 'Yussuf Zanzibar Tour & Safari');
         $mail->addAddress($customerEmail, $customerName);
         $mail->isHTML(true);
         
@@ -42,8 +42,8 @@ function sendTourStatusEmail($customerEmail, $customerName, $status, $bookingDet
             $body = "<h3>Dear $customerName,</h3>";
             $body .= "<p>We regret to inform you that your tour booking has been <strong>cancelled</strong>.</p>";
             $body .= "<p>If you believe this is a mistake or have any questions, please contact us immediately.</p>";
-            $body .= "<p>Phone: +255 123 456 789</p>";
-            $body .= "<p>Email: husseinjuma0097@gmail.com</p>";
+            $body .= "<p>Phone: +255714221365</p>";
+            $body .= "<p>Email:yussufzanzibar611@gmail.com</p>";
         }
         
         $body .= "<br><p>Best regards,<br>Yussuf Zanzibar Tour & Safari Team</p>";
@@ -72,7 +72,7 @@ function sendSafariStatusEmail($customerEmail, $customerName, $status, $bookingD
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        $mail->setFrom('husseinjuma0097@gmail.com', 'Yussuf Zanzibar Tour & Safari');
+        $mail->setFrom('yussufzanzibar611@gmail.com', 'Yussuf Zanzibar Tour & Safari');
         $mail->addAddress($customerEmail, $customerName);
         $mail->isHTML(true);
         
@@ -93,8 +93,8 @@ function sendSafariStatusEmail($customerEmail, $customerName, $status, $bookingD
             $body = "<h3>Dear $customerName,</h3>";
             $body .= "<p>We regret to inform you that your safari booking has been <strong>cancelled</strong>.</p>";
             $body .= "<p>If you believe this is a mistake or have any questions, please contact us immediately.</p>";
-            $body .= "<p>Phone: +255 123 456 789</p>";
-            $body .= "<p>Email: husseinjuma0097@gmail.com</p>";
+            $body .= "<p>Phone: +255714221365</p>";
+            $body .= "<p>Email: yussufzanzibar611@gmail.com</p>";
         }
         
         $body .= "<br><p>Best regards,<br>Yussuf Zanzibar Tour & Safari Team</p>";
@@ -123,7 +123,7 @@ function sendTransportStatusEmail($customerEmail, $customerName, $status, $booki
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        $mail->setFrom('husseinjuma0097@gmail.com', 'Yussuf Zanzibar Tour & Safari');
+        $mail->setFrom('yussufzanzibar611@gmail.com', 'Yussuf Zanzibar Tour & Safari');
         $mail->addAddress($customerEmail, $customerName);
         $mail->isHTML(true);
         
@@ -145,8 +145,8 @@ function sendTransportStatusEmail($customerEmail, $customerName, $status, $booki
             $body = "<h3>Dear $customerName,</h3>";
             $body .= "<p>We regret to inform you that your transport booking has been <strong>cancelled</strong>.</p>";
             $body .= "<p>If you believe this is a mistake or have any questions, please contact us immediately.</p>";
-            $body .= "<p>Phone: +255 123 456 789</p>";
-            $body .= "<p>Email: husseinjuma0097@gmail.com</p>";
+            $body .= "<p>Phone: +255714221365</p>";
+            $body .= "<p>Email: yussufzanzibar611@gmail.com</p>";
         }
         
         $body .= "<br><p>Best regards,<br>Yussuf Zanzibar Tour & Safari Team</p>";

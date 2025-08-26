@@ -1570,6 +1570,12 @@ const safarisData = {
         <li>Personal items</li>
       </ul>
     `,
+
+    
+     price: `
+    <h2>Price</h2>
+    <p><strong>500 dollars per person</strong> </p>
+  `,
     gallery: [
       "./assets/images/safari/mikumi/1.jpg",
       "./assets/images/safari/mikumi/2.jpg",
@@ -1583,6 +1589,8 @@ const safarisData = {
       
     
     ]
+
+
   },
 
   "ngorongoro-tarangire-2days": {
@@ -1633,6 +1641,11 @@ const safarisData = {
         <li>Alcoholic beverages</li>
       </ul>
     `,
+
+      price: `
+    <h2>Price</h2>
+    <p><strong>1200 dollars per person</strong></p>
+  `,
     gallery: [
       "./assets/images/safari/ngorongoro/0.jpg",
       "./assets/images/safari/ngorongoro/1.jpg",
@@ -1727,6 +1740,11 @@ const safarisData = {
         <li>On one of the days, it will not be possible to hold the special dinner on Nakupenda Island due to high tide. Instead, the tour includes lunch at Nakupenda Sandbank during the day, with beautiful decoration but without live music.</li>
       </ul>
     `,
+
+      price: `
+    <h2>Price</h2>
+    <p><strong>1350 dollars per person</strong></p>
+  `,
     gallery: [
        "./assets/images/safari/manyara/0.jpg",
       "./assets/images/safari/manyara/1.jpg",
@@ -1793,6 +1811,10 @@ const safarisData = {
       <li>Tips for the guide</li>
       <li>Personal items</li>
     </ul>
+  `,
+    price: `
+    <h2>Price</h2>
+    <p><strong>1600 dollars per person</strong> </p>
   `,
   gallery: [
        "./assets/images/safari/serengeti/0.jpg",
@@ -1885,6 +1907,11 @@ const safarisData = {
       <li>Tips for the guide</li>
       <li>Personal expenses</li>
     </ul>
+  `,
+
+    price: `
+    <h2>Price</h2>
+    <p><strong>1700 dollars per person</strong></p>
   `,
   gallery: [
       "./assets/images/safari/tarangire/0.jpg",
