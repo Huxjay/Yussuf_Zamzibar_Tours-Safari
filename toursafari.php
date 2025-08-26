@@ -84,6 +84,17 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
   border: 1px solid rgba(231, 76, 60, 0.4);
 }
 
+/* New Badge */
+.new-badge {
+  background: #e67e22;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
 /* Actions */
 .booking-actions {
   display: flex;
@@ -100,7 +111,8 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
 /* Buttons */
 .btn-approve,
 .btn-cancel,
-.btn-whatsapp {
+.btn-whatsapp,
+.btn-delete {
   padding: 8px 14px;
   border: none;
   border-radius: 10px;
@@ -133,6 +145,17 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
   color: #fff;
 }
 
+.btn-delete {
+  background: rgba(155, 89, 182, 0.2);
+  color: #9b59b6;
+  border: 1px solid rgba(155, 89, 182, 0.5);
+}
+
+.btn-delete:hover {
+  background: #9b59b6;
+  color: #fff;
+}
+
 .btn-whatsapp {
   background: rgba(37, 211, 102, 0.2);
   color: #25d366;
@@ -154,7 +177,8 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
   }
   .btn-approve,
   .btn-cancel,
-  .btn-whatsapp {
+  .btn-whatsapp,
+  .btn-delete {
     font-size: 13px;
     padding: 7px 12px;
   }
@@ -163,7 +187,7 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
 <!-- Main Content -->
 <div class="main-content2">
   <h1>Tours & Safari Management</h1>
-  <p>Here admin can view, approve, cancel, and contact tourists.</p>
+  <p>Here admin can view, approve, cancel, delete, and contact tourists.</p>
 
   <!-- Tours Section -->
   <h2>Tour Bookings</h2>
@@ -177,6 +201,9 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
           <span class="status-badge <?php echo $statusClass; ?>">
             <?php echo ucfirst($tour['status']); ?>
           </span>
+          <?php if (strtotime($tour['created_at']) >= strtotime('-1 day')): ?>
+            <span class="new-badge">NEW</span>
+          <?php endif; ?>
         </h3>
         <div class="booking-info">
           <p><b>Email:</b> <?php echo $tour['email']; ?></p>
@@ -203,6 +230,13 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
               <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
             </form>
           <?php endif; ?>
+
+          <!-- Delete -->
+          <form method="post" action="delete_booking.php" onsubmit="return confirm('Delete this booking?');">
+            <input type="hidden" name="booking_id" value="<?php echo $tour['booking_id']; ?>">
+            <input type="hidden" name="type" value="tour">
+            <button type="submit" class="btn-delete">Delete</button>
+          </form>
           
           <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $tour['whatsapp']); ?>" target="_blank" class="btn-whatsapp">WhatsApp</a>
         </div>
@@ -222,6 +256,9 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
           <span class="status-badge <?php echo $statusClass; ?>">
             <?php echo ucfirst($safari['status']); ?>
           </span>
+          <?php if (strtotime($safari['created_at']) >= strtotime('-1 day')): ?>
+            <span class="new-badge">NEW</span>
+          <?php endif; ?>
         </h3>
         <div class="booking-info">
           <p><b>Email:</b> <?php echo $safari['email']; ?></p>
@@ -248,6 +285,13 @@ $safariBookings = $conn->query("SELECT * FROM safaribookings ORDER BY created_at
               <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
             </form>
           <?php endif; ?>
+
+          <!-- Delete -->
+          <form method="post" action="delete_booking.php" onsubmit="return confirm('Delete this booking?');">
+            <input type="hidden" name="id" value="<?php echo $safari['id']; ?>">
+            <input type="hidden" name="type" value="safari">
+            <button type="submit" class="btn-delete">Delete</button>
+          </form>
           
           <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $safari['whatsapp']); ?>" target="_blank" class="btn-whatsapp">WhatsApp</a>
         </div>

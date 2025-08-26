@@ -1503,6 +1503,36 @@ function loadTourTabContent(tourKey, tab) {
 
 
 
+const langBtn = document.getElementById('languageBtn');
+const langPopup = document.getElementById('languagePopup');
+
+langBtn.addEventListener('click', () => {
+  langPopup.style.display = langPopup.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close popup if clicked outside
+document.addEventListener('click', function(event) {
+  if (!langPopup.contains(event.target) && !langBtn.contains(event.target)) {
+    langPopup.style.display = 'none';
+  }
+});
+
+// When a language option is clicked, redirect via Google Translate
+document.querySelectorAll('.langOption').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang;
+    translatePage(lang);
+    langPopup.style.display = 'none';
+  });
+});
+
+// Function to translate the current page
+function translatePage(lang) {
+  const currentURL = encodeURIComponent(window.location.href);
+  window.location.href = `https://translate.google.com/translate?sl=auto&tl=${lang}&u=${currentURL}`;
+}
+
+
 
 
 

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         // ✅ Send Email Notification to Admin
-        $adminEmail = "husseinjuma0097@gmail.com"; // Change if needed
+        $adminEmail = "yussufzanzibar611@gmail.com"; // Change if needed
 
         // Example tours list (slug => full name) - adjust as per DB
         $toursList = [
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               font-size: 14px;
               transition: 0.3s;
             }
-            .popup-content button:hover { background: #27ae60; }
+            .popup-content button:hover { background: #111111ff; }
           </style>
         </head>
         <body>

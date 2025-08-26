@@ -94,7 +94,7 @@
         popup.classList.remove("show");
         <?php if(($_GET['status'] ?? '') === 'success'): ?>
           // If success, redirect from inside admin.php back to login
-          setTimeout(() => { window.location.href = "login.php"; }, 300);
+          setTimeout(() => { window.location.href = "index.php?page=login.php"; }, 300);
         <?php endif; ?>
       }
     </script>

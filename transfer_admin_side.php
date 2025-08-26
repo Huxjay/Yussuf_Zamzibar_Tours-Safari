@@ -69,7 +69,8 @@ $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY crea
 /* Buttons */
 .btn-approve,
 .btn-cancel,
-.btn-whatsapp {
+.btn-whatsapp,
+.btn-delete {
   padding: 8px 14px;
   border: none;
   border-radius: 10px;
@@ -116,10 +117,32 @@ $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY crea
   color: #fff;
 }
 
+.btn-delete {
+  background: rgba(155, 89, 182, 0.2);
+  color: #9b59b6;
+  border: 1px solid rgba(155,89,182,0.5);
+}
+
+.btn-delete:hover {
+  background: #9b59b6;
+  color: #fff;
+}
+
 /* Status Colors */
 .status-pending { color: #f39c12; }
 .status-confirmed { color: #2ecc71; }
 .status-cancelled { color: #e74c3c; }
+
+/* New Badge */
+.new-badge {
+  background: #e67e22;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
 
 /* Responsive */
 @media (max-width: 480px) {
@@ -128,7 +151,8 @@ $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY crea
   }
   .btn-approve,
   .btn-cancel,
-  .btn-whatsapp {
+  .btn-whatsapp,
+  .btn-delete {
     font-size: 13px;
     padding: 7px 12px;
   }
@@ -138,14 +162,22 @@ $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY crea
 <!-- Main Content -->
 <div class="main-content2">
   <h1>Transport Management</h1>
-  <p>Here admin can view, approve, cancel, and contact transfer customers.</p>
+  <p>Here admin can view, approve, cancel, delete, and contact transfer customers.</p>
 
   <!-- Transport Section -->
   <h2>Transfer Bookings</h2>
   <div class="booking-container">
     <?php while($transport = $transportBookings->fetch_assoc()): ?>
       <div class="booking-card">
-        <h3><?php echo htmlspecialchars($transport['name']); ?></h3>
+        <h3>
+          <?php echo htmlspecialchars($transport['name']); ?>
+          <span class="status-<?php echo $transport['status']; ?>">
+            <?php echo ucfirst($transport['status']); ?>
+          </span>
+          <?php if (strtotime($transport['created_at']) >= strtotime('-1 day')): ?>
+            <span class="new-badge">NEW</span>
+          <?php endif; ?>
+        </h3>
         <div class="booking-info">
           <p><b>Email:</b> <?php echo htmlspecialchars($transport['email']); ?></p>
           <p><b>Phone:</b> <?php echo htmlspecialchars($transport['phone']); ?></p>
@@ -153,9 +185,6 @@ $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY crea
           <p><b>Drop-off:</b> <?php echo htmlspecialchars($transport['dropoff_location']); ?></p>
           <p><b>Date:</b> <?php echo htmlspecialchars($transport['booking_date']); ?></p>
           <p><b>Time:</b> <?php echo htmlspecialchars($transport['booking_time']); ?></p>
-          <p><b>Status:</b> <span class="status-<?php echo $transport['status']; ?>">
-            <?php echo ucfirst($transport['status']); ?>
-          </span></p>
           <p><b>Booked On:</b> <?php echo $transport['created_at']; ?></p>
         </div>
         <div class="booking-actions">
@@ -168,6 +197,12 @@ $transportBookings = $conn->query("SELECT * FROM transport_booking ORDER BY crea
             <input type="hidden" name="id" value="<?php echo $transport['id']; ?>">
             <input type="hidden" name="type" value="transport">
             <button type="submit" name="cancel" class="btn-cancel">Cancel</button>
+          </form>
+          <!-- Delete -->
+          <form method="post" action="delete_booking.php" onsubmit="return confirm('Delete this booking?');">
+            <input type="hidden" name="id" value="<?php echo $transport['id']; ?>">
+            <input type="hidden" name="type" value="transport">
+            <button type="submit" class="btn-delete">Delete</button>
           </form>
           <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $transport['phone']); ?>" target="_blank" class="btn-whatsapp">WhatsApp</a>
         </div>

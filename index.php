@@ -386,9 +386,33 @@ switch ($page) {
 </div>
 
 <footer>
-    📞 WhatsApp: +255 XXX  | 🌐 Yussuf Zanzibar Tour & Safari
-  </footer>
+  <div>
+    <button id="languageBtn" style="padding:8px 12px; border:none; border-radius:6px; cursor:pointer; background:#0077b6; color:white;">🌐 Language</button>
+    <span>📞 WhatsApp: +255 XXX | 🌐 Yussuf Zanzibar Tour & Safari</span>
+  </div>
+</footer>
 
+<!-- Language Popup -->
+<div id="languagePopup" style="
+    position:fixed;
+    bottom:60px;
+    left:20px;
+    background:white;
+    padding:15px 20px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    display:none;
+    z-index:1000;
+">
+  <h4>Select Language</h4>
+  <ul style="list-style:none; padding:0; margin:10px 0;">
+    <li><button class="langOption" data-lang="en">English</button></li>
+    <li><button class="langOption" data-lang="es">Spanish</button></li>
+    <li><button class="langOption" data-lang="fr">French</button></li>
+    <li><button class="langOption" data-lang="de">German</button></li>
+    <li><button class="langOption" data-lang="sw">Swahili</button></li>
+  </ul>
+</div>
 
 
 

@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         // Destroy session & force re-login
         session_destroy();
-        header("Location: admin.php?page=change_password&status=success&message=Password updated successfully, please log in again");
+        header("Location: index.php?page=login.php");
         exit();
     } else {
         header("Location: admin.php?page=change_password&status=error&message=Failed to update password");

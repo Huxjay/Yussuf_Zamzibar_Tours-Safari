@@ -218,7 +218,7 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
   <div id="top-nav">
     <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
     <div class="profile">
-      <span>Admin Name</span>
+      <span>YUSSUF</span>
       <img src="https://via.placeholder.com/38" alt="Profile">
     </div>
   </div>
@@ -295,11 +295,7 @@ $transportCount = $conn->query("SELECT COUNT(*) as count FROM transport_booking"
               <div class="chart-number"><?php echo $transportCount; ?></div>
               <div class="chart-label">Total</div>
             </div>
-            <div class="chart-item">
-              <h4>Estimated Revenue</h4>
-              <div class="chart-number">$<?php echo number_format($totalRevenue); ?></div>
-              <div class="chart-label">Total</div>
-            </div>
+            
           </div>
 
           <!-- Quick Stats Table -->

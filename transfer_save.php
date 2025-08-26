@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         // ✅ Send Email Notification to Admin
-        $adminEmail = "husseinjuma0097@gmail.com"; // Change to preferred admin email
+        $adminEmail = "yussufzanzibar611@gmail.com"; // Change to preferred admin email
 
         $bookingData = [
             'name'    => $name,
