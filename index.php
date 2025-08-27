@@ -387,25 +387,17 @@ switch ($page) {
 
 <footer>
   <div>
-    <button id="languageBtn" style="padding:8px 12px; border:none; border-radius:6px; cursor:pointer; background:#0077b6; color:white;">🌐 Language</button>
+  <footer>
+  <div class="footer-bar">
+    <button id="languageBtn">🌐 Language</button>
     <span>📞 WhatsApp: +255 XXX | 🌐 Yussuf Zanzibar Tour & Safari</span>
   </div>
 </footer>
 
 <!-- Language Popup -->
-<div id="languagePopup" style="
-    position:fixed;
-    bottom:60px;
-    left:20px;
-    background:white;
-    padding:15px 20px;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    display:none;
-    z-index:1000;
-">
+<div id="languagePopup">
   <h4>Select Language</h4>
-  <ul style="list-style:none; padding:0; margin:10px 0;">
+  <ul>
     <li><button class="langOption" data-lang="en">English</button></li>
     <li><button class="langOption" data-lang="es">Spanish</button></li>
     <li><button class="langOption" data-lang="fr">French</button></li>
@@ -414,6 +406,95 @@ switch ($page) {
   </ul>
 </div>
 
+<style>
+/* Footer Bar */
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #f8f9fa;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+/* Language Button */
+#languageBtn {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #0077b6, #0096c7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#languageBtn:hover {
+  background: linear-gradient(135deg, #023e8a, #0077b6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+}
+
+/* Popup */
+#languagePopup {
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1000;
+  width: 220px;
+  animation: fadeIn 0.3s ease;
+}
+
+#languagePopup h4 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Language List */
+#languagePopup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#languagePopup ul li {
+  margin: 6px 0;
+}
+
+/* Language Options */
+.langOption {
+  width: 100%;
+  padding: 8px 12px;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.langOption:hover {
+  background: #0077b6;
+  color: #fff;
+  transform: scale(1.03);
+}
+
+/* Smooth popup fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
 
 

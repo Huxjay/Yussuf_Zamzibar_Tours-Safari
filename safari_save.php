@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'safari'   => $safari
         ];
 
-        $adminEmail = "husseinjuma0097@gmail.com"; // change to real real admin email
+        $adminEmail = "yussufzanzibar611@gmail.com"; // change to real real admin email
         sendSafariBookingEmail($adminEmail, $bookingData, $tours);
 
         ?>
